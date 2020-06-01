@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MOST2.css">
+    <title>MOST</title>
+</head>
+<body>
+    <div class= "container">
+
+        <div class="item header logo">
+          <div class="logo"><a class="home-link" href="index.html"><img src="logo.png" alt="logo" style="max-width:100%"/></a></div>
+        </div>
+
+        <div class="item header nav">
+            <div class="active"><a class="nav-link" id="nav_letter" href="letter.html">LETTER</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
+        </div>
+
+        <div class="item header info">
+            Welcome userID
+        </div>
+
+        <div class="item sidebar">
+              <div><button class="sidebarbtn on"><i class="fas fa-envelope-open-text"></i><br>Mailbox</button></div>
+              <div><button class="sidebarbtn"><i class="fas fa-pencil-alt"></i><br>Write a letter</button></div>
+        </div>
+
+        <div class="item content">
+              <div class="detail on">
+                  <h3 style>My Mailbox<br><br></h3>
+                  <div class="pad">
+                      <div class="mailbox">
+                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
+                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
+                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+                      </div>
+                  </div>
+                  <div class="lettercontent">
+                    <div><button id="letterclose" style="float:right;">X</button></div>
+                    <div><p id="letterdisplay" style="clear:right;">
+                      Dear. ooo<br><br>Hi, I'm so glad to be your Manito.<br>I sent you a present this morning. Hope you like it.<br><br>From your Manito.<br>2020.05.31<br></p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="detail">
+                <!--
+                  <form class="writing" action="">
+                      <textarea rows="25" placeholder="Write a letter here"></textarea>
+                      <input type="submit" value="Send" style="float:right;">
+                  </form> -->
+                  <div class="writing">
+                    <h3 style>Write a letter to your friend<br><br></h3>
+                    <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
+                    <button style="float:right;    margin-top: 10px; padding: 10px; border: 0; background-color:#afadd2;
+                        font-size: 20px;" onclick="temp()" >SEND</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="letter.js"></script>
+    <script>
+      function temp(){
+        document.getElementById("txt").value = "";
+        alert ("Letter has been sent");
+      }
+    </script>
+</body>
+</html>

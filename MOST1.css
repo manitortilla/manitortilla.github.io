@@ -1,0 +1,90 @@
+/*전체 크기*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap');
+
+/*전체 크기*/
+body {
+    padding : 2;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5em;
+}
+
+/*위쪽 바*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px minmax(800px, auto);
+    grid-gap: 3em 20px;
+    justify-content: center;
+    width : 80em;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item:nth-child(2) {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+}
+
+.item:nth-child(3) {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.item:nth-child(4) {
+    grid-column: 1 / span 5;
+    padding : 2em;
+}
+
+.header {
+    text-align: center;
+    padding : 1em;
+}
+
+.logo{
+    padding: 0;
+}
+
+.nav div {
+    display: inline-block;
+    margin : 0%;
+    padding : 0%;
+    height : 20px;
+}
+
+.nav .nav-link {
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-right: 3em;
+}
+
+.nav .active > .nav-link {
+    width:100%;
+    height:51px;
+    border-bottom: .50rem solid transparent;
+    border-bottom-color: #5e5aa4;
+}
+
+.navbtn:hover > .nav-link{
+    width:100%;
+    border-bottom: .50rem solid transparent;
+    border-bottom-color: #afadd2;
+}
+
+.info{
+    text-align: right;
+}
+
+/*컨텐츠*/
+.detail {
+    margin-top: 50px;
+    padding : 5%;
+    border: solid grey 1px;
+}

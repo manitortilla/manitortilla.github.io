@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MOST.css">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <title>MOST</title>
+</head>
+<body>
+    <div class= "container">
+
+        <div class="item header logo">
+          <div class="logo"><a class="home-link" href="index.html"><img src="logo.png" alt="logo" style="max-width:100%"/></a></div>
+        </div>
+
+        <div class="item header nav">
+            <div class="navbtn"><a class="nav-link" id="nav_letter" href="letter.html">LETTER</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
+            <div class="active"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
+        </div>
+
+        <div class="item header info">
+            Welcome userID
+        </div>
+
+        <div class="item sidebar">
+              <div><button class="sidebarbtn on"><i class="fas fa-question fa-4x"></i><br>Guess Manito</button></div>
+              <div><button class="sidebarbtn"><i class="fas fa-plus-circle fa-4x"></i><br>New Manito Game</button></div>
+        </div>
+
+        <div class="item content">
+            <h3 style>Would You Guess Manito?<br><br></h3>
+            <div class="manitomain">
+                <table class="pad">
+                 <tr>
+                     <td>
+                         <div class="userprofile"><img src="https://i.imgur.com/4SLDvXw.jpg"><div>UserID</div></div>
+                         <div class="guessingarrowwrapper"><i class="fas fa-arrow-right fa-7x"></i><div>guess</div></div>
+                         <div id='manitoprofile' class="userprofile empty"><i class="far fa-user fa-6x"></i><div>None</div></div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <div id="guessdescription">
+                             You have only 1 chance to guess Manito during manito game. Once you choose someone as Manito, you can not change your choice.
+                         </div>
+                    </td>
+                 </tr>
+                </table>
+                <div class="pad">
+                    <button id="guessingbutton" class="guessbtn posi"> gussing</button>
+                </div>
+            </div>
+            <div class="guesswindow">
+                <div style="vertical-align: middle;"><button id="guesswindowclose"><i class="fas fa-chevron-left fa-3x"></i></button><b>Guess Your Manito</b></div>
+                <div id="guessuserlist">
+                    <div class=pad2><div id='guessprofile1'class="guessprofile"><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><div>Yellow</div></div><button id="guessuserbutton1"class="guessuserbutton">Choose</button></div>
+                    <div class=pad2><div id='guessprofile2'class="guessprofile"><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><div>Green</div></div><button id="guessuserbutton2"class="guessuserbutton">Choose</button></div>
+                    <div class=pad2><div id='guessprofile3'class="guessprofile"><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><div>Blue</div></div><button id="guessuserbutton3"class="guessuserbutton">Choose</button></div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Manito.js"></script>
+
+
+
+</body>
+</html>

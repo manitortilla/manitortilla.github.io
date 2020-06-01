@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".tab ul li").click(function(){
+            $(".tab ul li").removeClass('on');
+            $(".tab .conBox").removeClass('on');
+            $(this).addClass('on');
+            $("#"+$(this).data('id')).addClass('on');
+        });
+
+        // $("#recommendation").load("gift_recommendation.html");
+        // $("#best").load("gift_best.html");
+        // $("#brand").load("gift_brand.html");
+        // $("#category").load("gift_category.html");
+
+    });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gift.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap" rel="stylesheet">
+    <title>MOST</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="item header logo">
+            <a class="home-link" href="index.html"><img src="logo.png" alt="logo" style="max-width:100%;"/></a>
+        </div>
+
+        <div class="item header nav">
+            <div class="navbtn"><a class="nav-link" id="nav_letter" href="letter.html">LETTER</a></div>
+            <div class="active"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
+        </div>
+
+        <div class="item header info">
+            Welcome userID
+        </div>
+
+
+
+        <div class="item sidebar">
+             <div class="func">
+                <button class="sidebarbtn on" onClick="location.href='gift_send.html'"><i class="fas fa-gift"></i>Send a gift</button>
+            </div>
+            <div class="func">
+                <button class="sidebarbtn" onClick="location.href='gift_check.html'"><i class="fas fa-box-open"></i>Receive a gift</button>
+            </div>
+        </div>
+
+        <div class="item main">
+            <div class="searcharea">
+                <input class="search" type="text" placeholder="Search the gift">
+                <button class="searchbtn"type="submit">Search</button>
+            </div>
+
+            <div class="tab">
+                <ul>
+                    <li class="tabmenu" data-id="recommendation" class="on">Recommendation</li>
+                    <li class="tabmenu" data-id="best">Best</li>
+                    <li class="tabmenu" data-id="brand">Brand</li>
+                    <li class="tabmenu" data-id="category">Category</li>
+                </ul>
+                <div id="recommendation" class="conBox on">
+                    <iframe src="gift_recommendation.html" width="100%" height="inherit" scrolling="yes" frameborder="0" class="ifrcontent"></iframe>
+                </div>
+                <div id="best" class="conBox">
+                    <iframe src="gift_best.html" height="inherit" scrolling="yes" frameborder="0" class="ifrcontent"></iframe>
+                </div>
+                <div id="brand" class="conBox">
+                    <iframe src="gift_brand.html" height="inherit" scrolling="yes" frameborder="0" class="ifrcontent"></iframe>
+                </div>
+                <div id="category" class="conBox">
+                    <iframe src="gift_category.html" height="inherit" scrolling="yes" frameborder="0" class="ifrcontent"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
