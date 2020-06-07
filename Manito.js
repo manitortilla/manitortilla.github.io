@@ -29,7 +29,7 @@ $('#guesswindowclose').on('click', function(){
 
 
 $('#guessuserbutton1').on('click',function(){
-    const result = confirm('이 사람을 마니또로 선택하시겠습니까?');
+    const result = confirm('Do you really choose this member as Manito?');
     if(result){
         var photo_html = $('#guessprofile1').html();
         $('#manitoprofile').removeClass(' empty');
@@ -46,7 +46,7 @@ $('#guessuserbutton1').on('click',function(){
 });
 
 $('#guessuserbutton2').on('click',function(){
-    const result = confirm('이 사람을 마니또로 선택하시겠습니까?');
+    const result = confirm('Do you really choose this member as Manito?');
     if(result){
         var photo_html = $('#guessprofile2').html();
         $('#manitoprofile').removeClass(' empty');
@@ -62,7 +62,7 @@ $('#guessuserbutton2').on('click',function(){
     
 });
 $('#guessuserbutton3').on('click',function(){
-    const result = confirm('이 사람을 마니또로 선택하시겠습니까?');
+    const result = confirm('Do you really choose this member as Manito?');
     if(result){
         var photo_html = $('#guessprofile3').html();
         $('#manitoprofile').removeClass(' empty');
