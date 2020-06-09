@@ -73,8 +73,14 @@
     <script type="text/javascript" src="letter.js"></script>
     <script>
       function temp(){
-        document.getElementById("txt").value = "";
-        alert ("Letter has been sent");
+        lettertxt = document.getElementById("txt").value
+        if (lettertxt == "") {
+          alert ("You cannot sent an empty letter");
+        }
+        else {
+          lettertxt = "";
+          alert ("Letter has been sent");
+        }
       }
     </script>
 </body>

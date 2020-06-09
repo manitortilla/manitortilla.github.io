@@ -32,6 +32,7 @@ body {
 
 /*인풋- 아이디, 비밀번호*/
 .wrap-input{
+    display: flex;
     width:100%;
     margin-bottom: 16px;
     border-radius: 3px;
@@ -49,6 +50,16 @@ body {
     border: none;
     padding: 0 5px 0 20px;
 }
+
+.alert {
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: 13px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 
 /*아이디 관리*/
 .manage {

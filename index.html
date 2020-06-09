@@ -11,12 +11,14 @@
         <div class ="login-form validate-form">
             <div class="logo"><img src="logo.png" alt="logo" style="width:50%;"/></div>
 
-            <div class="wrap-input validate-input" data-validate = "Username is required">
+            <div class="wrap-input validate-input">
   						<input class="userinput" type="text" name="username" placeholder="Username">
+              <div class= "alert" id="alertname">Username is required !</div>
   					</div>
 
-  					<div class="wrap-input validate-input" data-validate = "Password is required">
+  					<div class="wrap-input validate-input">
   						<input class="userinput" type="password" name="pass" placeholder="Password">
+              <div class= "alert" id="alertpass">Password is required !</div>
   					</div>
 
   					<div class="manage">
@@ -24,7 +26,7 @@
   							<input class="input-checkbox" id="ckbx" type="checkbox" name="remember-me">
   							<label class="label-checkbox" for="ckbx">Remember me</label>
   						</div>
-  						<div><a href="#" class="txt">Forgot?</a></div>
+  						<div><a href="#" class="txt" onclick="forgotclicked()">Forgot?</a></div>
   					</div>
 
   					<div class="container-loginbtn">
@@ -40,7 +42,7 @@
             </div>
             <div class="list">
                 <ul class="game"><a href="home.html">Seoul friends</a></ul>
-                <ul class="game"><a href="home.html">Friends from school</a></ul>
+                <ul class="game"><a href="home.html">EWHA Group!!</a></ul>
                 <ul class="game"><a href="home.html">Best friends</a></ul>
                 <ul class="game newgame"><a href="#">+ Start a new game</a></ul>
           </div>
@@ -49,10 +51,33 @@
 
     </div>
   </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
     <script>
+      $('.userinput').each(function(){
+          $(this).focus(function(){
+            document.getElementsByClassName("alert")[0].style.display = "none";
+            document.getElementsByClassName("alert")[1].style.display = "none";
+          });
+      });
       function loginclicked(){
-        document.getElementsByClassName("login-form")[0].style.display = "none";
-        document.getElementsByClassName("game-list")[0].style.display = "block";
+        input = document.getElementsByClassName("userinput");
+        if (input[0].value == ""){
+          document.getElementById("alertname").style.display = "block";
+        }
+        if (input[1].value == ""){
+          document.getElementById("alertpass").style.display = "block";
+        }
+        if (input[0].value != "" && input[1].value != "") {
+          document.getElementsByClassName("login-form")[0].style.display = "none";
+          document.getElementsByClassName("game-list")[0].style.display = "block";
+        }
+      }
+
+      function forgotclicked(){
+        alert("Sorry, we are currently preparing for this service");
       }
     </script>
 
