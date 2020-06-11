@@ -1,3 +1,46 @@
+initFirebaseAuth();
+// Initiate firebase auth.
+function initFirebaseAuth() {
+ firebase.auth().onAuthStateChanged(authStateObserver);
+}
+
+
+function getProfilePicUrl() {
+ return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
+}
+
+// Returns the signed-in user's display name.
+function getUserName() {
+ return firebase.auth().currentUser.displayName;
+}
+// Returns true if a user is signed-in.
+function isUserSignedIn() {
+ return !!firebase.auth().currentUser;
+}
+console.log(isUserSignedIn());
+// Adds a size to Google Profile pics URLs.
+function addSizeToGoogleProfilePic(url) {
+ if (url.indexOf('googleusercontent.com') !== -1 && url.indexOf('?') === -1) {
+   return url + '?sz=150';
+ }
+ return url;
+}
+
+// Triggers when the auth state change for instance when the user signs-in or signs-out.
+function authStateObserver(user) {
+ if (user) { // User is signed in!
+   // Get the signed-in user's profile pic and name.
+   //var profilePicUrl = getProfilePicUrl();
+   document.getElementById("userID").innerHTML = getUserName();
+
+   // Set the user's profile pic and name.
+   //userPicElement.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(profilePicUrl) + ')';
+
+ } else { // User is signed out!
+   console.log("NO");
+ }
+}
+
 // sidebar menu toggle
 $('.sidebarbtn').on('click', function(){
   //sidebarbtn color update
@@ -37,3 +80,23 @@ document.getElementById("letterclose").onclick = function() {
   document.getElementsByClassName("mailbox")[0].style.display = "grid";
   document.getElementsByClassName("pad")[0].style.display = "block";
 };
+
+// Saves a letter to Cloud Firestore database.
+function sendLetter() {
+  // Add a new login info entry to the database.
+  content= document.getElementById("txt").value;
+
+  if (content != "") {
+    document.getElementById("txt").value = ""; //clear
+    alert ("Letter has been sent");
+    return firebase.firestore().collection('letter').add({
+      userID: getUserName(),
+      contents: content
+    }).catch(function(error) {
+      console.error('Error writing new message to database', error);
+    });
+  }
+  else {
+    alert ("You cannot sent an empty letter");
+  }
+}

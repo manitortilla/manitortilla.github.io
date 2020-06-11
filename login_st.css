@@ -60,34 +60,37 @@ body {
   margin-bottom: auto;
 }
 
-
-/*아이디 관리*/
-.manage {
-  display: flex;
-  justify-content: space-between;
-  font-size: 17px;
-  width:100%;
-  padding-top: 3px;
-  padding-bottom: 24px;
-}
-.manage a {
-  text-decoration: none;
-  color: #5e5aa4;
-}
-
 /*로그인버튼*/
 .container-loginbtn {
+    display: flex;
     margin-top: 16px;
 }
 
 .loginbtn {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  width: 100%;
-  background-color: #afadd2;
+  width: 80%;
+  background-color: grey;
   border: 1px solid transparent;
   border-radius: 3px;
   height: 40px;
+}
+
+#signupbtn{
+  text-align: center;
+  text-decoration: none;
+  color: #5e5aa4;
+  font-size: 15px;
+  width:20%;
+  margin-left: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#googlelogin {
+  width: 100%;
+  background-color: #afadd2;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 

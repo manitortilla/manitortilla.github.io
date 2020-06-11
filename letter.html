@@ -21,7 +21,7 @@
         </div>
 
         <div class="item header info">
-            Welcome userID
+            Welcome <span id="userID"></span>
         </div>
 
         <div class="item sidebar">
@@ -60,7 +60,7 @@
                     <h3 style>Write a letter to your friend<br><br></h3>
                     <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
                     <button style="float:right;    margin-top: 10px; padding: 10px; border: 0; background-color:#afadd2;
-                        font-size: 20px;" onclick="temp()" >SEND</button>
+                        font-size: 20px;" onclick="sendLetter()" >SEND</button>
                   </div>
               </div>
           </div>
@@ -70,18 +70,15 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-storage.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-messaging.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.15.0/firebase-performance.js"></script>
+    <script src="/__/firebase/init.js"></script>
+
     <script type="text/javascript" src="letter.js"></script>
-    <script>
-      function temp(){
-        lettertxt = document.getElementById("txt").value
-        if (lettertxt == "") {
-          alert ("You cannot sent an empty letter");
-        }
-        else {
-          lettertxt = "";
-          alert ("Letter has been sent");
-        }
-      }
-    </script>
+
 </body>
 </html>
