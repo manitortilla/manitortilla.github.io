@@ -142,9 +142,9 @@ body {
 
 
 .detail {
-    border: solid;
+    border: NONE;
     margin : 2%;
-    padding : 5%;
+    padding : 0%;
     align-content: center;
 }
 
@@ -164,10 +164,10 @@ body {
 /*User 프로필*/
 .userprofile{
     margin: 2%;
+    padding : 1%;
     float : left;
     background-color: #afadd2;
-    width : 30%;
-    height : 40%;
+    width : 200px;
     text-align: center;
 }
 
@@ -179,6 +179,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    border-radius: 50px;
     height: 100PX;
     width: 100PX;
     margin: 5%;
@@ -186,6 +187,7 @@ body {
 
 /*빈 마니또 프로필*/
 .userprofile empty{
+    padding : 1%;
     margin: 2%;
     float : left;
     background-color: #afadd2;
@@ -195,16 +197,15 @@ body {
 }
 
 .userprofile empty svg{ 
-    position:relative;
-    border:solid;
-    background-color: ghostwhite;
+    position: relative;
+    border: solid;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100px;
-    height:100PX;
-    margin:5%;
+    height: 100PX;
+    width: 100PX;
+    margin: 5%;
 }
 
 /*화살표*/
@@ -286,10 +287,10 @@ body {
 }
 
 .guessprofile {
-    margin: 2%;
-    background-color: #afadd2;
-    width : 200px;
-    height : 200px;
+    margin: 0%;
+    background-color: None;
+    width : 100%;
+    height : 70%;
     text-align: center;
     float: left;
 }
@@ -317,17 +318,8 @@ body {
     text-align: center;
     width: 10em;
 }
-
 .guessuserbutton:hover{
-    color: #ffffff;
-    background-color:  #373472;
-    border: none;
-    padding : 1em;
-    display: inline-block;
-    font-size: 10px;
-    border-radius: 20px;
-    text-align: center;
-    width: 10em;
+    background-color:#3a3870 ;
 }
 
 .pad2{
@@ -338,4 +330,126 @@ body {
     text-align: center;
     float: left;
     background-color: #afadd2;
+}
+
+
+.windowtitle{
+    inline-size: inherit;
+
+}
+
+#manitoresult{
+    display : none;
+}
+
+.resultblock{
+    background-color: #afadd2;
+    
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding : 2%;
+    border-radius: 30px;
+    width: 100%;
+    height: 100px;
+}
+
+
+
+.resultblock_name{
+    width: 20%;
+    padding:0%;
+    display: table-cell;
+    border-right:solid; 
+    border-right-color:   #ffffff; 
+}
+.resultblock_name span{
+    margin: 2%;
+    width: 70%;
+    vertical-align: middle; 
+    
+}
+
+.resultblock_name img{
+    margin: 2%;
+    width:70px;
+    height:70px;
+    border-radius: 35px;
+    border: solid;
+    border-color: black;
+    vertical-align: middle;    
+}
+
+.resultblock_guess{
+    width: 30%;    
+    padding-top:0;
+    padding-bottom:0;
+    display: table-cell;
+    border-right:solid; 
+    border-right-color:   #ffffff; 
+}
+
+.resultblock_guess span{
+    padding: 5%;
+    vertical-align: middle;
+    color: black;
+    font-family: impact;
+    font-size: 150%;
+}
+
+.resultblock_manito{
+    width: 30%;
+    border-right : solid;
+    border-right-color:   #ffffff; 
+}
+
+.resultblock_manito span{
+    padding: 5%;
+    vertical-align: middle;
+    color: black;
+    font-family: impact;
+    font-size: 150%;
+}
+
+/* small profile related style*/
+.smallprofile{
+    background-color: #afadd2;
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:0;
+    padding:0%;
+    width: 100px;
+    
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.smallprofile img{
+    
+    vertical-align: middle;
+    border :solid;
+    border-radius: 35px;
+    width: 70px;
+    height: 70px;
+    margin-right:2px;
+}
+
+.smallprofile span{
+    vertical-align: middle;
+    font-family: arial;
+    font-size: 20px;
+}
+
+
+
+.resultblock_hit{
+    display: table-cell;
+    text-align: center;
+}
+.resultblock_hit img{
+    vertical-align: middle;
+
+    width: 70px;
+    height: 70px;
 }

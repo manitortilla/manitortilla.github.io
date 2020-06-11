@@ -11,6 +11,7 @@ $('.sidebarbtn').on('click', function(){
     $('.detail').eq(idx).show();
     if (idx == 0){ 
       $('.manitomain').show();
+      $('.guesswindow').hide();
     }
   }); 
 
@@ -29,7 +30,7 @@ $('#guesswindowclose').on('click', function(){
 
 
 $('#guessuserbutton1').on('click',function(){
-    const result = confirm('Do you really choose this member as Manito?');
+    const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile1').html();
         $('#manitoprofile').removeClass(' empty');
@@ -46,7 +47,7 @@ $('#guessuserbutton1').on('click',function(){
 });
 
 $('#guessuserbutton2').on('click',function(){
-    const result = confirm('Do you really choose this member as Manito?');
+    const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile2').html();
         $('#manitoprofile').removeClass(' empty');
@@ -62,7 +63,7 @@ $('#guessuserbutton2').on('click',function(){
     
 });
 $('#guessuserbutton3').on('click',function(){
-    const result = confirm('Do you really choose this member as Manito?');
+    const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile3').html();
         $('#manitoprofile').removeClass(' empty');
