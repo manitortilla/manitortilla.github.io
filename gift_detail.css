@@ -131,12 +131,40 @@ p {
     margin: 2%; 
 }
 
-.product_buy{
+.product_buybtn{
     margin:2%;  
     width : 180px;
     height: 40px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    
+    color:white;
+    border-radius: 20px;
+    background-color: #5e5aa4;
+}
+
+#pop{
+    display: none;
+    padding: 3%;
+    width: 400px;
+    height: 100px;
+    background-color: #3d3d3d;
+    color:#fff;
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align:center;
+    border:2px solid #000;
+}
+
+#close{
+    margin:5%;
+    width:100px;
+    height:50px;
+    margin:auto;
+    background-color: transparent;
+    border:transparent;
+    font-size: 20px;
+    color:white;
 }
