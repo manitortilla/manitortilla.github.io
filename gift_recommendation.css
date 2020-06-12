@@ -9,55 +9,37 @@ body{
     padding : 1%;
 }
 
-.wrapper_rank {
+.wrapper_ad {
     font-size: 30px;
     padding : 5%;
     border-right : solid gray 1px;
 }
 
-.wrapper_hashtag {
-    font-size: 30px;
-    padding : 5%;
-}
-
-.rank{
-    width: inherit;
-    margin: 2%;
-}
-
-.rank_tr{
+.t_ad {
     margin : 20px;
 }
 
-.rank_no{
-    font-size : 25px;
-    text-align: center;
-    padding : 5px;
+.ad_img {
+    width : 150px;
+    /* border-right : solid 1px gray; */
+    border-bottom : solid 1px gray;
 }
 
-.product_img {
-    height : 150px;
-    text-align: center;
-    padding : 5px;
-}
-
-.product_img img {
-    height : 150px;
+.ad_img img{
+    height : 120px;
     width : auto;
+    padding: 30px;
+    text-align: center;
 }
 
-.product_info {
-    padding: 5px;
+.ad_text{
+    font-size: 20px;
+    border-bottom : solid 1px gray;
 }
 
-.product_name {
+.wrapper_hashtag {
     font-size: 30px;
-    padding : 5px;
-}
-
-.product_detail{
-    font-size: 15px;
-    padding : 5px;
+    padding : 5%;
 }
 
 .hashtag{
@@ -74,4 +56,13 @@ body{
     margin : 2%;
     border: solid 2px #afadd2;
     border-radius: 10px;
+}
+
+.name {
+    font-size: 20px;
+    padding : 10px;
+}
+
+.exp {
+    font-size : 15px;
 }
