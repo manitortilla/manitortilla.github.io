@@ -4,6 +4,12 @@ function initFirebaseAuth() {
   firebase.auth().onAuthStateChanged(authStateObserver);
 }
 
+var signOutButtonElement = document.getElementById('logoutbtn');
+function signOut() {
+  // Sign out of Firebase.
+  firebase.auth().signOut();
+}
+signOutButtonElement.addEventListener('click', signOut);
 
 function getProfilePicUrl() {
   return firebase.auth().currentUser.photoURL;
@@ -23,7 +29,7 @@ function isUserSignedIn() {
 // Adds a size to Google Profile pics URLs.
 function addSizeToGoogleProfilePic(url) {
   if (url.indexOf('googleusercontent.com') !== -1 && url.indexOf('?') === -1) {
-    return url + '?sz=150';
+    return url + '?sz=50';
   }
   return url;
 }
@@ -32,15 +38,14 @@ function addSizeToGoogleProfilePic(url) {
 function authStateObserver(user) {
   if (user) { // User is signed in!
     // Get the signed-in user's profile pic and name.
-    var profilePicUrl = getProfilePicUrl();
-    console.log(profilePicUrl);
-  //  document.getElementById("userpic").src = "\"" + addSizeToGoogleProfilePic(profilePicUrl) + "\"";
+  //  var profilePicUrl = getProfilePicUrl();
+  //  var url = addSizeToGoogleProfilePic(profilePicUrl);
+
+  //  document.getElementById("userpic").setAttribute("src", url);
     document.getElementById("userID").innerHTML = getUserName();
     document.getElementById("userID2").innerHTML = getUserName();
 
-    // Set the user's profile pic and name.
-    //userPicElement.style.backgroundImage = 'url(' + addSizeToGoogleProfilePic(profilePicUrl) + ')';
-
   } else { // User is signed out!
+    location.href="/index.html";
   }
 }

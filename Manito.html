@@ -21,10 +21,10 @@
             <div class="active"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
         </div>
 
-        
+
 
         <div class="item header info">
-            Welcome userID
+            Welcome <span id="userID"></span>
         </div>
 
         <div class="item sidebar">
@@ -41,9 +41,9 @@
                  <tr>
                      <td>
                          <div class="userprofile"><img src="https://i.imgur.com/4SLDvXw.jpg"><div>UserID</div></div>
-                         
+
                          <div class="guessingarrowwrapper"><i class="fas fa-arrow-right fa-7x"></i><div>guess</div></div>
-                         
+
                          <div id='manitoprofile' class="userprofile empty"><img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png"><div>None</div></div>
                      </td>
                  </tr>
@@ -60,16 +60,16 @@
                 </div>
             </div>
 
-            
+
             <div class="guesswindow">
                 <div style="vertical-align: middle;"><button id="guesswindowclose"><i class="fas fa-chevron-left fa-3x"></i></button><span class="windowtitle"><b>Guess Your Manito</b></span></div>
                 <div id="guessuserlist">
                     <div class=pad2><div id='guessprofile1'class="guessprofile"><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><div>Yellow</div></div><button id="guessuserbutton1"class="guessuserbutton">Choose</button></div>
                     <div class=pad2><div id='guessprofile2'class="guessprofile"><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><div>Green</div></div><button id="guessuserbutton2"class="guessuserbutton">Choose</button></div>
                     <div class=pad2><div id='guessprofile3'class="guessprofile"><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><div>Blue</div></div><button id="guessuserbutton3"class="guessuserbutton">Choose</button></div>
-                    
+
                 </div>
-                
+
             </div>
             </div>
 
@@ -79,7 +79,7 @@
                     <h3 >RESULT<br><br></h3>
                     <table id= result0 class=resultblock>
                         <tr>
-                            <td class='resultblock_name'><img src="https://i.imgur.com/4SLDvXw.jpg"><span>You(Red)</span></td>
+                            <td class='resultblock_name'><img src="https://i.imgur.com/4SLDvXw.jpg"><span id="userID2"></span></td>
                             <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
                             <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
                             <td class='resultblock_hit'><img src='check.png'></td>
@@ -108,17 +108,41 @@
                             <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></span></td>
                             <td class='resultblock_hit'><img src='xmark.png'></td>
                         </tr>
-                        </table>                        
+                        </table>
                 </div>
             </div>
-        </div>    
-        
+        </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-performance.js"></script>
+    <script>
+        if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
+    var firebaseConfig = {
+      "projectId": "most-hciproject",
+      "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
+      "databaseURL": "https://most-hciproject.firebaseio.com",
+      "storageBucket": "most-hciproject.appspot.com",
+      "locationId": "us-central",
+      "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
+      "authDomain": "most-hciproject.firebaseapp.com",
+      "messagingSenderId": "1096383375744",
+      "measurementId": "G-D34DTCWS6S"
+    };
+    if (firebaseConfig) {
+      firebase.initializeApp(firebaseConfig);
+    }
+      </script>
+
     <script type="text/javascript" src="Manito.js"></script>
 
 
-    
+
 </body>
 </html>
