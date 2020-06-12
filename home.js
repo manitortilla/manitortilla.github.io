@@ -33,7 +33,8 @@ function authStateObserver(user) {
   if (user) { // User is signed in!
     // Get the signed-in user's profile pic and name.
     var profilePicUrl = getProfilePicUrl();
-    document.getElementById("userpic").src = "\"" + addSizeToGoogleProfilePic(profilePicUrl) + "\"";
+    console.log(profilePicUrl);
+  //  document.getElementById("userpic").src = "\"" + addSizeToGoogleProfilePic(profilePicUrl) + "\"";
     document.getElementById("userID").innerHTML = getUserName();
     document.getElementById("userID2").innerHTML = getUserName();
 
