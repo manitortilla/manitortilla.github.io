@@ -32,7 +32,8 @@ function addSizeToGoogleProfilePic(url) {
 function authStateObserver(user) {
   if (user) { // User is signed in!
     // Get the signed-in user's profile pic and name.
-    document.getElementById("userpic") = getProfilePicUrl();
+    var profilePicUrl = getProfilePicUrl();
+    document.getElementById("userpic").src = 'url(' + addSizeToGoogleProfilePic(profilePicUrl) + ')';
     document.getElementById("userID").innerHTML = getUserName();
     document.getElementById("userID2").innerHTML = getUserName();
 
