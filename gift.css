@@ -143,44 +143,44 @@ body {
     cursor: pointer;
 }
 
-/*gift_send 탭 메뉴*/
-.tab{
+/* Style the tab */
+.tab {
     width:auto;
     height:auto;
     overflow:hidden;
 }
- 
-.tab ul{
-    padding:0;
-    margin:0;
-    list-style:none;
-    width:100%;
-    height:auto;
-    overflow:hidden;
-}
- 
-.tab ul li{
-    display:inline-block;
-    width: 10em;
-    float:left;
-    line-height:40px;
-    text-align:center;
-    cursor:pointer;
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border : solid gray 1px;
+    border-radius : 0 10px 0 0;
     font-size: large;
     font-weight: bold;
+    width : 200px;
 }
- 
-.tab ul li:hover {
+  
+  /* Change background color of buttons on hover */
+.tab button:hover {
     background: #afadd2 ;
     font-style: italic;
 }
-.tab ul li.on{
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    /* background-color: #ccc; */
     color: #ffffff;
     background: #5e5aa4;
-}
- 
-/*탭 내부 컨텐츠 */
-.tab .conBox{
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
     width: auto;
     height : 1000px;
     max-height: auto;
@@ -190,18 +190,9 @@ body {
     display:none;
     text-align:center;
     border: solid gray 1px;
-}
- 
-.tab .conBox.on{
-    display:block;
-}
+  }
 
-.tabmenu {
-    border : solid gray 1px;
-    border-radius : 0 10px 0 0;
-}
-
-iframe {
+  iframe {
     width: 100%;
     height: inherit;
 }
