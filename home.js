@@ -6,7 +6,7 @@ function initFirebaseAuth() {
 
 
 function getProfilePicUrl() {
-  return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
+  return firebase.auth().currentUser.photoURL;
 }
 
 // Returns the signed-in user's display name.
@@ -32,7 +32,7 @@ function addSizeToGoogleProfilePic(url) {
 function authStateObserver(user) {
   if (user) { // User is signed in!
     // Get the signed-in user's profile pic and name.
-    //var profilePicUrl = getProfilePicUrl();
+    document.getElementById("userpic").innerHTML = getProfilePicUrl();
     document.getElementById("userID").innerHTML = getUserName();
     document.getElementById("userID2").innerHTML = getUserName();
 
