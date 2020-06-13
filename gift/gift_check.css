@@ -172,27 +172,44 @@ body {
     font-style: italic;
 }
   
-  /* Create an active/current tablink class */
-  .tab button.active {
-    /* background-color: #ccc; */
-    color: #ffffff;
-    background: #5e5aa4;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    width: auto;
-    height : 1000px;
-    max-height: auto;
-    overflow:hidden;
-    min-height:200px;
-    background: #ffffff;;
-    display:none;
-    text-align:center;
-    border: solid gray 1px;
-  }
-
-  iframe {
-    width: 100%;
-    height: inherit;
+#tab_on {
+    background :  #5e5aa4;
+    color: white;
 }
+
+.exp {
+    font-size : 15px;
+}
+
+
+.wrapper {
+    margin: 3%;
+    padding: 5%;
+}
+
+.giftbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    text-align: center;
+}
+
+.giftbox .new {
+    background:none;
+    border:0;
+    outline:0;
+    cursor:pointer;
+    padding-bottom: 20px;
+    font-size: 100px;
+    color:  #5e5aa4;
+}
+.giftbox .old {
+    background:none;
+    border:0;
+    outline:0;
+    cursor:pointer;
+    padding-bottom: 20px;
+    font-size: 100px;
+    color: grey;
+}
+  
