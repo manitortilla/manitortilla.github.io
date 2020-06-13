@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gift_detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title id="title"></title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="item header logo">
+            <a class="home-link" href="../home.html"><img src="../logo.png" alt="logo" style="max-width:100%;"/></a>
+        </div>
+
+        <div class="item header nav">
+            <div class="navbtn"><a class="nav-link" id="nav_letter" href="../letter.html">LETTER</a></div>
+            <div class="active"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_manito" href="../Manito.html">MANITO</a></div>
+        </div>
+
+        <div class="item header info">
+            Welcome <span id="userID"></span>
+            <i class="fas fa-sign-out-alt" id="logoutbtn" style="font-size: 40px; margin-left: 10px;"></i>
+        </div>
+
+
+        <div class="item sidebar">
+             <div class="func">
+                <button class="sidebarbtn on" onClick="location.href='gift_send.html'"><i class="fas fa-gift"></i>Send a gift</button>
+            </div>
+            <div class="func">
+                <button class="sidebarbtn" onClick="location.href='gift_check.html'"><i class="fas fa-box-open"></i>Receive a gift</button>
+            </div>
+        </div>
+
+        <div class="item main">
+                       
+            <p class='product_name'>상품명</p>
+            <table>
+                <tr>
+                    <td class='product_layout_left'>
+                        <div class='product_img'>
+                            <img src='https://cdn1.playskateshop.com/21151-large/vans-shoes-old-skool-platform-black-white.jpg'>
+                        </div>
+                    </td>
+                    <td class='product_layout_right'>
+                        <b style="font-size: 22px; color: royalblue">Check the information below one more time</b>   
+                        &nbsp;
+                        <div class="card">
+                            <table class='gift_info'>
+                                <tr>
+                                    <td class='gift_attr'>Receiver</td>
+                                    <td class='gift_value'>Green</td>
+                                </tr>
+                                <tr>
+                                    <td class='gift_attr'>Address</td>
+                                    <td class='gift_value'>daehyeon-dong, seodaemun-goo, Seoul</td>
+                                </tr>
+                                <tr>
+                                    <td class='gift_attr'>Gift</td>
+                                    <td class='gift_value'>상품명</td>
+                                </tr>
+                            </table>
+                            <button class='product_buybtn'>BUY</button>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            <div class='product_price'>가격</div>
+            <div class='product_detail'>정보</div>
+            <div id='pop'>
+                <div>
+                    Sorry. A problem occurs during paying process.<br>We will solve the problem if you write problem situation to us through <a href="qnaboard.html">QnA board</a>
+                </div>
+                <div>
+                    <button id="close">X</button>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+
+</body>
+</html>
