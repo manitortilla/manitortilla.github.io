@@ -22,7 +22,8 @@ body {
 
 /*상태1. 로그인 창 */
 .login-form {
-  display: block;
+  display: none;
+  color: grey;
 }
 /*로고*/
 .logo{

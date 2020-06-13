@@ -34,18 +34,10 @@
  }
  signInButtonElement.addEventListener('click', signIn);
 
- function signOut() {
-   // Sign out of Firebase.
-   firebase.auth().signOut();
- }
 
  // Initiate firebase auth.
  function initFirebaseAuth() {
    firebase.auth().onAuthStateChanged(authStateObserver);
- }
-
- function getProfilePicUrl() {
-   return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
  }
 
  // Returns the signed-in user's display name.
@@ -53,17 +45,13 @@
    return firebase.auth().currentUser.displayName;
  }
 
+ function getUserUid(){ //현재 로그인 한 유저의 uid 불러오기
+   return firebase.auth().currentUser.uid
+ }
+
  // Returns true if a user is signed-in.
 function isUserSignedIn() {
   return !!firebase.auth().currentUser;
-}
-
-// Adds a size to Google Profile pics URLs.
-function addSizeToGoogleProfilePic(url) {
-  if (url.indexOf('googleusercontent.com') !== -1 && url.indexOf('?') === -1) {
-    return url + '?sz=150';
-  }
-  return url;
 }
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
@@ -71,14 +59,41 @@ function authStateObserver(user) {
   if (user) { // User is signed in!
     // show the game list
     document.getElementById("userID").innerHTML="Hi, "+getUserName();
-    document.getElementsByClassName("login-form")[0].style.display="none";
-    document.getElementsByClassName("game-list")[0].style.display="block";
-  } else { // User is signed out!
-  //  location.href="/index.html";
+    toggleScreen();
+  } else{
+    toggleScreen();
   }
 }
 
+function toggleScreen(){
+  if (isUserSignedIn()){
+    getGamelist();
+    document.getElementsByClassName("login-form")[0].style.display="none";
+    document.getElementsByClassName("game-list")[0].style.display="block";
+  }
+  else{
+    getGamelist();
+    document.getElementsByClassName("login-form")[0].style.display="block";
+    document.getElementsByClassName("game-list")[0].style.display="none";
+  }
+}
 
-function forgotclicked(){
+function signupclicked(){
   alert("Sorry, we are currently preparing for this service");
+}
+
+function getGamelist(){
+  //load users' game list
+  firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
+      var newHTML = "<ul class='game'><a href='home.html'>SAMPLE GAME</a></ul>";
+      if (doc.exists) {
+        var mygamelist = doc.data().game;
+        for (i=0; i<mygamelist.length; i++){
+          newHTML += "<ul class='game'><a href='home.html'>"+mygamelist[i]+"</a></ul>";
+        }
+      }
+      newHTML += " <ul class='game newgame'><a href='newgame.html'>+ Start a new game</a></ul>";
+      document.getElementsByClassName("list")[0].innerHTML= newHTML;
+  });
+
 }

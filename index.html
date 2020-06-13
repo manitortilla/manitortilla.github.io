@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class ="login-form validate-form">
+        <div class ="login-form">
             <div class="logo"><img src="logo.png" alt="logo" style="width:50%;"/></div>
             <button class="loginbtn" id="googlelogin">LOGIN with GOOGLE</button>
 
@@ -29,7 +29,7 @@
 
             <div class="container-loginbtn">
               <button class="loginbtn" id="loginbtn">LOGIN</button>
-              <a href="#" id="signupbtn" onclick="forgotclicked()">SIGN UP</a>
+              <a href="#" id="signupbtn" onclick="signupclicked()">SIGN UP</a>
             </div>
         </div>
 
@@ -41,10 +41,8 @@
               <span>among your ongoing games</span>
             </div>
             <div class="list">
-                <ul class="game"><a href="home.html">Seoul friends</a></ul>
-                <ul class="game"><a href="home.html">EWHA Group!!</a></ul>
-                <ul class="game"><a href="home.html">Best friends</a></ul>
-                <ul class="game newgame"><a href="#">+ Start a new game</a></ul>
+
+
           </div>
         </div>
       </div>
@@ -58,16 +56,12 @@
     <!-- FIREBASE!! -->
       <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-performance.js"></script>
+
     <script>
       if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
   var firebaseConfig = {
