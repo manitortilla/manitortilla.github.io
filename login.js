@@ -46,7 +46,7 @@
  }
 
  function getUserUid(){ //현재 로그인 한 유저의 uid 불러오기
-   return firebase.auth().currentUser.uid
+   return firebase.auth().currentUser.uid;
  }
 
  // Returns true if a user is signed-in.
