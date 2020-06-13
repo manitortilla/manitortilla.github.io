@@ -72,7 +72,6 @@ function toggleScreen(){
     document.getElementsByClassName("game-list")[0].style.display="block";
   }
   else{
-    getGamelist();
     document.getElementsByClassName("login-form")[0].style.display="block";
     document.getElementsByClassName("game-list")[0].style.display="none";
   }
