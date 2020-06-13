@@ -25,6 +25,8 @@
 
         <div class="item header info">
             Welcome <span id="userID"></span>
+            <i class="fas fa-sign-out-alt" id="logoutbtn" style="font-size: 40px; margin-left: 10px;"></i>
+
         </div>
 
         <div class="item sidebar">
@@ -40,7 +42,7 @@
                 <table class="pad">
                  <tr>
                      <td>
-                         <div class="userprofile"><img src="https://i.imgur.com/4SLDvXw.jpg"><div>UserID</div></div>
+                         <div class="userprofile"><img id="userpic" src=""><div><span id="userID2"></span></div></div>
 
                          <div class="guessingarrowwrapper"><i class="fas fa-arrow-right fa-7x"></i><div>guess</div></div>
 
@@ -79,7 +81,7 @@
                     <h3 >RESULT<br><br></h3>
                     <table id= result0 class=resultblock>
                         <tr>
-                            <td class='resultblock_name'><img src="https://i.imgur.com/4SLDvXw.jpg"><span id="userID2"></span></td>
+                            <td class='resultblock_name'><img id="userpic2" src=""><span id="userID3"></span></td>
                             <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
                             <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
                             <td class='resultblock_hit'><img src='check.png'></td>
@@ -97,14 +99,14 @@
                         <tr>
                             <td class='resultblock_name'><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>GREEN</span></td>
                             <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://i.imgur.com/4SLDvXw.jpg"><span>Red</span></span></td>
+                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img id="userpic3" src=""><span id="userID4"></span></span></td>
                             <td class='resultblock_hit'><img src='xmark.png'></td>
                         </tr>
                         </table>
                     <table id= result0 class=resultblock>
                         <tr>
                             <td class='resultblock_name'><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>YELLOW</span></td>
-                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://i.imgur.com/4SLDvXw.jpg"><span>Red</span></span></td>
+                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img id="userpic4" src=""><span id="userID5"></span></span></td>
                             <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></span></td>
                             <td class='resultblock_hit'><img src='xmark.png'></td>
                         </tr>
@@ -116,29 +118,27 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-performance.js"></script>
     <script>
-        if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
-    var firebaseConfig = {
-      "projectId": "most-hciproject",
-      "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
-      "databaseURL": "https://most-hciproject.firebaseio.com",
-      "storageBucket": "most-hciproject.appspot.com",
-      "locationId": "us-central",
-      "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
-      "authDomain": "most-hciproject.firebaseapp.com",
-      "messagingSenderId": "1096383375744",
-      "measurementId": "G-D34DTCWS6S"
-    };
-    if (firebaseConfig) {
-      firebase.initializeApp(firebaseConfig);
-    }
-      </script>
+      if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
+  var firebaseConfig = {
+    "projectId": "most-hciproject",
+    "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
+    "databaseURL": "https://most-hciproject.firebaseio.com",
+    "storageBucket": "most-hciproject.appspot.com",
+    "locationId": "us-central",
+    "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
+    "authDomain": "most-hciproject.firebaseapp.com",
+    "messagingSenderId": "1096383375744",
+    "measurementId": "G-D34DTCWS6S"
+  };
+  if (firebaseConfig) {
+    firebase.initializeApp(firebaseConfig);
+  }
+    </script>
 
     <script type="text/javascript" src="Manito.js"></script>
 
