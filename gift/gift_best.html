@@ -59,8 +59,8 @@
                 <button class="tablinks" id="tab_on" onclick="location.href='gift_best.html'">Best</button>
                 <button class="tablinks" onclick="location.href='gift_category.html'">Category</button>
             </div>
-            
-            
+
+
     <div class="wrapper">
         <div class="wrapper_rank">
             Ranking
@@ -73,62 +73,24 @@
                 </div>
               </div>
             <table class="rank">
+
                 <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
                     <td class="rank_no">1</td>
-                    <td class="product_img"><img src="https://www.yoox.com/images/items/12/12307769st_14_f.jpg?width=387&height=490&impolicy=crop&gravity=Center" alt="tommy hilfiger t shirt"></td>
+                    <td class="product_img"><img src="" alt=""></td>
                     <td class="product_info">
                         <table>
-                            <tr class="product_name"><td>T-shirt</td></tr>
+                            <tr class="product_name"><td>Product Name</td></tr>
                             <tr class="product_detail"><td>nnn,nnn won</td></tr>
                         </table>
                     </td>
                 </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
-                    <td class="rank_no">2</td>
-                    <td class="product_img"><img src="https://www.junkyard.com/media/catalog/product/930x/9/1/914292.jpg" alt="Adidas dress"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Dress</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail.html'">
-                    <td class="rank_no">3</td>
-                    <td class="product_img"><img src="https://cdn1.playskateshop.com/21151-large/vans-shoes-old-skool-platform-black-white.jpg" alt="Vans Oldskool"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Shoes</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail.html'">
-                    <td class="rank_no">4</td>
-                    <td class="product_img"><img src="https://cdn.shopify.com/s/files/1/0314/0213/1589/products/black-cap_1000x.png?v=1580401944" alt="Smiley Logo Cap"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Cap</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail.html'">
-                    <td class="rank_no">5</td>
-                    <td class="product_img"><img src="https://image.yes24.com/goods/88428004/L" alt="Hearbreak Weather Vinyl"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Album</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
+
             </table>
         </div>
     </div>
-            
 
-            
+
+
         </div>
     </div>
 
@@ -136,7 +98,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
     <script>
       if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
       var firebaseConfig = {
@@ -154,6 +116,6 @@
         firebase.initializeApp(firebaseConfig);
       }
     </script>
-
+    <script src = 'gift_best.js'></script>
 </body>
 </html>
