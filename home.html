@@ -7,6 +7,7 @@
     <title>MOST</title>
 </head>
 <body>
+
   <div class= "container">
 
       <div class="item header logo">
@@ -22,9 +23,6 @@
       <div class="item header info">
         <table class="user_info">
           <tr>
-            <td colspan="3" style="text-align: right;">Welcome!</td>
-          </tr>
-          <tr>
             <td colspan="3" id="userID"></td>
           </tr>
           <tr>
@@ -36,28 +34,56 @@
       </div>
 
       <div class="item under">
-          <div class="content">
-              <h4 style="text-align: center; padding:10px; ">Hello, <span id="userID2"></span> !<br> You are on a game now. Until the end of the game,</h4>
-              <h1 style="text-align: center; padding:10px; ">D-Day: 7</h1>
-              <div class="detail">
-                  <h2 style="text-align: center; border-bottom: solid 5px; ">Welcome to MOST<br><br></h2>
-                  <div style="display:grid; grid-template-columns: 2fr 1fr;">
-                      <div><h3 style="font-weight: normal; line-height:1.7em;">Most is a platform where users can play Manito online with a perfect anonymity.
-                              If you want to have fun with your friends playing a game, we will be your game host!
-                              You can write a letter and buy a gift for your friend.
-                              Once you do, MOST will take care of anything else.
-                              So that your friend never knows that you are the Manito!
-                              Just make some great memories with your beloved friends.</h3></div>
-                      <div style="margin-left:30px">
-                          <h3>How to use?</h3>
-                          <a href="manual.html">Click for Website Manual</a>
-                      </div>
-                  </div>
-              </div>
+        <div class="wrapper">
+          <div class="item_un no1">
+              <h2>Welcome to MOST!</h2>
+              <p class="most_exp">
+                  Most is a platform where users can play Manito online with a perfect anonymity.
+                  If you want to have fun with your friends playing a game, we will be your game host!
+                  <span id="dots">...</span>
+                  <span id="more">
+                    You can write a letter and buy a gift for your friend.
+                    Once you do, MOST will take care of anything else.
+                    So that your friend never knows that you are the Manito!
+                    Just make some great memories with your beloved friends.
+                  </span>
+                  <span>
+                    <button id="myBtn" onclick="readmore()">Read more</button>
+                  </span>
+              </p>
           </div>
+          <div class="item_un no2">
+            <p class="hello">Hello, <span id="userID2"></span> ! </p>
+            <p class="on_game">You are on a game now. Until the end of the game,</p>
+            <h1>D-Day : 7</h1>
+          </div>
+          <div class="item_un no3">
+              <p class="hello">How to use?</p>
+              <a href="manual.html">Click here for Website Manual</a>
+          </div>
+      </div>
       </div>
 
   </div>
+
+  <script>
+    function readmore() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+        } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+        }
+    }
+  </script>
+
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
@@ -81,9 +107,5 @@
     firebase.initializeApp(firebaseConfig);
   }
     </script>
-
-  <script src="home.js"></script>
-
-
 </body>
 </html>
