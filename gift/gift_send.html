@@ -22,9 +22,19 @@
         </div>
 
         <div class="item header info">
-            Welcome <span id="userID"></span>
-            <i class="fas fa-sign-out-alt" id="logoutbtn" style="font-size: 40px; margin-left: 10px;"></i>
-        </div>
+            <table class="user_info">
+              <tr>
+                <td colspan="2" style="text-align: right; color: #5e5aa4;">Welcome!</td>
+              </tr>
+              <tr>
+                <td colspan="2" id="userID"></td>
+              </tr>
+              <tr>
+                <td style="cursor: pointer; color: #5e5aa4;" onclick="location.href='index.html'">Start Game</td>
+                <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4;">Log out</td>
+              </tr>
+            </table>
+          </div>
 
 
         <div class="item sidebar">

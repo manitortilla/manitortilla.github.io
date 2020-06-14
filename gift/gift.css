@@ -245,3 +245,12 @@ body {
 .exp {
     font-size : 15px;
 }
+
+.user_info{
+    text-align: left;
+    font-size: 16px;
+}
+
+#logoutbtn{
+    text-align: right;
+}

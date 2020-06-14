@@ -244,3 +244,12 @@ body {
     font-size: 15px;
     padding : 5px;
 }
+
+.user_info{
+    text-align: left;
+    font-size: 16px;
+}
+
+#logoutbtn{
+    text-align: right;
+}
