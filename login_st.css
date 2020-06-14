@@ -75,6 +75,7 @@ body {
   border: 1px solid transparent;
   border-radius: 3px;
   height: 40px;
+  cursor: pointer;
 }
 
 #signupbtn{
@@ -86,12 +87,15 @@ body {
   margin-left: 5px;
   margin-top: auto;
   margin-bottom: auto;
+  cursor: pointer;
 }
+
 #googlelogin {
   width: 100%;
   background-color: #afadd2;
   margin-top: 20px;
   margin-bottom: 50px;
+  cursor: pointer;
 }
 
 
