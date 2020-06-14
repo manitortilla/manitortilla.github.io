@@ -72,6 +72,7 @@ function getItem(categoryNO){
                   </table> \
               </td> \
           </tr>";
+          "<div class='menu_cate'id=" +Category_no+ " tab_on>"
           count++;
         }
         i++;
