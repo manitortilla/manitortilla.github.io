@@ -22,7 +22,8 @@ function authStateObserver(user) {
 }
 
 getBestItem(); //always load items;
-
+var getHT= sessionStorage.getItem("hashtag");
+console.log(getHT);
 function getBestItem(){
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
