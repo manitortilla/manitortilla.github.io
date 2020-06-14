@@ -40,7 +40,8 @@ function saveGame() {
 }
 
 function dataSave(name, ids){
-  return firebase.firestore().collection("gamelist").doc(name).set({
+  return firebase.firestore().collection("gamelist").add({
+    gamename: name,
     players: getUserUid()+', '+ ids
   }).then(function() {
       userdataUpdate(name);

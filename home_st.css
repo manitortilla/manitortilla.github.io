@@ -30,7 +30,7 @@ body {
 }
 
 .item:nth-child(3) {
-    grid-column: 5;
+    grid-column: 4 / span 5;
     grid-row: 1;
 }
 
@@ -78,15 +78,6 @@ body {
 }
 
 .info{
-    text-align: right;
-}
-
-.user_info{
-    text-align: left;
-    font-size: 16px;
-}
-
-#logoutbtn{
     text-align: right;
 }
 

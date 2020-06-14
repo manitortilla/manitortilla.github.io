@@ -34,27 +34,25 @@
               <div class="detail on">
                   <h3 style>My Mailbox<br><br></h3>
                   <div class="tab">
-                    <button class="tablinks" id="tab_on" onclick="location.href='letter.html'">Received</button>
-                    <button class="tablinks" onclick="location.href='letter_sent.html'">Sent</button>
+                      <button class="tablinks" onclick="location.href='letter.html'">Received</button>
+                      <button class="tablinks" id="tab_on" onclick="location.href='letter_sent.html'">Sent</button>
                   </div>
 
                   <div class="pad">
                       <div class="mailbox">
-                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
-                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+
+
                       </div>
                   </div>
 
-                  <div class="modal" id='myModal'> <!--modal background-->
+                  <div class="modal" id='myModal' style="display:none;"> <!--modal background-->
                     <div class="lettercontent">
-                    <span class="close" id="letterclose">&times;</span>
-                    <p id="letterdisplay" style="clear:right;">Dear. ooo<br><br>Hi, I'm so glad to be your Manito.<br></p>
+                      <span class="close" id="letterclose">&times;</span>
+                      <div class="letterdiv"><p ></p></div>
+
                     </div>
                   </div>
+
               </div>
 
               <div class="detail">
@@ -93,7 +91,7 @@
   }
     </script>
 
-    <script type="text/javascript" src="letter.js"></script>
+    <script type="text/javascript" src="letter_sent.js"></script>
 
 </body>
 </html>
