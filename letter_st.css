@@ -238,21 +238,12 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .letterdisplay {
   display: none;
 }
 
 .letterdisplay.on {
   display: block;
-=======
-#letterclose {
-  marin : 0 auto;
-  border-radius: 5px;
-  border: 0;
-  background-color:#afadd2;
-  font-size: 20px;
->>>>>>> 7b26e67976198c22b10376780d9441929aa91ceb
 }
 
 .writing{
@@ -261,14 +252,12 @@ body {
 }
 .writing textarea{
     resize: none;
-    padding: 20px;
     width: 100%;
-    height: 400px;
+    height: 100%;
     border : 2px solid #afadd2;
     border-radius : 5px;
     background-color: #F6F6F6;
-    font-size: 20px;
-    font-family: "Montserrat";
+    font-size: 17px;
 }
 
 .writing input{

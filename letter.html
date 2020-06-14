@@ -21,19 +21,8 @@
         </div>
 
         <div class="item header info">
-          <table class="user_info">
-            <tr>
-              <td colspan="3" style="text-align: right;">Welcome!</td>
-            </tr>
-            <tr>
-              <td colspan="3" id="userID"></td>
-            </tr>
-            <tr>
-              <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
-              <td>&nbsp;&nbsp;&nbsp;</td>
-              <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
-            </tr>
-          </table>
+            Welcome <span id="userID"></span>
+            <i class="fas fa-sign-out-alt" id="logoutbtn" style="font-size: 40px; margin-left: 10px;"></i>
         </div>
 
         <div class="item sidebar">
@@ -44,6 +33,11 @@
         <div class="item content">
               <div class="detail on">
                   <h3 style>My Mailbox<br><br></h3>
+                  <div class="tab">
+                    <button class="tablinks" id="tab_on" onclick="location.href='letter.html'">Received</button>
+                    <button class="tablinks" onclick="location.href='letter_sent.html'">Sent</button>
+                  </div>
+
                   <div class="pad">
                       <div class="mailbox">
                           <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
@@ -54,19 +48,20 @@
                           <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
                       </div>
                   </div>
-                  <div class="lettercontent">
-                    <div><button id="letterclose" style="float:right;">X</button></div>
-                    <div><p id="letterdisplay" style="clear:right;">
-                      Dear. ooo<br><br>Hi, I'm so glad to be your Manito.<br>I sent you a present this morning. Hope you like it.<br><br>From your Manito.<br>2020.05.31<br></p>
+
+                  <div class="modal" id='myModal'> <!--modal background-->
+                    <div class="lettercontent">
+                    <span class="close" id="letterclose">&times;</span>
+                    <p id="letterdisplay" style="clear:right;">Dear. ooo<br><br>Hi, I'm so glad to be your Manito.<br></p>
                     </div>
                   </div>
               </div>
 
               <div class="detail">
                   <div class="writing">
-                    <h2 style>Write a letter to your friend<br><br></h2>
+                    <h3 style>Write a letter to your friend<br><br></h3>
                     <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
-                    <button style="float:right; border-radius:5px; cursor:pointer; margin-top: 10px; padding: 10px; border: 0; background-color:#afadd2;
+                    <button style="float:right;    margin-top: 10px; padding: 10px; border: 0; background-color:#afadd2;
                         font-size: 20px;" onclick="sendLetter()" >SEND</button>
                   </div>
               </div>
@@ -82,20 +77,20 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
     <script>
       if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
-      var firebaseConfig = {
-        "projectId": "most-hciproject",
-        "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
-        "databaseURL": "https://most-hciproject.firebaseio.com",
-        "storageBucket": "most-hciproject.appspot.com",
-        "locationId": "us-central",
-        "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
-        "authDomain": "most-hciproject.firebaseapp.com",
-        "messagingSenderId": "1096383375744",
-        "measurementId": "G-D34DTCWS6S"
-      };
-      if (firebaseConfig) {
-        firebase.initializeApp(firebaseConfig);
-      }
+  var firebaseConfig = {
+    "projectId": "most-hciproject",
+    "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
+    "databaseURL": "https://most-hciproject.firebaseio.com",
+    "storageBucket": "most-hciproject.appspot.com",
+    "locationId": "us-central",
+    "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
+    "authDomain": "most-hciproject.firebaseapp.com",
+    "messagingSenderId": "1096383375744",
+    "measurementId": "G-D34DTCWS6S"
+  };
+  if (firebaseConfig) {
+    firebase.initializeApp(firebaseConfig);
+  }
     </script>
 
     <script type="text/javascript" src="letter.js"></script>
