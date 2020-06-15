@@ -41,7 +41,7 @@ function getHashtagItem(hashtag){
   var content="";
 
   title.innerHTML = sessionStorage.Hashtag_name; //hashtag name
-  firebase.database().ref().orderByChild('Hashtag_no').equalTo(1).once('value', function(snapshot){
+  firebase.database().ref().orderByChild('Hashtag_no').equalTo(Number(hashtag)).once('value', function(snapshot){
     var data = snapshot.val();
     data = Object.values(data); //data가 object형으로 나오니까 array로 바꿔주는 것
 
