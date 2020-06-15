@@ -34,7 +34,7 @@ function getBestItem(){
     var data = snapshot.val();
     for (count = 0, i = 10 ; i < data.length ; i+=11){ //11,22,33,44,55번째 아이템 가져온다
       content +=
-      "<tr class='rank_tr' onclick='location.href=\"gift_detail.html\"'> \
+      "<tr class='rank_tr' onclick='location.href=\"gift_detail_sender.html\"'> \
           <td class='rank_no'>" + (count+1) + "</td> \
           <td class='product_img'><img src='"+ data[i].Img +"'></td> \
           <td class='product_info'> \

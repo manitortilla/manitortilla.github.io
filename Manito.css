@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
+
 /*전체 크기*/
 body {
     padding : 2;
@@ -166,15 +167,17 @@ body {
     margin: 2%;
     padding : 1%;
     float : left;
-    background-color: #afadd2;
+    border: solid 1px #afadd2;
+    border-radius: 5px;
     width : 200px;
+    height: 200px;
     text-align: center;
 }
 
 
 .userprofile img{
     position: relative;
-    border: solid;
+    border: solid gray 1px;
     top: 0;
     left: 0;
     right: 0;
@@ -224,20 +227,24 @@ body {
 
 /*마니또 선택 설명란*/
 #guessdescription{
-    margin-right: 5%;
-    margin-left: 5%;
-    width: 80%;
+    font-family: "Source Sans Pro",sans-serif;
+    margin: 20px;
+    width: 700px;
     padding: 3%;
     position: relative;
-    background-color: rgb(182, 182, 182);
+    line-height: 20px;
     font-size: large;
     border-radius: 20px;
+}
+
+.emph{
+    color: royalblue;
+    font-weight: bold;
 }
 
 /*마니또 추측도 + 마니또 선택 설명란*/
 .pad{
     width : 90%;
-
     margin: 3%;
     display: flow-root;
     text-align: center;
