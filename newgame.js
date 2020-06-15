@@ -63,7 +63,7 @@ function dataSave(name, ids){
 
   return firebase.firestore().collection("gamelist").add({
     gamename: name,
-    enddate: $("#gamedate").value(),
+    enddate: document.getElementById("gamedate").value,
     players: getUserUid()+', '+ ids
   }).then(function() {
       userdataUpdate(name);
