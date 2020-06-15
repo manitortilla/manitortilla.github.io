@@ -220,13 +220,14 @@ body {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 60em;
+  font-size: 20px;
 }
 /* The Close Button */
 .close {
   color: #aaaaaa;
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -239,12 +240,16 @@ body {
 
 .letterdisplay {
   display: none;
-  font-size: 20px;
 }
 
 .letterdisplay.on {
   display: block;
   font-size: 20px;
+}
+
+#letterdisplay {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
 }
 
 .writing{
@@ -270,4 +275,16 @@ body {
     border: 0;
     background-color:#afadd2;
     font-size: 20px;
+}
+
+#sendbtn {
+    float:right; 
+    border-radius:5px; 
+    cursor:pointer; 
+    margin-top: 10px; 
+    padding: 10px; 
+    border: 0; 
+    background-color:#afadd2;
+    font-size: 20px;
+    font-family: "Montserrat";
 }
