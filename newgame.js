@@ -42,7 +42,8 @@ function initDate(){
   }
   var tomorrow = year+"-"+month+"-"+ (day+1);
 
-  $("#gamedate").min = tomorrow;
+  document.getElementById("gamedate").setAttribute("min", tomorrow);
+
 }
 
 // Saves a letter to Cloud Firestore database.
