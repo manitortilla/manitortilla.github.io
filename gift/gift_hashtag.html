@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="gift_detail.css">
+    <link rel="stylesheet" href="gift_hashtag.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title id="title"></title>
@@ -23,13 +23,16 @@
         <div class="item header info">
             <table class="user_info">
                 <tr>
+                    <td colspan="3" style="text-align: right;">Welcome!</td>
+                  </tr>
+                  <tr>
                     <td colspan="3" id="userID"></td>
-                </tr>
-                <tr>
+                  </tr>
+                  <tr>
                     <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
-                </tr>
+                  </tr>
             </table>
         </div>
 
@@ -44,53 +47,18 @@
         </div>
 
         <div class="item main">
-            <h2 id="#">해시태그 명</h2>
+            <h2 id="hashtag_title"></h2>
             <table class="rank">
                 <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
-                    <td class="product_img"><img src="https://cdn1.playskateshop.com/21151-large/vans-shoes-old-skool-platform-black-white.jpg"></td>
+                    <td class="product_img"><img src=""></td>
                     <td class="product_info">
                         <table>
-                            <tr class="product_name"><td>Vans Oldskool</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
+                            <tr class="product_name"><td></td></tr>
+                            <tr class="product_detail"><td></td></tr>
                         </table>
                     </td>
                 </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
-                    <td class="product_img"><img src="https://gdimg.gmarket.co.kr/1667043534/still/600?ver=1576216462"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Converse Chuck Taylor All Star Classic High</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
-                    <td class="product_img"><img src="data:image/jpeg;base64,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"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>adidas BW Army Utility White</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail.html'">
-                    <td class="product_img"><img src="https://images-na.ssl-images-amazon.com/images/I/71FOGYBgA0L._AC_UX395_.jpg"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Dr.Martens - 1460 Original 8-Eye Leather Boot</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="rank_tr" onclick="location.href='gift_detail_sender.html'">
-                    <td class="product_img"><img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/i1-512bfa8a-01a0-4971-bd34-9cef18a159e0/air-force-1-07-womens-shoe-KyTwDPGG.jpg" alt="Hearbreak Weather Vinyl"></td>
-                    <td class="product_info">
-                        <table>
-                            <tr class="product_name"><td>Nike Air Force 1</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
-                        </table>
-                    </td>
-                </tr>
+            
             </table>
         </div>
     </div>
