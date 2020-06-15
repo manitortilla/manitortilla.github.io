@@ -40,3 +40,45 @@ for (i=0; i< hashtags.length; i++){
     sessionStorage.setItem("Hashtag_name", this.innerHTML);
   }
 }
+
+var searchbtn = document.getElementsByClassName("searchbtn")[0];
+var keyword = document.getElementsByClassName("search")[0];
+searchbtn.onclick = function (){
+  var key = keyword.value;
+  gedSearchedItem(key);
+  keyword.value = ""; //clear
+}
+
+function gedSearchedItem(key){
+  var found = 0
+  var productName;
+  var content = "";
+  firebase.database().ref().once('value').then(function(snapshot) {
+
+    var data = snapshot.val();
+    for (i = 0 ; i < data.length; i++){
+      productName = data[i].Name;
+
+      if (productName.includes(key)) {
+        content +=
+        "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+        "); location.href=\"gift_detail_sender.html\"'> \
+            <td class='rank_no'>" + (i+1) +"</td> \
+            <td class='product_img'><img src='" + data[i].Img + "'></td> \
+            <td class='product_info'> \
+                <table> \
+                    <tr class='product_name'><td>" +data[i].Name +"</td></tr> \
+                    <tr class='product_detail'><td>" +data[i].Price+" won</td></tr> \
+                </table> \
+            </td> \
+        </tr>";
+        fount = 1;
+      }
+    }
+    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
+    if (found == 0) {
+      alert("No such item.");
+    }
+  });
+
+}
