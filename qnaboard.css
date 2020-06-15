@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
+/*전체 크기*/
+body {
+    padding : 2;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5em;
+}
+
+/*위쪽 바*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100px minmax(800px, auto);
+    grid-gap: 3em 20px;
+    justify-content: center;
+    width : 80em;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item:nth-child(2) {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+}
+
+.item:nth-child(3) {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    border-right: solid gray 1px;
+    padding: 1em;
+    justify-content: center;
+}
+
+.item:nth-child(5) {
+    grid-column: 2 / span 4;
+    grid-row: 2;
+    padding : 2em;
+}
+
+.header {
+    text-align: center;
+    padding : 1em;
+}
+
+.logo{
+    padding: 0;
+}
+
+.nav div {
+    display: inline-block;
+    margin : 0%;
+    padding : 0%;
+    height : 20px;
+}
+
+.nav .nav-link {
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-right: 3em;
+}
+
+.nav .active > .nav-link {
+    width:100%;
+    height:51px;
+    border-bottom: .50rem solid transparent;
+    border-bottom-color: #5e5aa4;
+}
+
+.navbtn:hover > .nav-link{
+    width:100%;
+    border-bottom: .50rem solid transparent;
+    border-bottom-color: #afadd2;
+}
+
+.info{
+    text-align: right;
+}
+
+.sidebarbtn {
+    width : 120px;
+    height: 120px;
+    margin : 10px;
+    float: right;
+}
+
+/*컨텐츠*/
+.under {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-auto-rows: auto auto;
+   }
+
+.sidebarbtn {
+    max-width: inherit;
+    height : inherit;
+    border: solid #5e5aa4;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding:5%;
+}
+
+.sidebarbtn.on {
+    background-color:silver;
+    color: #5e5aa4;
+}
+.sidebarbtn i {
+  padding: 20%;
+  font-size: 40px;
+}
+
+
+.detail {
+    display: none;
+}
+.detail.on {
+    display: block;
+}
+
+/* Style the tab */
+.tab {
+    width:auto;
+    height:auto;
+    overflow:hidden;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border : solid gray 1px;
+    border-radius : 0 10px 0 0;
+    font-size: large;
+    font-weight: bold;
+    width : 200px;
+}
+
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background: #afadd2 ;
+    font-style: italic;
+}
+
+#tab_on {
+    background :  #5e5aa4;
+    color: white;
+}
+
+
+.pad {
+  margin-top:10px;
+  padding: 5%;
+}
+
+.faqlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    text-align: center;
+}
+
+.faqbar{
+    width: 100%;
+    height:100px;
+    margin-top:0%;
+    margin-bottom:0%;
+}
+
+.faqbar_num{
+    width:10%;
+}
+.faqbar_title{
+    width:80%;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 200px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.faqcontent {
+    background-color: #fefefe;
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+    border: 1px solid #888;
+    width: 600px;
+    font-size: 20px;
+    }
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.letterdisplay {
+  display: none;
+}
+
+.letterdisplay.on {
+  display: block;
+  font-size: 20px;
+}
+
+#faq_display {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.writing_qna {
+    padding-bottom: 20px;
+    margin-right: 10px;
+  }
+
+#txt{
+    margin: 40px;
+    width: 800px;
+    height: 400px;
+    border : 2px solid #afadd2;
+    border-radius : 5px;
+    background-color: #F6F6F6;
+    font-size: 17px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+  .writing input{
+      margin-top: 10px;
+      padding: 10px;
+      border: 0;
+      background-color:#afadd2;
+      font-size: 20px;
+  }
+
+#submitbtn {
+    float:right; 
+    border-radius:5px; 
+    cursor:pointer; 
+    margin-top: 10px; 
+    padding: 10px; 
+    border: 0; 
+    background-color:#afadd2;
+    font-size: 20px;
+    font-family: "Montserrat";
+}
