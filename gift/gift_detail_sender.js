@@ -60,3 +60,4 @@ function getProduct(Product_no){
   });
 }
 getProduct(sessionStorage.Product_no);
+console.log(sessionStorage.Product_no);

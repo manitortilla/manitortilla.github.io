@@ -46,7 +46,6 @@ function getItem(categoryNO){
   if (categoryNO  == 0 ) { //if "all"
     return firebase.database().ref().once('value').then(function(snapshot) {
       var data = snapshot.val();
-      console.log(data);
       for (i = 0 ; i < data.length; i++){
         content +=
         "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
