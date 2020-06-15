@@ -60,7 +60,9 @@
                  <tr>
                      <td>
                          <div id="guessdescription">
-                             You have <span class="emph"> only 1 chance  </span> to guess Manito during manito game. Once you choose someone as Manito, you can not change your choice.
+                             You have <span class="emph"> only 1 chance  </span> to guess Manito during manito game. 
+                             <br>
+                             Once you choose someone as Manito, you <span class="emph"> cannot change </span>your choice.
                          </div>
                     </td>
                  </tr>
@@ -72,12 +74,11 @@
 
 
             <div class="guesswindow">
-                <div style="vertical-align: middle;"><button id="guesswindowclose"><i class="fas fa-chevron-left fa-3x"></i></button><span class="windowtitle"><b>Guess Your Manito</b></span></div>
+                <div style="vertical-align: middle;"><button id="guesswindowclose"><i class="fas fa-chevron-left fa-3x"></i></button><span class="windowtitle"><h2>&nbsp;&nbsp;&nbsp;Guess your Manito</h2></span></div>
                 <div id="guessuserlist">
                     <div class=pad2><div id='guessprofile1'class="guessprofile"><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><div>Yellow</div></div><button id="guessuserbutton1"class="guessuserbutton">Choose</button></div>
                     <div class=pad2><div id='guessprofile2'class="guessprofile"><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><div>Green</div></div><button id="guessuserbutton2"class="guessuserbutton">Choose</button></div>
                     <div class=pad2><div id='guessprofile3'class="guessprofile"><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><div>Blue</div></div><button id="guessuserbutton3"class="guessuserbutton">Choose</button></div>
-
                 </div>
 
             </div>
@@ -86,36 +87,43 @@
             <!--result menu-->
             <div id='manitoresult'  class="detail">
                 <div class="manitomain">
-                    <h3 >RESULT<br><br></h3>
+                    <h2>Result</h2>
+                    <br><br>
                     <table id= result0 class=resultblock>
+                        <tr class="table_head">
+                            <td>User</td>
+                            <td>Guess</td>
+                            <td>Manito</td>
+                            <td>Result</td>
+                        </tr>
                         <tr>
-                            <td class='resultblock_name'><img id="userpic2" src=""><span id="userID3"></span></td>
-                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
+                            <td class='resultblock_name'><img id="userpic2" src=""><div id="userID3"></div></td>
+                            <td class='resultblock_guess'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
+                            <td class='resultblock_manito'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
                             <td class='resultblock_hit'><img src='check.png'></td>
                         </tr>
                         </table>
                     <table id= result0 class=resultblock>
                         <tr>
                             <td class='resultblock_name'><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></td>
-                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
-                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
+                            <td class='resultblock_guess'><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
+                            <td class='resultblock_manito'><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
                             <td class='resultblock_hit'><img src='check.png'></td>
                         </tr>
                         </table>
                     <table id= result0 class=resultblock>
                         <tr>
                             <td class='resultblock_name'><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>GREEN</span></td>
-                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img id="userpic3" src=""><span id="userID4"></span></span></td>
+                            <td class='resultblock_guess'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
+                            <td class='resultblock_manito'><span class=smallprofile><img id="userpic3" src=""><span id="userID4"></span></span></td>
                             <td class='resultblock_hit'><img src='xmark.png'></td>
                         </tr>
                         </table>
                     <table id= result0 class=resultblock>
                         <tr>
                             <td class='resultblock_name'><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>YELLOW</span></td>
-                            <td class='resultblock_guess'><span>GUESS</span><span class=smallprofile><img id="userpic4" src=""><span id="userID5"></span></span></td>
-                            <td class='resultblock_manito'><span>MANITO</span><span class=smallprofile><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></span></td>
+                            <td class='resultblock_guess'><span class=smallprofile><img id="userpic4" src=""><span id="userID5"></span></span></td>
+                            <td class='resultblock_manito'><span class=smallprofile><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></span></td>
                             <td class='resultblock_hit'><img src='xmark.png'></td>
                         </tr>
                         </table>

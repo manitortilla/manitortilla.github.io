@@ -261,6 +261,7 @@ body {
     border-radius: 20px;
     text-align: center;
     width: 10em;
+    cursor: pointer;
 }
 
 .guessbtn.nega{
@@ -324,19 +325,23 @@ body {
     border-radius: 20px;
     text-align: center;
     width: 10em;
+    cursor: pointer;
+    font-family: "Anton";
+    font-size: 30px;
 }
 .guessuserbutton:hover{
     background-color:#3a3870 ;
 }
 
 .pad2{
+    font-family: "Montserrat", sans-serif;
     margin: 2%;
-    background-color: #afadd2;
+    border : solid 1px #afadd2;
+    border-radius: 5px;
     width : 200px;
     height : 300px;
     text-align: center;
     float: left;
-    background-color: #afadd2;
 }
 
 
@@ -350,10 +355,9 @@ body {
 }
 
 .resultblock{
-    background-color: #afadd2;
-    
-    margin-top: 1%;
-    margin-bottom: 1%;
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: #afadd2;  
+    margin: 5px;
     padding : 2%;
     border-radius: 30px;
     width: 100%;
@@ -456,7 +460,6 @@ body {
 }
 .resultblock_hit img{
     vertical-align: middle;
-
     width: 70px;
     height: 70px;
 }
@@ -469,4 +472,8 @@ body {
 
 #logoutbtn{
     text-align: right;
+}
+
+.table_head {
+    font-family: "Anton", ;
 }
