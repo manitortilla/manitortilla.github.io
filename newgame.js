@@ -26,6 +26,25 @@ function authStateObserver(user) {
  }
 }
 
+initDate();
+function initDate(){
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = new String(date.getMonth()+1);
+  var day = new String(date.getDate());
+
+  // 한자리수일 경우 0을 채워준다.
+  if(month.length == 1){
+    month = "0" + month;
+  }
+  if(day.length == 1){
+    day = "0" + day;
+  }
+  var tomorrow = year+"-"+month+"-"+ (day+1);
+
+  $("#gamedate").min = tomorrow;
+}
+
 // Saves a letter to Cloud Firestore database.
 function saveGame() {
   // Add a new login info entry to the database.
@@ -40,8 +59,10 @@ function saveGame() {
 }
 
 function dataSave(name, ids){
+
   return firebase.firestore().collection("gamelist").add({
     gamename: name,
+    enddate: $("#gamedate").value(),
     players: getUserUid()+', '+ ids
   }).then(function() {
       userdataUpdate(name);
