@@ -371,7 +371,7 @@ body {
     width: 800px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 100px) repeat(4, 200px);
+    grid-template-rows: repeat(1, 100px) repeat(4, 1fr);
 }
 
 /* head 부분 */
@@ -465,7 +465,7 @@ body {
 /* Inside User */
 .resultblock_name{
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .resultblock_name img{
@@ -500,7 +500,7 @@ body {
 
 .smallprofile p{
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
+    font-size: 10px;
 }
 
 /* Inside Result */
