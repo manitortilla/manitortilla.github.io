@@ -124,44 +124,137 @@
                 <div class="manitomain">
                     <h2>Result</h2>
                     <br><br>
-                    <table id= result0 class=resultblock>
-                        <tr class="table_head">
-                            <td>User</td>
-                            <td>Guess</td>
-                            <td>Manito</td>
-                            <td>Result</td>
-                        </tr>
-                        <tr>
-                            <td class='resultblock_name'><img id="userpic2" src=""><div id="userID3"></div></td>
-                            <td class='resultblock_guess'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_manito'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_hit'><img src='check.png'></td>
-                        </tr>
-                        </table>
-                    <table id= result0 class=resultblock>
-                        <tr>
-                            <td class='resultblock_name'><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></td>
-                            <td class='resultblock_guess'><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
-                            <td class='resultblock_manito'><span class=smallprofile><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>Green</span></span></td>
-                            <td class='resultblock_hit'><img src='check.png'></td>
-                        </tr>
-                        </table>
-                    <table id= result0 class=resultblock>
-                        <tr>
-                            <td class='resultblock_name'><img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg"><span>GREEN</span></td>
-                            <td class='resultblock_guess'><span class=smallprofile><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>Yellow</span></span></td>
-                            <td class='resultblock_manito'><span class=smallprofile><img id="userpic3" src=""><span id="userID4"></span></span></td>
-                            <td class='resultblock_hit'><img src='xmark.png'></td>
-                        </tr>
-                        </table>
-                    <table id= result0 class=resultblock>
-                        <tr>
-                            <td class='resultblock_name'><img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg"><span>YELLOW</span></td>
-                            <td class='resultblock_guess'><span class=smallprofile><img id="userpic4" src=""><span id="userID5"></span></span></td>
-                            <td class='resultblock_manito'><span class=smallprofile><img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg"><span>Blue</span></span></td>
-                            <td class='resultblock_hit'><img src='xmark.png'></td>
-                        </tr>
-                        </table>
+
+                    <div class="resulttable">
+                        <!-- thead -->
+                        <div class="titem t_head">
+                            User
+                        </div>
+                        <div class="titem t_head">
+                            Guess
+                        </div>
+                        <div class="titem t_head">
+                            Real Manito
+                        </div>
+                        <div class="titem t_head">
+                            Result
+                        </div>
+                    
+                        <!-- tbody of row1 -->
+                        <div class="titem row1">
+                            <div class="resultblock_name">
+                                <img id="userpic2" src="">
+                                <p id="userID3">RTK</p>
+                            </div>
+                        </div>
+                        <div class="titem row1">
+                            <div class="resultblock_guess">
+                                <div class=smallprofile>
+                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                    <p>Yellow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row1">
+                            <div class="resultblock_manito">
+                                <div class=smallprofile>
+                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                    <p>Yellow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row1">
+                            <div class="resultblock_hit">
+                                <img src='check.png'>
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="titem row2">
+                            <div class="resultblock_name">
+                                <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
+                                <p> Blue</p>
+                            </div>
+                        </div>
+                        <div class="titem row2">
+                            <div class="resultblock_guess">
+                                <div class=smallprofile>
+                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                    <p>Yellow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row2">
+                            <div class="resultblock_manito">
+                                <div class=smallprofile>
+                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                    <p>Yellow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row2">
+                            <div class="resultblock_hit">
+                                <img src='check.png'>
+                            </div>
+                        </div>
+                    
+                        <div class="titem row3">
+                            <div class='resultblock_name'>
+                                <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
+                                <p>Green</p>
+                            </div>
+                        </div>
+                        <div class="titem row3">
+                            <div class='resultblock_guess'>
+                                <div class=smallprofile>
+                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                    <p>Green</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row3">
+                            <div class='resultblock_manito'>
+                                <div class=smallprofile>
+                                    <img id="userpic3" src="">
+                                    <p id="userID4"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row3">
+                            <div class='resultblock_hit'>
+                                <img src='xmark.png'>
+                            </div>
+                        </div>
+                    
+                        <div class="titem row4">
+                            <div class='resultblock_name'>
+                                <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
+                                <p>Yellow</p>
+                            </div>
+                        </div>
+                        <div class="titem row4">
+                            <div class='resultblock_guess'>
+                                <div class=smallprofile>
+                                    <img id="userpic4" src="">
+                                    <p id="userID5"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row4">
+                            <div class='resultblock_manito'>
+                                <div class=smallprofile>
+                                    <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
+                                    <p>Blue</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titem row4">
+                            <div class='resultblock_hit'>
+                                <img src='xmark.png'>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
