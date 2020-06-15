@@ -1,3 +1,8 @@
+initFirebaseAuth();
+// Initiate firebase auth.
+function initFirebaseAuth() {
+ firebase.auth().onAuthStateChanged(authStateObserver);
+}
 
 var signOutButtonElement = document.getElementById('logoutbtn');
 function signOut() {
