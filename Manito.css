@@ -366,42 +366,119 @@ body {
     display : none;
 }
 
-.resultblock{
-    font-family: "Source Sans Pro", sans-serif;
-    background-color: #afadd2;  
-    margin: 5px;
-    padding : 2%;
-    border-radius: 30px;
-    width: 100%;
-    height: 100px;
+
+.resulttable {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 100px) repeat(4, 200px);
+}
+
+/* head 부분 */
+.titem:nth-child(1){
+    border-bottom: solid #5e5aa4;
+}
+.titem:nth-child(2){
+    border-bottom: solid#5e5aa4;
+    border-right: solid #5e5aa4;
+}
+.titem:nth-child(3){
+    border-bottom: solid #5e5aa4;
+}
+.titem:nth-child(4){
+    border-bottom: solid #5e5aa4;
+}
+
+.t_head {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-family: "Anton";
 }
 
 
+.row1, .row2, .row3, .row4 {
+    padding: 20px;
+    text-align: center;
+}
 
+/* table first row */
+.titem:nth-child(5){
+    border-bottom: solid gray 1px;
+}
+.titem:nth-child(6){
+    border-bottom: solid gray 1px;
+    border-right: solid #5e5aa4;
+}
+.titem:nth-child(7){
+    border-bottom: solid gray 1px;
+}
+.titem:nth-child(8){
+    border-bottom: solid gray 1px;
+}
+
+/* table second row */
+.titem:nth-child(9){
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(10){
+    border-bottom: solid gray 1px;
+    border-right: solid #5e5aa4;
+}
+.titem:nth-child(11){
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(12){
+    border-bottom: solid 1px gray;
+}
+
+/* table third row */
+.titem:nth-child(13){
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(14){
+    border-bottom: solid gray 1px;
+    border-right: solid #5e5aa4;
+}
+.titem:nth-child(15){
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(16){
+    border-bottom: solid 1px gray;
+}
+
+/* table forth row */
+.titem:nth-child(17) {
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(18) {
+    border-bottom: solid gray 1px;
+    border-right: solid #5e5aa4;
+}
+.titem:nth-child(19) {
+    border-bottom: solid 1px gray;
+}
+.titem:nth-child(20) {
+    border-bottom: solid 1px gray;
+}
+
+/* Inside User */
 .resultblock_name{
-    width: 20%;
-    padding:0%;
-    display: table-cell;
-    border-right:solid; 
-    border-right-color:   #ffffff; 
-}
-.resultblock_name span{
-    margin: 2%;
-    width: 70%;
-    vertical-align: middle; 
-    
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
 }
 
 .resultblock_name img{
     margin: 2%;
-    width:70px;
-    height:70px;
-    border-radius: 35px;
+    width:100px;
+    height:100px;
+    border-radius: 55px;
     border: solid;
     border-color: black;
     vertical-align: middle;    
 }
 
+/* Inside Guess */
 .resultblock_guess{
     width: 30%;    
     padding-top:0;
@@ -411,71 +488,31 @@ body {
     border-right-color:   #ffffff; 
 }
 
-.resultblock_guess span{
-    padding: 5%;
-    vertical-align: middle;
-    color: black;
-    font-family: impact;
-    font-size: 150%;
-}
-
-.resultblock_manito{
-    width: 30%;
-    border-right : solid;
-    border-right-color:   #ffffff; 
-}
-
-.resultblock_manito span{
-    padding: 5%;
-    vertical-align: middle;
-    color: black;
-    font-family: impact;
-    font-size: 150%;
-}
-
 /* small profile related style*/
-.smallprofile{
-    background-color: #afadd2;
-    margin-top:0;
-    margin-bottom:0;
-    margin-right:0;
-    padding:0%;
-    width: 100px;
-    
-    display: inline-block;
-    vertical-align: middle;
-    border-radius: 20px;
-    text-align: center;
-}
-
 .smallprofile img{
-    
     vertical-align: middle;
     border :solid;
-    border-radius: 35px;
-    width: 70px;
-    height: 70px;
+    width:100px;
+    height:100px;
+    border-radius: 55px;
     margin-right:2px;
 }
 
-.smallprofile span{
-    vertical-align: middle;
-    font-family: arial;
+.smallprofile p{
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
 }
 
-
-
+/* Inside Result */
 .resultblock_hit{
-    display: table-cell;
     text-align: center;
+    padding-top: 30px;
 }
 .resultblock_hit img{
     vertical-align: middle;
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
 }
-
 
 .user_info{
     text-align: left;
