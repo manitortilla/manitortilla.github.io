@@ -64,27 +64,21 @@ function getItem(categoryNO){
     });
   }
   else { //not "all"
-    return firebase.database().ref().once('value').then(function(snapshot) {
-      var data = snapshot.val(); //불러온 정보(snapshot)을 javascript로 사용할 수 있게 변경
-
-      var i = 0, count = 0;
-      while (data[i] && count < 5) { // 데이터의 끝까지만 검색, 5개까지만 보여줌
-        if (data[i].Category_no == categoryNO) {
-          content +=
-          "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
-        "); location.href=\"gift_detail_sender.html\"'> \
-              <td class='rank_no'>" + (count+1) + "</td> \
-              <td class='product_img'><img src='"+ data[i].Img +"'></td> \
-              <td class='product_info'> \
-                  <table> \
-                      <tr class='product_name'><td>" +data[i].Name + "</td></tr> \
-                      <tr class='product_detail'><td>" + data[i].Price +" won</td></tr> \
-                  </table> \
-              </td> \
-          </tr>";
-          count++;
-        }
-        i++;
+    return firebase.database().ref().orderByChild('Hashtag_no').equalTo(Number(categoryNO)).once('value', function(snapshot){
+      var data = snapshot.val();
+      for (i = 0 ; i < data.length; i++){
+        content +=
+        "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+      "); location.href=\"gift_detail_sender.html\"'> \
+            <td class='rank_no'>" + (i+1) + "</td> \
+            <td class='product_img'><img src='"+ data[i].Img +"'></td> \
+            <td class='product_info'> \
+                <table> \
+                    <tr class='product_name'><td>" +data[i].Name + "</td></tr> \
+                    <tr class='product_detail'><td>" + data[i].Price +" won</td></tr> \
+                </table> \
+            </td> \
+        </tr>";
       }
       document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
     });

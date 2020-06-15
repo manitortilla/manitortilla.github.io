@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <html lang="en">
 <head>
@@ -64,9 +64,9 @@
             <div class="dropdown">
                 <button class="dropbtn">Sort by</button>
                 <div class="dropdown-content">
-                  <a href="#">Price High to Low</a>
-                  <a href="#">Price Low to High</a>
-                  <a href="#">Best Seller</a>
+                  <a href="#" onclick="getHighItem()">Price High to Low</a>
+                  <a href="#" onclick="getLowItem()">Price Low to High</a>
+                  <a href="#" onclick="getBestItem()">Best Seller</a>
                 </div>
               </div>
             <table class="rank">
@@ -76,8 +76,8 @@
                     <td class="product_img"><img src="" alt=""></td>
                     <td class="product_info">
                         <table>
-                            <tr class="product_name"><td>Product Name</td></tr>
-                            <tr class="product_detail"><td>nnn,nnn won</td></tr>
+                            <tr class="product_name"><td></td></tr>
+                            <tr class="product_detail"><td></td></tr>
                         </table>
                     </td>
                 </tr>

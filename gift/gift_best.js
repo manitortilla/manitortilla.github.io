@@ -27,8 +27,6 @@ function authStateObserver(user) {
 }
 
 getBestItem(); //always load items;
-var getHT= sessionStorage.getItem("hashtag");
-console.log(getHT);
 function getBestItem(){
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
@@ -39,7 +37,8 @@ function getBestItem(){
     var data = snapshot.val();
     for (count = 0, i = 10 ; i < data.length ; i+=11){ //11,22,33,44,55번째 아이템 가져온다
       content +=
-      "<tr class='rank_tr' onclick='location.href=\"gift_detail_sender.html\"'> \
+      "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+    "); location.href=\"gift_detail_sender.html\"'> \
           <td class='rank_no'>" + (count+1) + "</td> \
           <td class='product_img'><img src='"+ data[i].Img +"'></td> \
           <td class='product_info'> \
@@ -51,6 +50,65 @@ function getBestItem(){
       </tr>";
       count++;
     }
+    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
+  });
+}
+
+function getLowItem(){
+  var img = document.getElementsByClassName("product_img");
+  var name = document.getElementsByClassName("product_name");
+  var price = document.getElementsByClassName("product_detail");
+
+  var content = "";
+  return firebase.database().ref().orderByChild('Price').limitToFirst(10).once('value').then(function(snapshot) {
+    var data = snapshot.val();
+    data = Object.values(data); //data가 object형으로 나오니까 array로 바꿔주는 것
+
+    for (i=0; i<data.length; i++){
+      content +=
+      "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+    "); location.href=\"gift_detail_sender.html\"'> \
+          <td class='rank_no'>" + (i+1) + "</td> \
+          <td class='product_img'><img src='"+ data[i].Img +"'></td> \
+          <td class='product_info'> \
+              <table> \
+                  <tr class='product_name'><td>" +data[i].Name + "</td></tr> \
+                  <tr class='product_detail'><td>" + data[i].Price +" won</td></tr> \
+              </table> \
+          </td> \
+      </tr>";
+    }
+    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
+  });
+}
+
+function getHighItem(){
+  var img = document.getElementsByClassName("product_img");
+  var name = document.getElementsByClassName("product_name");
+  var price = document.getElementsByClassName("product_detail");
+
+  var content = "";
+
+
+  return firebase.database().ref().orderByChild('Price').limitToLast(10).once('value').then(function(snapshot) {
+    var data = snapshot.val();
+    data = Object.values(data); //data가 object형으로 나오니까 array로 바꿔주는 것
+
+    for (i=0; i<data.length; i++){
+      content +=
+      "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+      "); location.href=\"gift_detail_sender.html\"'> \
+          <td class='rank_no'>" + (i+1) + "</td> \
+          <td class='product_img'><img src='"+ data[i].Img +"'></td> \
+          <td class='product_info'> \
+              <table> \
+                  <tr class='product_name'><td>" +data[i].Name + "</td></tr> \
+                  <tr class='product_detail'><td>" + data[i].Price +" won</td></tr> \
+              </table> \
+          </td> \
+      </tr>";
+    }
+
     document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
   });
 }
