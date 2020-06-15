@@ -216,15 +216,12 @@ body {
 
 /* Modal Content */
 .lettercontent {
-    background-color: #fefefe;
-    margin: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 40px;
-    border: 1px solid #888;
-    width: 600px;
-    font-size: 20px;
-    }
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
 
 /* The Close Button */
 .close {
