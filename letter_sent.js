@@ -53,17 +53,19 @@ $('.sidebarbtn').on('click', function(){
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
     var modal = document.getElementById("myModal");
-    var lettercontent = document.getElementsByClassName("lettercontent")[0];
+    var letterdiv = document.getElementsByClassName("letterdiv")[0];
     modal.style.display = "none";
-    $(lettercontent).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+    $(letterdiv).children('.on').removeClass('on'); // 활성화된 modal content 삭제
 
   }
 }
 // modal close
 document.getElementById("letterclose").onclick = function() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+    var modal = document.getElementById("myModal");
+    var letterdiv = document.getElementsByClassName("letterdiv")[0];
+    modal.style.display = "none";
+    $(letterdiv).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+
 };
 
 // - Sent Tab
