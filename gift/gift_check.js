@@ -69,6 +69,7 @@ $('.product_rcbtn').on('click',function(){
     $('#pop').show();
     $(this).addClass(' off');
     $('.modal').hide();
+    $(".giftcontent").children('.on').removeClass('on');
   }
   else{
   };

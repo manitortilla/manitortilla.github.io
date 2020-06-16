@@ -406,8 +406,8 @@ body {
     padding: 3%;
     width: 400px;
     height: 100px;
-    background-color: #3d3d3d;
-    color:#fff;
+    background-color: #ffffff;
+    color:black;
     position: absolute;
     top:30%;
     left: 50%;
@@ -428,11 +428,10 @@ body {
 }
 
 .pop_xbtnwrapper{
-    margin:2%;
     text-align: right;
 }
 
 .pop_xbtn{
-    width:50px;
-    height:50px;
+    background-color: transparent;
+    color:white;
 }
