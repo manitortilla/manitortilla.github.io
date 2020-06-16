@@ -35,37 +35,35 @@ function authStateObserver(user) {
  }
 }
 
-
 // sidebar menu toggle
 $('.sidebarbtn').on('click', function(){
   //sidebarbtn color update
   $('.sidebarbtn').removeClass('on');
   $(this).addClass('on');
 
+  //show the related content
   var idx = $('.sidebarbtn').index(this);
   $('.detail').hide(); //style="display:none"
   $('.detail').eq(idx).show();
-  if (idx == 0){ //편지 읽기 상태에서 메뉴 바꿨을 때 메일함이 디폴트로 올 수 있게
-    getSent(); //보낸 편지함 다시 초기화
-    $('.lettercontent').hide();
-    $('.mailbox').show();
-  }
-});
 
+});
 
 // Modal
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
-    document.getElementById("myModal").style.display = "none";
-    $("#myModal").children('.on').removeClass(' on'); // 활성화된 modal content 삭제
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+
   }
 }
 // modal close
 document.getElementById("letterclose").onclick = function() {
-  document.getElementById("myModal").style.display = "none";
-  $("#myModal").children('.on').removeClass(' on'); // 활성화된 modal content 삭제
-}
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+  $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+};
 
 // - Sent Tab
 function getSent(){
@@ -86,7 +84,7 @@ function getSent(){
           + "'><i class='fas fa-sticky-note'></i></button></div>"; //button ID->count
           modal_content +=
           "<p class='letterdisplay " + count +"'>" +
-          data.contents + "<br>" + data.timestamp + "</p>"; //modal content class-> count
+          data.contents + "<br><br>" + data.timestamp + "</p>"; //modal content class-> count
 
           count++;
         }

@@ -45,17 +45,17 @@ $('.sidebarbtn').on('click', function(){
   var idx = $('.sidebarbtn').index(this);
   $('.detail').hide(); //style="display:none"
   $('.detail').eq(idx).show();
-  if (idx == 0){ //편지 읽기 상태에서 메뉴 바꿨을 때 메일함이 디폴트로 올 수 있게
-    $('.lettercontent').hide();
-    $('.mailbox').show();
-  }
+
 });
 
 // Modal
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
-    document.getElementById("myModal").style.display = "none";
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+
   }
 }
 // modal close
@@ -73,6 +73,8 @@ function getReceived() {
   var letters = document.getElementsByClassName("letter ");
   for (i=0; i< letters.length; i++){
     letters[i].onclick = function() {
+      var idx = $('.letter').index(this);
+      $('.letterdisplay').eq(idx).addClass('on'); //매칭되는 편지 on
       document.getElementById("myModal").style.display = "block";
 
       if ($(this).hasClass('new')){ //if it is a new letter, update as read
