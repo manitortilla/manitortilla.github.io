@@ -53,8 +53,9 @@ $('.sidebarbtn').on('click', function(){
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
     var modal = document.getElementById("myModal");
+    var lettercontent = document.getElementsByClassName("lettercontent");
     modal.style.display = "none";
-    $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+    $(lettercontent).children('.on').removeClass('on'); // 활성화된 modal content 삭제
 
   }
 }
