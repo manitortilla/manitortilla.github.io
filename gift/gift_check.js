@@ -20,6 +20,9 @@ function authStateObserver(user) {
  if (user) { // User is signed in!
    document.getElementById("userID").innerHTML = getUserName();
    document.getElementById("userID2").innerHTML = getUserName();
+   document.getElementById("userID3").innerHTML = getUserName();
+   document.getElementById("userID4").innerHTML = getUserName();
+
  } else { // User is signed out!
    location.href="/index.html";
  }
@@ -29,13 +32,13 @@ function authStateObserver(user) {
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
     document.getElementById("myModal").style.display = "none";
+    $(".giftcontent").children('.on').removeClass('on'); // 활성화된 modal content 삭제
   }
 }
 // modal close
 document.getElementById("giftclose").onclick = function() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+  document.getElementById("myModal").style.display = "none";
+  $(".giftcontent").children('.on').removeClass('on'); // 활성화된 modal content 삭제
 };
 
 // load gifts
@@ -44,10 +47,7 @@ function getReceived() {
   for (i=0; i< gifts.length; i++){
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
-
-      var idx = $('.gift').index(this);
-      $('#giftdisplay').eq(idx).show();
-
+      
       var idx = $('.sidebarbtn').index(this);
       $('.giftdisplay').eq(idx).addClass('on');
 
