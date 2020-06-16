@@ -30,13 +30,13 @@ function authStateObserver(user) {
    location.href="/index.html";
  }
 }
-
+/*
 function getHashtagItem(hashtag){
   var hashtag_id = documnet.getElementsByClassName("hash_id")
   var title = document.getElementsByIDName("hashtag_title");
   title[0].innerHTML = sessionStorage.Hashtag_name; //hashtag name
   title[1].innerHTML = sessionStorage.Hashtag_name; //hashtag name
-  
+
   var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
   sessionStorage.setItem("Nav_parent", nav_parent);
 
@@ -66,3 +66,17 @@ function getHashtagItem(hashtag){
 }
 
 getHashtagItem(sessionStorage.Hashtag);
+*/
+function getHashtagItem(hashtag){
+    var hashtagID = Number(hashtag) -1; //인덱스 0부터니까
+    document.getElementsByClassName('hashtagcontent')[hashtagID].style.display='block';
+
+}
+getHashtagItem(sessionStorage.Hashtag);
+
+var nav_bar = document.getElementsByClassName('subt')[0];
+var ashtag_name = sessionStorage.Hashtag_name;
+nav_bar.innerHTML = '<a href="gift_send.html">Hashtag</a><span>></span>'+
+        '<span id="hashtag_title">'+sessionStorage.Hashtag_name+'</span>';
+
+sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);

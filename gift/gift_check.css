@@ -263,6 +263,7 @@ body {
 .giftdisplay.on {
   display: block;
   padding: 20px;
+  text-align: center;
 }
 
 .user_info{
@@ -322,6 +323,7 @@ body {
     background-color: #afadd2;
     padding: 3%;
     margin:2%;
+    width: 500px;
     font-size:20px;
     font-family: arial;
 }
@@ -365,6 +367,7 @@ body {
     font-family: "Source Sans Pro", sans-serif;
 }
 
+
 .product_rcbtn{
     margin:2%;
     font-size: 20px;
@@ -381,13 +384,28 @@ body {
 
 }
 
+.product_rcbtn.off{
+    margin:2%;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    width : 120px;
+    height: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color:white;
+    border-radius: 20px;
+    background-color: gray;
+    cursor: pointer;
+}
+
 #pop{
     display: none;
     padding: 3%;
     width: 400px;
     height: 100px;
-    background-color: #3d3d3d;
-    color:#fff;
+    background-color: #ffffff;
+    color:black;
     position: absolute;
     top:30%;
     left: 50%;
@@ -407,8 +425,19 @@ body {
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.pop_xbtnwrapper{
+    text-align: right;
+}
+
+.pop_xbtn{
+    background-color: transparent;
+    color:white;
+>>>>>>> 14bae8d5d4d892d420a25b6e83934a26c79a4468
+}
+
 textarea{
     font-family: "Source Sans Pro", sans-serif ;
     text-align: left;
     font-size: 10px;
-}
