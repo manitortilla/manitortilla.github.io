@@ -333,16 +333,17 @@ body {
 .gift_attr{
     font-family: "Montserrat",sans-serif;
     font-weight: bold;
-    margin: 10px;
+    padding: 10px;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
+    border-right: solid 1px gray;
 }
 
 .gift_value{
     font-family: "Source Sans Pro", sans-serif ;
-    padding: 5px;
+    padding: 10px;
     text-align: left;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .product_price{
@@ -366,8 +367,8 @@ body {
 
 .product_buybtn{
     margin:2%;
-    font-size: 30px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
     width : 100px;
     height: 40px;
     position: relative;
@@ -403,4 +404,5 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: royalblue;
+    text-align: center;
 }
