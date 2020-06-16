@@ -40,7 +40,7 @@ function initDate(){
   if(day.length == 1){
     day = "0" + day;
   }
-  var tomorrow = year+"-"+month+"-"+ (day+1);
+  var tomorrow = year+"-"+month+"-"+ (Number(day)+1);
 
   document.getElementById("gamedate").setAttribute("min", tomorrow);
 
@@ -60,39 +60,30 @@ function saveGame() {
 }
 
 function dataSave(name, ids){
-
   return firebase.firestore().collection("gamelist").add({
     gamename: name,
     enddate: document.getElementById("gamedate").value,
     players: getUserUid()+', '+ ids
-  }).then(function() {
-      userdataUpdate(name);
+  }).then(function(doc) {
+      userdataUpdate(name, doc.id);
   }).catch(function(error) {
     console.error('Error writing new message to database', error);
   });
 }
 
 //원래는 player마다 게임방 이름 추가해야하지만 여기서는 그냥 현재 유저에만 한다
-function userdataUpdate(game){
+function userdataUpdate(game, docid){
   firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
-    if (!doc.exists) {
+    if (!doc.exists) //게임 리스트 없으면 새로 시작
       var myGamelist = [];
-      myGamelist.push(game);
-      return firebase.firestore().collection("userlist").doc(getUserUid()).set({
-        game: myGamelist
-      }).then(function() {
-        location.href='/index.html';
-      });
-    }
-    else {
+    else //게임 리스트 있으면 기존 리스트 가져온다
       var myGamelist = doc.data().game;
-      myGamelist.push(game);
-      return firebase.firestore().collection("userlist").doc(getUserUid()).set({
-        game: myGamelist
-      }).then(function() {
-        location.href='/index.html';
-      });
-    }
-
+    myGamelist.push(game);
+    return firebase.firestore().collection("userlist").doc(getUserUid()).set({
+      game: myGamelist,
+      gameDocID: docid
+    }).then(function() {
+      location.href='/index.html';
+    });
   });
 }

@@ -87,8 +87,9 @@ function getGamelist(){
       var newHTML = "<ul class='game'><a href='home.html'>SAMPLE GAME</a></ul>";
       if (doc.exists) {
         var mygamelist = doc.data().game;
-        for (i=0; i<mygamelist.length; i++){
-          newHTML += "<ul class='game'><a href='home.html'>"+mygamelist[i]+"</a></ul>";
+        for (i=0; i < mygamelist.length; i++){
+          newHTML += "<ul class='game'><a href='home.html' onclick ='sessionStorage.gameID=\"" + doc.data().gameDocID + "\"'>"
+              + mygamelist[i] + "</a></ul>";
         }
       }
       newHTML += " <ul class='game newgame'><a href='newgame.html'>+ Start a new game</a></ul>";
