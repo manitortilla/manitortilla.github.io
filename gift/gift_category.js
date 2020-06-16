@@ -41,6 +41,8 @@ function getItem(categoryNO){
   var price = document.getElementsByClassName("product_detail");
 
   title.innerHTML = document.getElementById(categoryNO).innerHTML; //category name
+
+  var nav_parent = document.getElementsByClassName(subt)[0].innertHTML;
   var content = "";
 
   if (categoryNO  == 0 ) { //if "all"
@@ -48,8 +50,10 @@ function getItem(categoryNO){
       var data = snapshot.val();
       for (i = 0 ; i < data.length; i++){
         content +=
-        "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
-      "); location.href=\"gift_detail_sender.html\"'> \
+        "<tr class='rank_tr' \
+         onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+         "); sessionStorage.setItem(\"Nav_parent\"," + nav_parent +
+        "); location.href=\"gift_detail_sender.html\"'> \
             <td class='rank_no'>" + (i+1) + "</td> \
             <td class='product_img'><img src='"+ data[i].Img +"'></td> \
             <td class='product_info'> \
@@ -70,8 +74,10 @@ function getItem(categoryNO){
 
       for (i = 0 ; i < data.length; i++){
         content +=
-        "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
-      "); location.href=\"gift_detail_sender.html\"'> \
+        "<tr class='rank_tr' \
+          onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+        "); sessionStorage.setItem(\"Nav_parent\"," + nav_parent +
+        "); location.href=\"gift_detail_sender.html\"'> \
             <td class='rank_no'>" + (i+1) + "</td> \
             <td class='product_img'><img src='"+ data[i].Img +"'></td> \
             <td class='product_info'> \
