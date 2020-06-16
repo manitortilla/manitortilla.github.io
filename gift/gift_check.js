@@ -47,8 +47,8 @@ function getReceived() {
   for (i=0; i< gifts.length; i++){
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
-      
-      var idx = $('.gifts').index(this);
+
+      var idx = $('.gift').index(this);
       $('.giftdisplay').eq(idx).addClass('on');
 
       if ($(this).hasClass('new')){ //if it is a new letter, update as read
