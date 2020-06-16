@@ -406,3 +406,9 @@ body {
     color: royalblue;
     text-align: center;
 }
+
+textarea{
+    font-family: "Source Sans Pro", sans-serif ;
+    text-align: left;
+    font-size: 10px;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>MOST</title> 
+    <link rel="stylesheet" href="manual.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <style> 
+      .carousel-inner > .carousel-item > img{
+         width: 640px; 
+         height: auto; 
+      } 
+    </style> 
+  </head> 
+  <body> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script> 
+      $('.carousel').carousel({ interval: 10000
+      })
+      
+      function fnMove(seq){
+        var offset = $("#div" + seq).offset();
+        $('html,body').animate({scrollTop : offset.top}, 400);
+      }
+
+      function TopMove() {
+        var offset = $('body').offset();
+        $('html,body').animate({scrollTop : offset.top}, 400);
+      }
+    </script> 
+
+    <div class="wrapper">
+      <div class="item header logo">
+        <div class="logo"><a class="home-link" href="home.html"><img src="logo.png" alt="logo" style="max-width:100%"/></a></div>
+      </div>
+
+      <div class="item header navi">
+          <div class="navbtn">
+            <a class="nav_link" id="nav_letter" href="letter.html">LETTER</a>
+          </div>
+          <div class="navbtn">
+            <a class="nav_link" id="nav_gift" href="./gift/gift_send.html">GIFT</a>
+          </div>
+          <div class="navbtn">
+            <a class="nav_link" id="nav_manito" href="Manito.html">MANITO</a>
+          </div>
+      </div>
+
+      <div class="item header info">
+        <table class="user_info">
+          <tr>
+            <td colspan="3" id="userID">user ID</td>
+          </tr>
+          <tr>
+            <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
+          </tr>
+        </table>
+      </div>
+    </div> 
+    
+    <div id="demo" class="carousel slide" data-ride="carousel"> 
+      <div class="carousel-inner"> 
+        <!-- 슬라이드 쇼 --> 
+        <div class="carousel-item active"> 
+          <!--가로--> 
+          <br>
+          <div class="text">
+            <p class="greet">Welcome to MOST</p>
+            <p class="text">Enjoy your Manito game with your friends! MOSt will be your friendly host.</p>
+            <p> <img src="https://media.gettyimages.com/photos/girlfriends-hanging-out-in-the-city-picture-id826974998?s=2048x2048" alt=""></p>
+          </div>
+        </div> 
+        <div class="carousel-item"> 
+          <br>
+          <div class="text">
+            <p class="greet">How to sign up and find friends?</p>
+            <p class="text">You can sign up by google accounts. Also you can find friends by inviting.
+              <br>
+              <span>
+                <button id="myBtn" onclick="fnMove('1')">More detail</button>
+              </span>
+            </p>
+            <p> <img src="https://media.gettyimages.com/photos/friends-toasting-with-wine-and-beer-at-rustic-dinner-party-picture-id909208170?s=2048x2048" alt=""></p>
+          </div>
+        </div> 
+        <div class="carousel-item"> 
+          <br>
+          <div class="text">
+            <p class="greet">Send letters and gifts via MOST!</p>
+            <p class="text"> Go to LETTER and GIFT tab to play Manito game in secret!
+              <br>
+              <span>
+                <button id="myBtn" onclick="fnMove('2')">More detail</button>
+              </span>
+            </p>
+            <p> <img src="https://media.gettyimages.com/photos/friends-catching-popcorn-with-the-mouth-picture-id991486444?s=2048x2048" alt=""></p>
+          </div>
+        </div>
+        <div class="carousel-item"> 
+          <br>
+          <div class="text">
+            <p class="greet">Check the result and manage the game</p>
+            <p class="text"> MANITO tab will show your game result on the revealing day. Everything is secret till then!
+              <br>
+              <span>
+                <button id="myBtn" onclick="fnMove('3')">More detail</button>
+              </span>
+            </p>
+            <p> <img src="https://media.gettyimages.com/photos/family-sitting-on-pier-by-the-sea-picture-id1002673938?s=2048x2048" alt=""></p>
+          </div>
+        </div> 
+        <!-- / 슬라이드 쇼 끝 --> <!-- 왼쪽 오른쪽 화살표 버튼 --> 
+        <a class="carousel-control-prev" href="#demo" data-slide="prev"> 
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+          <!-- <span>Previous</span> --> 
+        </a> 
+        <a class="carousel-control-next" href="#demo" data-slide="next"> 
+          <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+          <!-- <span>Next</span> --> 
+        </a> 
+        <!-- / 화살표 버튼 끝 --> 
+        <!-- 인디케이터 --> 
+        <ul class="carousel-indicators"> 
+          <li data-target="#demo" data-slide-to="0" class="active"></li> 
+          <!--0번부터시작--> 
+          <li data-target="#demo" data-slide-to="1"></li> 
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li> 
+        </ul> 
+        <!-- 인디케이터 끝 --> 
+      </div> 
+    </div>
+    <div class="moredetail" id="div1">
+      <p class="greet" style="color: #5e5aa4;">How to sign up and find friends?</p>
+      <p class="text_under">
+        <span class="step"> STEP 1.</span> Click 'LOGIN with GOOGLE button.'
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="step1.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 2.</span> If you have an ongoing game, then click the game name. 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        'SAMPLE GAME' is an ongoing game in this case.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="step2.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 3.</span> + Start a new game. 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Set revealing date. MOST will keep the secret unitl that day! 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        You need <b style="color: royalblue;">at leat 4 players</b> to play MANITO.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="step3.PNG" alt="">
+        <br><br>
+      </p>
+      <button id="myBtn1" onclick="TopMove()">Go to top</button>
+      <br>
+    </div>
+
+    <div class="moredetail" id="div2">
+      <p class="greet" style="color: #5e5aa4;">Send letters and gifts via MOST!</p>
+      <p class="text_under">
+        <span class="step"> STEP 1.</span> Click 'LETTER' on navigation bar
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="2_step1.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 2.</span> You can check your mailbox. 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>'Received'</b>  shows received letters from your Manito.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>'Sent'</b>  shows letters that you send to Manito.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="2_step2.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 3.</span> Moreover, you can write a letter.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Deliver your sincerity with a letter.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="2_step3.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 4.</span> You also can send a gift to Manito.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>'Recommendation'</b>  shows our recommendations including advertisements and hashtag.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>'Best'</b>  shows best ranking.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>'Category'</b>  shows our recommendations including advertisements and hashtag.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="2_step4.PNG" alt=""><img src="2_step4_2" alt="">
+        <br><br>
+        <span class="step"> STEP 5.</span> Finally, check gifts from your Manito!
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        You have to click <b>'RECEIVE'</b> to get a gift.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="2_step5.PNG" alt="">
+      </p>
+      <button id="myBtn1" onclick="TopMove()">Go to top</button>
+      <br>
+    </div>
+    <div class="moredetail" id="div3">
+      <p class="greet" style="color: #5e5aa4;">Check the result and manage the game</p>
+      <p class="text_under">
+        <span class="step"> STEP 1.</span> Guess your Manito! Click 'Try the guess'
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        You have <b style="color: royalblue;">only one chance</b> to guess.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="3_step1.PNG" alt="">
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="3_step1_1.PNG" alt="">
+        <br><br>
+        <span class="step"> STEP 2.</span> Show your game result on revealing day. 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="3_step2.PNG" alt="">
+        <br><br>
+      </p>
+      <button id="myBtn1" onclick="TopMove()">Go to top</button>
+      <br>
+    </div>
+    </body> 
+    </html>
+
