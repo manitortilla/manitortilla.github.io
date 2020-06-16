@@ -61,9 +61,11 @@ window.onclick = function(event) {
 }
 // modal close
 document.getElementById("letterclose").onclick = function() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+    var modal = document.getElementById("myModal");
+    var lettercontent = document.getElementsByClassName("lettercontent")[0];
+    modal.style.display = "none";
+    $(lettercontent).children('.on').removeClass('on'); // 활성화된 modal content 삭제
+
 };
 
 
