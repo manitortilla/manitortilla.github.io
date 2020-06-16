@@ -184,6 +184,12 @@ body {
     padding : 20px;
 }
 
+.wrapper_search {
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    padding : 20px;
+}
+
 .wrapper_ad {
     font-size: 30px;
     padding : 5%;
