@@ -41,7 +41,6 @@ document.getElementById("giftclose").onclick = function() {
 // load gifts
 function getReceived() {
   var gifts = document.getElementsByClassName("gift");
-  console.log(gifts);
   for (i=0; i< gifts.length; i++){
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
