@@ -47,15 +47,9 @@ function getReceived() {
   for (i=0; i< gifts.length; i++){
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
-
       var idx = $('.gift').index(this);
-      $('.giftdisplay').eq(idx).addClass('on');
-
-      if ($(this).hasClass('new')){ //if it is a new letter, update as read
-          $(this).removeClass(' new');
-          $(this).addClass(' old');
-          $(this).html('<i class="fas fa-box-open"></i>');
-      }
+    $('.giftdisplay').eq(idx).addClass('on');
+     
     };
   }
 }
@@ -70,6 +64,14 @@ $('.product_rcbtn').on('click',function(){
     $(this).addClass(' off');
     $('.modal').hide();
     $(".giftcontent").children('.on').removeClass('on');
+    
+    var idx = $('.product_rcbtn').index(this);
+    var icon = document.getElementsByClassName('gift').eq(idx);
+    if (icon.hasClass('new')){ //if it is a new letter, update as read
+        icon.removeClass(' new');
+        icon.addClass(' old');
+        icon.html('<i class="fas fa-box-open"></i>');
+    }
   }
   else{
   };
