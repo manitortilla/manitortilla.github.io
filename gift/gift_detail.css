@@ -118,11 +118,10 @@ body {
   background-color: #afadd2;
 }
 
-.subt a, p {
+.subt p {
   color: white;
   padding-left: 20px;
   font-size: 20px;
-  font-weight: bold;
   margin: 5px;
 }
 
@@ -160,6 +159,8 @@ body {
 }
 
 .product_name {
+    color: royalblue;
+    font-family: "Montserrat", sans-serif;
     font-size: 30px;
     padding : 5px;
 }
@@ -213,11 +214,13 @@ body {
 }
 
 .product_buybtn{
-    margin:2%;
-    width : 180px;
+    font-family: "Montserrat";
+    font-size: 20px;
+    margin: 2%;
+    width : 100px;
     height: 40px;
     position: relative;
-    left: 40%;
+    left: 50%;
     transform: translateX(-50%);
     color:white;
     border-radius: 20px;
@@ -259,4 +262,8 @@ body {
 
 #logoutbtn{
     text-align: right;
+}
+
+.wrap_table {
+    padding : 20px;
 }

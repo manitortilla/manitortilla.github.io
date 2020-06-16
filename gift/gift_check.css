@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
 
 body {
     padding : 2;
@@ -232,14 +232,15 @@ body {
 /* Modal Content */
 .giftcontent {
     background-color: #fefefe;
-    margin: 10px;
+    margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 40px;
     padding-right: 40px;
     border: 1px solid #888;
     width: 900px;
     font-size: 20px;
-    }
+}
 
 /* The Close Button */
 .close {
@@ -262,6 +263,7 @@ body {
 
 .giftdisplay.on {
   display: block;
+  padding: 20px;
 }
 
 .user_info{
@@ -307,10 +309,10 @@ body {
     padding: 5px;
 }
 
-.product_name {
+/* .product_name {
     font-size: 30px;
     padding : 5px;
-}
+} */
 
 .product_detail{
     font-size: 15px;
@@ -330,16 +332,16 @@ body {
 }
 
 .gift_attr{
-    font-family: arial black;
+    font-family: "Anton",sans-serif, black;
     padding: 3px;
     text-align: center;
 }
 
 .gift_value{
-    font-family: arial ;
-    padding: 3px;
+    font-family: "Source Sans Pro", sans-serif ;
+    padding: 5px;
     text-align: left;
-
+    font-size: 20px;
 }
 
 .product_price{
@@ -362,10 +364,12 @@ body {
 
 .product_buybtn{
     margin:2%;
-    width : 180px;
+    font-size: 30px;
+    font-family: "Source Sans Pro", sans-serif;
+    width : 100px;
     height: 40px;
     position: relative;
-    left: 40%;
+    left: 50%;
     transform: translateX(-50%);
     color:white;
     border-radius: 20px;
