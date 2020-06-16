@@ -177,6 +177,9 @@ body {
     color: white;
 }
 
+.wrapper {
+    padding : 20px;
+}
 
 .brand_menu {
     display: grid;
