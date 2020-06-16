@@ -60,3 +60,14 @@ function getReceived() {
   }
 }
 getReceived();
+
+
+$('.product_rcbtn').on('click',function(){
+  var result = confirm("Is the address written correctly?");
+  if(result){
+    $('#pop').show();
+    $(this).addClass('off');
+  }
+  else{
+  };
+});
