@@ -68,8 +68,13 @@ $('.product_rcbtn').on('click',function(){
   if(result){
     $('#pop').show();
     $(this).addClass(' off');
-    $('.giftdisplay').hide();
+    $('.modal').hide();
   }
   else{
   };
+});
+
+//pop x button clicked
+$('.pop_xbtn').on('click',function(){
+  $('#pop').hide();
 });
