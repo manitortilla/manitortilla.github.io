@@ -32,13 +32,13 @@ function authStateObserver(user) {
  }
 }
 var ad1 = document.getElementsByClassName("ad_content")[0];
-ad_content.onclick = function() {
+ad1.onclick = function() {
   sessionStorage.setItem('Product_no', 10);
   sessionStorage.setItem('Nav_parent', "'<a href='gift_send.html'>AD</a><span>></span>");
   location.href='gift_detail_sender.html';
 }
 var ad2 = document.getElementsByClassName("ad_content")[1];
-ad_content.onclick = function() {
+ad2.onclick = function() {
   sessionStorage.setItem('Product_no', 11);
   sessionStorage.setItem('Nav_parent', "'<a href='gift_send.html'>AD</a><span>></span>");
   location.href='gift_detail_sender.html';
