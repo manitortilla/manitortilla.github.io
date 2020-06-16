@@ -64,8 +64,10 @@ function getItem(categoryNO){
     });
   }
   else { //not "all"
-    return firebase.database().ref().orderByChild('Hashtag_no').equalTo(Number(categoryNO)).once('value', function(snapshot){
+    return firebase.database().ref().orderByChild('Category_no').equalTo(Number(categoryNO)).once('value', function(snapshot){
       var data = snapshot.val();
+      data = Object.values(data); //data가 object형으로 나오니까 array로 바꿔주는 것
+
       for (i = 0 ; i < data.length; i++){
         content +=
         "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
