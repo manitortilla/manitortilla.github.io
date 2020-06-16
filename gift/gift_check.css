@@ -232,7 +232,6 @@ body {
 /* Modal Content */
 .giftcontent {
     background-color: #fefefe;
-    margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 40px;
@@ -332,16 +331,18 @@ body {
 }
 
 .gift_attr{
-    font-family: "Anton",sans-serif, black;
-    padding: 3px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: bold;
+    margin: 10px;
     text-align: center;
+    font-size: 15px;
 }
 
 .gift_value{
     font-family: "Source Sans Pro", sans-serif ;
     padding: 5px;
     text-align: left;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .product_price{
@@ -360,6 +361,7 @@ body {
     padding-bottom: 0;
     width: 500px;
     margin: 2%;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .product_buybtn{
@@ -391,4 +393,14 @@ body {
     transform: translateX(-50%) translateY(-50%);
     text-align:center;
     border:2px solid #000;
+}
+
+.notion {
+    margin:2%;
+    font-size: 20px;
+    font-family: "Source Sans Pro", sans-serif;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: royalblue;
 }

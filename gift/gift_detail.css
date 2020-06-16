@@ -118,10 +118,10 @@ body {
   background-color: #afadd2;
 }
 
-.subt p {
+.subt a, span {
   color: white;
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 15px;
   margin: 5px;
 }
 
@@ -130,6 +130,7 @@ body {
     border: #5e5aa4 solid 2px;
     border-radius: 3px;
     width : 520px;
+    margin: 10px;
 }
 
 .product_layout_right{
@@ -168,6 +169,8 @@ body {
 .product_detail{
     font-size: 15px;
     padding : 5px;
+    width: 700px;
+    margin: 2%;
 }
 
 .gift_info{
@@ -183,16 +186,18 @@ body {
 }
 
 .gift_attr{
-    font-family: arial black;
-    padding: 3px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: bold;
+    padding: 5px;
     text-align: center;
+    font-size: 15px;
 }
 
 .gift_value{
     font-family: arial ;
     padding: 3px;
     text-align: left;
-
+    font-size: 15px;
 }
 
 .product_price{
@@ -204,18 +209,10 @@ body {
     width: 500px;
 }
 
-.product_detail{
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 0;
-    padding-bottom: 0;
-    width: 500px;
-    margin: 2%;
-}
 
 .product_buybtn{
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 15px;
     margin: 2%;
     width : 100px;
     height: 40px;
