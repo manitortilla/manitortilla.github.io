@@ -43,6 +43,8 @@ $('#close').on('click',function(){
 
 
 function getProduct(Product_no){
+  document.getElementsByClassName("subt")[0].innertHTML = sessionStorage.Nav_parent; //naviagation bar
+  document.getElementById("category_title").onclick = window.history.back();
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
   var img = document.getElementsByClassName("product_img")[0];

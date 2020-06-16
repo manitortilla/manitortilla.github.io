@@ -31,18 +31,20 @@ for (i = 0; i < menu_cate.length; i++) {
     getItem(this.id);
   });
 }
-
-getItem(0); //always starts from category All
+if (!sessionStorage.goBack || sessionStorage == -1 )
+  getItem(0); //always starts from category All
+else
+  getItem(sessionStorage.goBack);
 
 function getItem(categoryNO){
-  var title = document.getElementById("category_title");
+  var title = document.getElementById("category_title"); //navigation bar
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
   var price = document.getElementsByClassName("product_detail");
 
   title.innerHTML = document.getElementById(categoryNO).innerHTML; //category name
 
-  var nav_parent = document.getElementsByClassName(subt)[0].innertHTML;
+  var nav_parent = document.getElementsByClassName("subt")[0].innertHTML;
   var content = "";
 
   if (categoryNO  == 0 ) { //if "all"
