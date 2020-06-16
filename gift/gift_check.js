@@ -48,7 +48,7 @@ function getReceived() {
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
       
-      var idx = $('.sidebarbtn').index(this);
+      var idx = $('.gifts').index(this);
       $('.giftdisplay').eq(idx).addClass('on');
 
       if ($(this).hasClass('new')){ //if it is a new letter, update as read
