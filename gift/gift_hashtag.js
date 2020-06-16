@@ -31,10 +31,12 @@ function authStateObserver(user) {
  }
 }
 
-
 function getHashtagItem(hashtag){
   var title = document.getElementById("hashtag_title");
   title.innerHTML = sessionStorage.Hashtag_name; //hashtag name
+
+  var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
+  sessionStorage.setItem("Nav_parent", nav_parent);
 
   var content="";
 
@@ -58,7 +60,6 @@ function getHashtagItem(hashtag){
       </tr>";
     }
     document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
-    console.log(content);
   });
 }
 

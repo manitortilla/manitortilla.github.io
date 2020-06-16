@@ -43,8 +43,9 @@ $('#close').on('click',function(){
 
 
 function getProduct(Product_no){
-  document.getElementsByClassName("subt")[0].innertHTML = sessionStorage.Nav_parent; //naviagation bar
-  document.getElementById("category_title").onclick = function(){ window.history.back()};
+  document.getElementsByClassName("subt")[0].innerHTML =
+      sessionStorage.Nav_parent + "<span>  > </span><p class='product_name'></p>"; //naviagation bar
+
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
   var img = document.getElementsByClassName("product_img")[0];
@@ -62,4 +63,3 @@ function getProduct(Product_no){
   });
 }
 getProduct(sessionStorage.Product_no);
-console.log(sessionStorage.Product_no);

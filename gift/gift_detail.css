@@ -118,7 +118,7 @@ body {
   background-color: #afadd2;
 }
 
-.subt a {
+.subt a, p {
   color: white;
   padding-left: 20px;
   font-size: 20px;

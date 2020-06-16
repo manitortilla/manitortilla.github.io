@@ -31,21 +31,20 @@ for (i = 0; i < menu_cate.length; i++) {
     getItem(this.id);
   });
 }
-if (!sessionStorage.goBack || sessionStorage == -1 )
-  getItem(0); //always starts from category All
-else
-  getItem(sessionStorage.goBack);
+
+getItem(0); //always starts from category All
 
 function getItem(categoryNO){
+  var content = "";
+
   var title = document.getElementById("category_title"); //navigation bar
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
   var price = document.getElementsByClassName("product_detail");
 
   title.innerHTML = document.getElementById(categoryNO).innerHTML; //category name
-
-  var nav_parent = document.getElementsByClassName("subt")[0].innertHTML;
-  var content = "";
+  var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
+  sessionStorage.setItem("Nav_parent", nav_parent);
 
   if (categoryNO  == 0 ) { //if "all"
     return firebase.database().ref().once('value').then(function(snapshot) {
@@ -54,8 +53,7 @@ function getItem(categoryNO){
         content +=
         "<tr class='rank_tr' \
          onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
-         "); sessionStorage.setItem(\"Nav_parent\"," + nav_parent +
-        "); location.href=\"gift_detail_sender.html\"'> \
+         "); location.href=\"gift_detail_sender.html\"'> \
             <td class='rank_no'>" + (i+1) + "</td> \
             <td class='product_img'><img src='"+ data[i].Img +"'></td> \
             <td class='product_info'> \
@@ -78,7 +76,6 @@ function getItem(categoryNO){
         content +=
         "<tr class='rank_tr' \
           onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
-        "); sessionStorage.setItem(\"Nav_parent\"," + nav_parent +
         "); location.href=\"gift_detail_sender.html\"'> \
             <td class='rank_no'>" + (i+1) + "</td> \
             <td class='product_img'><img src='"+ data[i].Img +"'></td> \
