@@ -205,7 +205,7 @@ body {
   background-color: #afadd2;
 }
 
-#category_title {
+.subt a {
   color: white;
   padding-left: 20px;
   font-size: 20px;
