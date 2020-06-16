@@ -1,4 +1,8 @@
-
+initFirebaseAuth();
+// Initiate firebase auth.
+function initFirebaseAuth() {
+ firebase.auth().onAuthStateChanged(authStateObserver);
+}
 var signOutButtonElement = document.getElementById('logoutbtn');
 function signOut() {
  // Sign out of Firebase.
@@ -24,28 +28,29 @@ function authStateObserver(user) {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == document.getElementById("myModal")) {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-    $(modal).children().children('.on').removeClass('on'); // 활성화된 modal content 삭제
+    document.getElementById("myModal").style.display = "none";
   }
 }
 // modal close
 document.getElementById("giftclose").onclick = function() {
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
-  $(modal).children().children('.on').removeClass('on'); // 활성화된 modal content 삭제
+  $(modal).children('.on').removeClass('on'); // 활성화된 modal content 삭제
 };
 
 // load gifts
 function getReceived() {
   var gifts = document.getElementsByClassName("gift");
+  console.log(gifts);
   for (i=0; i< gifts.length; i++){
     gifts[i].onclick = function() {
       document.getElementById("myModal").style.display = "block";
 
       var idx = $('.gift').index(this);
+      $('#giftdisplay').eq(idx).show();
+
+      var idx = $('.sidebarbtn').index(this);
       $('.giftdisplay').eq(idx).addClass('on');
-      console.log(document.getElementsByClassName("on"));
 
       if ($(this).hasClass('new')){ //if it is a new letter, update as read
           $(this).removeClass(' new');
