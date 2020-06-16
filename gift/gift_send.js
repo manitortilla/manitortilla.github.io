@@ -78,6 +78,7 @@ function gedSearchedItem(key){
     document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
     if (found == 0) {
       alert("No such item.");
+      location.href="gift_send.html"
     }
   });
 
