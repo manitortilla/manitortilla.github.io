@@ -256,3 +256,8 @@ body {
     font-size: 15px;
     padding : 5px;
 }
+
+.wrapper_rank {
+    font-size: 30px;
+    padding : 5%;
+}

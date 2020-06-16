@@ -32,6 +32,7 @@ function authStateObserver(user) {
 }
 
 function getHashtagItem(hashtag){
+  var hashtag_id = documnet.getElementsByClassName("hash_id")
   var title = document.getElementsByIDName("hashtag_title");
   title[0].innerHTML = sessionStorage.Hashtag_name; //hashtag name
   title[1].innerHTML = sessionStorage.Hashtag_name; //hashtag name
