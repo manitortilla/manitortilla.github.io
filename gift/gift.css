@@ -261,3 +261,46 @@ body {
 #logoutbtn{
     text-align: right;
 }
+
+
+.rank{
+    width: inherit;
+    margin: 2%;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.rank_tr{
+    margin : 20px;
+    cursor: pointer;
+}
+
+.rank_no{
+    font-size : 25px;
+    text-align: center;
+    padding : 5px;
+}
+
+.product_img {
+    height : 150px;
+    text-align: center;
+    padding : 5px;
+}
+
+.product_img img {
+    height : 150px;
+    width : auto;
+}
+
+.product_info {
+    padding: 5px;
+}
+
+.product_name {
+    font-size: 30px;
+    padding : 5px;
+}
+
+.product_detail{
+    font-size: 15px;
+    padding : 5px;
+}
