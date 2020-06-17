@@ -352,16 +352,20 @@ margin-top:20px;
     padding: 0 5px 0 20px;
 }
 
-.close{
-    margin:5%;
-    width:100px;
-    height:50px;
-    margin:auto;
-    background-color: transparent;
-    border:transparent;
-    font-size: 20px;
-    color:black;
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
 }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
   #submitbtn {
       border-radius:5px;
