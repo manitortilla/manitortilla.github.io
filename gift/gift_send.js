@@ -62,20 +62,20 @@ searchbtn.onclick = function (){
 }
 
 function gedSearchedItem(key){
-  var found = 0
+  var found = 0;
   var productName;
   var content = "";
   firebase.database().ref().once('value').then(function(snapshot) {
 
     var data = snapshot.val();
-    for (i = 0 ; i < data.length; i++){
+    for (count= 1, i = 0 ; i < data.length; i++){
       productName = data[i].Name;
 
       if (productName.includes(key)) {
         content +=
         "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
         "); location.href=\"gift_detail_sender.html\"'> \
-            <td class='rank_no'>" + (i+1) +"</td> \
+            <td class='rank_no'>" + count +"</td> \
             <td class='product_img'><img src='" + data[i].Img + "'></td> \
             <td class='product_info'> \
                 <table> \
@@ -84,13 +84,13 @@ function gedSearchedItem(key){
                 </table> \
             </td> \
         </tr>";
-        fount = 1;
+        found = 1;
+        count++;
       }
     }
     document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
     if (found == 0) {
       alert("No such item.");
-      location.href="gift_send.html"
     }
   });
 

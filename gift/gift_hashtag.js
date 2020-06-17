@@ -76,7 +76,6 @@ getHashtagItem(sessionStorage.Hashtag);
 
 var nav_bar = document.getElementsByClassName('subt')[0];
 var ashtag_name = sessionStorage.Hashtag_name;
-nav_bar.innerHTML = '<a href="gift_send.html">Hashtag</a><span>></span>'+
-        '<span id="hashtag_title">'+sessionStorage.Hashtag_name+'</span>';
+nav_bar.innerHTML += '<span id="hashtag_title">'+sessionStorage.Hashtag_name+'</span>';
 
 sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);
