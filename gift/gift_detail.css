@@ -113,6 +113,71 @@ body {
   font-size: 40px;
 }
 
+
+/*gift_send 검색창*/
+.searcharea {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.search {
+    width: 25em;
+    height : 2em;
+    font-size: 20px;
+    border : solid #5e5aa4;
+    margin-right: 1em;
+}
+
+.searchbtn {
+    color: #ffffff;
+    background-color: #afadd2;
+    border-radius: 20px;
+    border: none;
+    padding : 1em;
+    display: inline-block;
+    font-size: 17px;
+    text-align: center;
+}
+
+.searchbtn:hover {
+    background-color: #5e5aa4;
+    cursor: pointer;
+}
+
+/* Style the tab */
+.tab {
+    width:auto;
+    height:auto;
+    overflow:hidden;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border : solid gray 1px;
+    border-radius : 0 10px 0 0;
+    font-size: large;
+    font-weight: bold;
+    width : 200px;
+}
+
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background: #afadd2 ;
+    font-style: italic;
+}
+
+#tab_on {
+    background :  #5e5aa4;
+    color: white;
+}
+
 .subt {
   display: flex;
   background-color: #afadd2;
