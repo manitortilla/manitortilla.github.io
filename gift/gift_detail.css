@@ -328,7 +328,7 @@ margin-top:20px;
 #pop{
     display: none;
     padding: 3%;
-    width: 500px;
+    width: auto;
     height: 250px;
     background-color: #ffffff;
     color:black;
@@ -367,7 +367,7 @@ margin-top:20px;
       border-radius:5px;
       cursor:pointer;
       margin-right: 15px;
-      margin-top: 15px;
+      margin-top: 20px;
       padding: 10px;
       border: 0;
       background-color:#afadd2;
