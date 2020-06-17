@@ -6,7 +6,7 @@ body {
     margin-top: 5em;
 }
 
-.container {  
+.container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 100px minmax(800px, auto);
@@ -165,13 +165,13 @@ body {
     font-weight: bold;
     width : 200px;
 }
-  
+
   /* Change background color of buttons on hover */
 .tab button:hover {
     background: #afadd2 ;
     font-style: italic;
 }
-  
+
 #tab_on {
     background :  #5e5aa4;
     color: white;
@@ -199,9 +199,12 @@ body {
 }
 
 .wrapper_search {
-    display : grid;
+    display : none;
     grid-template-columns: 1fr 1fr;
     padding : 20px;
+}
+.wrapper_search.on{
+  display:grid;
 }
 
 .wrapper_ad {
