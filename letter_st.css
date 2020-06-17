@@ -280,14 +280,42 @@ body {
       background-color:#afadd2;
       font-size: 20px;
   }
+  .buttonwarp{
+    display: flex;
+   }
 
-#sendbtn {
-    border-radius:5px;
-    cursor:pointer;
-    margin-top: 10px;
-    padding: 15px;
-    border: 0;
-    background-color:#afadd2;
-    font-size: 20px;
-    font-family: "Montserrat";
+  #sendbtn, #closebtn {
+      border-radius:5px;
+      cursor:pointer;
+      margin-right: 15px;
+      padding: 10px;
+      border: 0;
+      background-color:#afadd2;
+      font-size: 20px;
+      font-family: "Montserrat";
+  }
+  #undobtn {
+      border-radius:5px;
+      cursor:pointer;
+      margin-right: 15px;
+      padding: 10px;
+      border: 0;
+      background-color:#e6e6e6;
+      font-size: 20px;
+      font-family: "Montserrat";
+  }
+
+#pop{
+    display: none;
+    padding: 3%;
+    width: 400px;
+    height: 100px;
+    background-color: #ffffff;
+    color:black;
+    position: absolute;
+    top:55%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align:center;
+    border:2px solid #000;
 }

@@ -68,6 +68,16 @@
                     <h2 style>Write a letter to your friend<br><br></h2>
                     <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
                     <button id="sendbtn" onclick="sendLetter()" >SEND</button>
+
+                    <div id='pop'>
+                        <span class="close" id="popclose">&times;</span>
+                        <p class="popcontent" style="font-size: 20px;">Letter is successfully sent.<br></p>
+                        <div class="buttonwrap">
+                          <button id="undobtn">UNDO</button>
+                          <button id="closebtn">CLOSE</button>
+                        </div>
+                    </div>
+
                   </div>
               </div>
           </div>

@@ -75,6 +75,15 @@
                     <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
                     <p style="width: 800px; text-align: right;"><button id="sendbtn" onclick="sendLetter()" >SEND</button></p>
 
+                    <div id='pop'>
+                        <span class="close" id="popclose">&times;</span>
+                        <p class="popcontent" style="font-size: 20px;">Letter is successfully sent.<br></p>
+                        <div class="buttonwrap">
+                          <button id="undobtn">UNDO</button>
+                          <button id="closebtn">CLOSE</button>
+                        </div>
+                    </div>
+
                   </div>
               </div>
           </div>

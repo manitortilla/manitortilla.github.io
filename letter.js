@@ -48,6 +48,16 @@ $('.sidebarbtn').on('click', function(){
 
 });
 
+//pop x button clicked
+$('#popclose').on('click',function(){
+  $('#pop').hide();
+});
+
+$('#undobtn').on('click', function(){
+  document.getElementsByClassName('popcontent').innerHTML = "Undo sending";
+});
+
+
 // Modal
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -103,12 +113,13 @@ function sendLetter() {
 
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
-    alert ("Letter has been sent");
+    $('#pop').show();
+
     return firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').add({
       userID: getUserUid(),
       contents: content,
       read: false,
-      timestamp:t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate()+"   /   "+(t.getUTCHours())%24+":"+new Date().getUTCMinutes()
+      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate()
     }).catch(function(error) {
       console.error('Error writing new message to database', error);
     });
