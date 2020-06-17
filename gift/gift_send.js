@@ -68,7 +68,7 @@ function gedSearchedItem(key){
   firebase.database().ref().once('value').then(function(snapshot) {
 
     var data = snapshot.val();
-    for (count= 1; i = 0 ; i < data.length; i++){
+    for (count= 1, i = 0 ; i < data.length; i++){
       productName = data[i].Name;
 
       if (productName.includes(key)) {
