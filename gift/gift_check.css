@@ -314,11 +314,6 @@ body {
     padding : 5px;
 } */
 
-.product_detail{
-    font-size: 15px;
-    padding : 5px;
-}
-
 .gift_info{
     background-color: #afadd2;
     padding: 3%;
@@ -368,12 +363,13 @@ body {
 }
 
 .product_detail{
+    text-align: left;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 0;
     padding-bottom: 0;
-    width: 500px;
     margin: 2%;
+    font-size: 18px;
     font-family: "Source Sans Pro", sans-serif;
 }
 
