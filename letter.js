@@ -104,7 +104,7 @@ function sendLetter() {
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
     alert ("Letter has been sent");
-    return firebase.firestore().collection('gamelist').doc("wQhqbpC51BWHdO3O3RdK").collection('letters').add({
+    return firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').add({
       userID: getUserUid(),
       contents: content,
       read: false,
