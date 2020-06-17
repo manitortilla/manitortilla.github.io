@@ -329,7 +329,7 @@ margin-top:20px;
     display: none;
     padding: 3%;
     width: auto;
-    height: 250px;
+    height: auto;
     background-color: #ffffff;
     color:black;
     position: absolute;
@@ -370,8 +370,8 @@ margin-top:20px;
   #submitbtn {
       border-radius:5px;
       cursor:pointer;
-      margin-right: 15px;
       margin-top: 20px;
+      margin-bottom: 15px;
       padding: 10px;
       border: 0;
       background-color:#afadd2;
