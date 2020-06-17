@@ -179,6 +179,7 @@ body {
 }
 
 .subt {
+margin-top:20px;
   display: flex;
   background-color: #afadd2;
 }
@@ -240,7 +241,6 @@ body {
     color: white;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    font-size: 25px;
     padding-left : 10px;
     padding-bottom: 10px;
 }
@@ -249,11 +249,13 @@ body {
     padding:3%;
     padding-top:2%;
     padding-bottom:2%;
+    margin:1%;
 }
 
 #title_product_name{
     color : black;
     font-size: 35px;
+    
 }
 
 .product_detail{
@@ -288,7 +290,7 @@ body {
 
 .gift_value{
     font-family: "Source Sans Pro", sans-serif ;
-    padding: 3px;
+    padding-left: 10px;
     text-align: left;
     font-size: 20px;
 }
