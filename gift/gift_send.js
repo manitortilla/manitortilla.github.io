@@ -88,10 +88,17 @@ function gedSearchedItem(key){
         count++;
       }
     }
-    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
     if (found == 0) {
-      alert("No such item.");
+      content = "No such item.";
     }
+    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
+    $('.wrapper_search').addClass('on');
+    $('.wrapper').hide();
+    var nav_bar = document.getElementsByClassName('subt')[0];
+    nav_bar.innerHTML = "<a href='javascript:history.back()'>Back</a><span> Search: '"+key+"'</span>";
+    sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);
+
+
   });
 
 }
