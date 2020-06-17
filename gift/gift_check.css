@@ -418,7 +418,7 @@ body {
     background-color: #ffffff;
     color:black;
     position: absolute;
-    top:30%;
+    top:55%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align:center;
@@ -435,20 +435,3 @@ body {
     color: royalblue;
     text-align: center;
 }
-
-<<<<<<< HEAD
-=======
-.pop_xbtnwrapper{
-    text-align: right;
-}
-
-.pop_xbtn{
-    background-color: transparent;
-    color:white;
->>>>>>> 14bae8d5d4d892d420a25b6e83934a26c79a4468
-}
-
-textarea{
-    font-family: "Source Sans Pro", sans-serif ;
-    text-align: left;
-    font-size: 10px;
