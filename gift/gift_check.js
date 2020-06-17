@@ -82,6 +82,6 @@ $('.product_rcbtn').on('click',function(){
 });
 
 //pop x button clicked
-$('.pop_xbtn').on('click',function(){
+$('#popclose').on('click',function(){
   $('#pop').hide();
 });
