@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="gift_category.css">
+    <link rel="stylesheet" href="gift_detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,800;1,500;1,800&display=swap" rel="stylesheet">
-    <title>MOST</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title id="title"></title>
 </head>
 <body>
     <div class="container">
@@ -22,16 +21,16 @@
         </div>
 
         <div class="item header info">
-          <table class="user_info">
-            <tr>
-                <td colspan="3" id="userID"></td>
-            </tr>
-            <tr>
-                <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
-            </tr>
-          </table>
+            <table class="user_info">
+                <tr>
+                    <td colspan="3" id="userID"></td>
+                </tr>
+                <tr>
+                    <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
+                </tr>
+            </table>
         </div>
 
 
@@ -45,60 +44,109 @@
         </div>
 
         <div class="item main">
-            <div class="searcharea">
-                <input class="search" type="text" placeholder="Search the gift">
-                <button class="searchbtn"type="submit">Search</button>
-            </div>
 
-            <!-- Tab links -->
-            <div class="tab">
-                <button class="tablinks" onclick="location.href='gift_send.html'">Recommendation</button>
-                <button class="tablinks" onclick="location.href='gift_best.html'">Best</button>
-                <button class="tablinks" id="tab_on" onclick="location.href='gift_category.html'">Category</button>
-            </div>
-
-            <div class="subt">
-              <a href="gift_category.html">Category</a>
-              <span>  >  </span>
-              <a id="category_title"></a>
-            </div>
-
-          <div class="wrapper">
-            <div class="brand_menu">
-                <div class="menu_cate" id="0">All</div>
-                <div class="menu_cate" id="1">MOST Shop</div>
-                <div class="menu_cate" id="2">Flower</div>
-                <div class="menu_cate" id="3">Cafe</div>
-                <div class="menu_cate" id="4">Fashion</div>
-                <div class="menu_cate" id="5">Food</div>
-                <div class="menu_cate" id="6">Book/Entertainment</div>
-                <div class="menu_cate" id="7">Interior</div>
-                <div class="menu_cate" id="8">Fragrance/Make up</div>
-                <div class="menu_cate" id="9">For Baby</div>
-                <div class="menu_cate" id="10">Digital</div>
-                <div class="menu_cate" id="11">Sports</div>
-            </div>
-
-
-            <div class="wrapper_rank">
-              <table class="rank"></table>
-            </div>
-        </div>
-            <div class="wrapper_search" >
-                <div class="wrapper_rank">
-                    <span style="font-size: 25px; font-weight: bold;">Search results</span>
-                    <table class="rank" style="font-size: 20px;">
-                    </table>
-                </div>
-            </div>
-
+           <div class="searcharea">
+              <input class="search" type="text" placeholder="Search the gift"></input>
+              <button class="searchbtn"type="submit">Search</button>
           </div>
 
+          <!-- Tab links -->
+          <div class="tab">
+              <button class="tablinks" onclick="location.href='gift_send.html'">Recommendation</button>
+              <button class="tablinks" onclick="location.href='gift_best.html'">Best</button>
+              <button class="tablinks" onclick="location.href='gift_category.html'">Category</button>
+          </div>
+
+          <div class="subt">
+              <table>
+                  <tr>
+                      <td>
+                        <a href="gift_category.html"><b>Category</b></a>
+                        <span>  >  </span>
+                        <a id="category_title" ><b>category title</b></a>
+                        <span>  > </span>
+                        <b class='product_name'>product name</b>
+                      </td>
+              </table>
+
+
+          </div>
+          <div class='title_product_name_wrapper' >
+              <b class='product_name' id='title_product_name'>name</b>
+          </div>
+          <div class="wrapper">
+            <table>
+                <tr>
+                    <td class='product_layout_left'>
+                        <div class='product_img'>
+                            <img src="">
+                        </div>
+                    </td>
+                    <td class='product_layout_right'>
+                        <b style="font-size: 22px; color: royalblue">Check the information below one more time</b>
+                        &nbsp;
+                        <div class="card">
+                            <table class='gift_info'>
+                                <tr>
+                                    <td class='gift_attr'>Receiver</td>
+                                    <td class='gift_value'>Green</td>
+                                </tr>
+                                <tr>
+                                    <td class='gift_attr'>Address</td>
+                                    <td class='gift_value'>daehyeon-dong, seodaemun-goo, Seoul</td>
+                                </tr>
+                                <tr>
+                                    <td class='gift_attr'>Gift</td>
+                                    <td class='gift_value'></td>
+                                </tr>
+                            </table>
+                            <button class='product_buybtn'>BUY</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class='product_price'></div>
+            <div class='product_detail'></div>
+          </div>
+
+          <div class="wrapper_search" >
+              <div class="wrapper_rank">
+                  <span style="font-size: 25px; font-weight: bold;">Search results</span>
+                  <table class="rank" style="font-size: 20px;">
+                  </table>
+              </div>
+          </div>
+
+          <div id='pop'>
+              <span class="close" id="popclose">&times;</span>
+              <p class="popcontent" style="font-size: 20px;">Type your card information.<br></p>
+              <div class="card">
+                <div class="input cardinfo" style="display:flex;">
+                  <input class="userinput" placeholder="1234"><span>-</span>
+                  <input class="userinput" placeholder="1234"><span>-</span>
+                  <input class="userinput" placeholder="1234"><span>-</span>
+                  <input class="userinput" placeholder="1234"><span>-</span>
+                </div>
+                <div class="input csvinfo">
+                  <input class="userinput" placeholder="csv">
+                </div>
+              </div>
+              <div class="buttonwrap">
+                <button id="submitbtn">SUBMIT</button>
+                <button id="closebtn">CLOSE</button>
+              </div>
+          </div>
+
+        </div>
     </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
-
     <script>
       if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
       var firebaseConfig = {
@@ -115,7 +163,7 @@
       if (firebaseConfig) {
         firebase.initializeApp(firebaseConfig);
       }
-    </script>
-    <script src= "gift_category.js"></script>
-</body>
+</script>
+
+<script src="gift_detail_sender.js"></script>
 </html>
