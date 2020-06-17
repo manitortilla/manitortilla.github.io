@@ -496,9 +496,10 @@ body {
 /* small profile related style*/
 .smallprofile img{
     vertical-align: middle;
-    widows: 70px;
+    width: 70px;
     height: 70px;
     margin-right:2px;
+    border-radius: 35px;
 }
 
 .smallprofile p{
