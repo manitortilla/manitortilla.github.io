@@ -184,7 +184,7 @@ margin-top:20px;
   background-color: #afadd2;
 }
 
-.subt a, span {
+.subt a, .subt span {
   color: white;
   padding-left: 20px;
   font-size: 15px;
@@ -352,7 +352,7 @@ margin-top:20px;
     padding: 0 5px 0 20px;
 }
 
-#close{
+.close{
     margin:5%;
     width:100px;
     height:50px;
@@ -367,6 +367,7 @@ margin-top:20px;
       border-radius:5px;
       cursor:pointer;
       margin-right: 15px;
+      margin-top: 15px;
       padding: 10px;
       border: 0;
       background-color:#afadd2;
