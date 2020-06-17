@@ -214,6 +214,16 @@ body {
   margin: 5px;
 }
 
+.wrapper_search {
+    display : none;
+    grid-template-columns: 1fr 1fr;
+    padding : 20px;
+}
+.wrapper_search.on{
+  display:grid;
+}
+
+
 .wrapper_rank {
     font-size: 30px;
     padding : 10px;

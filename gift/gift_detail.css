@@ -190,6 +190,18 @@ body {
   margin: 5px;
 }
 
+.wrapper {
+    padding : 20px;
+}
+
+.wrapper_search {
+    display : none;
+    grid-template-columns: 1fr 1fr;
+    padding : 20px;
+}
+.wrapper_search.on{
+  display:grid;
+}
 
 .card {
     border: #5e5aa4 solid 2px;
@@ -329,8 +341,4 @@ body {
 
 #logoutbtn{
     text-align: right;
-}
-
-.wrap_table {
-    padding : 20px;
 }
