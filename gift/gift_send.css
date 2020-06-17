@@ -178,6 +178,20 @@ body {
 }
 
 
+.subt {
+  display: flex;
+  background-color: #afadd2;
+  margin-top: 20px;
+}
+
+.subt a,span {
+  color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+}
+
 .wrapper {
     display : grid;
     grid-template-columns: 1fr 1fr;
