@@ -286,7 +286,7 @@ body {
 .wrapper_rank {
     font-size: 30px;
     padding : 10px;
-    width: 900px;
+    width: 900px !important;
 }
 
 .rank{
