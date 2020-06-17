@@ -195,6 +195,16 @@ body {
     padding : 20px;
 }
 
+.wrapper_search {
+    display : none;
+    grid-template-columns: 1fr 1fr;
+    padding : 20px;
+}
+.wrapper_search.on{
+  display:grid;
+}
+
+
 .brand_menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

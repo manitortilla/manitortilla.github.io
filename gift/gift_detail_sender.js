@@ -48,6 +48,7 @@ function getProduct(Product_no){
 
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
+  var name3 = document.getElementsByClassName("product_name")[1];
   var img = document.getElementsByClassName("product_img")[0];
   var price = document.getElementsByClassName("product_price")[0];
   var detail = document.getElementsByClassName("product_detail")[0];
@@ -55,7 +56,7 @@ function getProduct(Product_no){
   return firebase.database().ref(Product_no).once('value').then(function(snapshot) {
     var data = snapshot.val(); //불러온 정보(snapshot)을 javascript로 사용할 수 있게 변경
 
-    name1.innerHTML = name2.innerHTML = data.Name; //상품명
+    name1.innerHTML = name2.innerHTML = name3.innerHTML = data.Name; //상품명
     img.innerHTML = "<img src= \"" + data.Img + "\">";  //이미지
     price.innerHTML = "Price : " + data.Price + " won";
     detail.innerHTML = data.Info;
@@ -63,3 +64,55 @@ function getProduct(Product_no){
   });
 }
 getProduct(sessionStorage.Product_no);
+
+var searchbtn = document.getElementsByClassName("searchbtn")[0];
+var keyword = document.getElementsByClassName("search")[0];
+searchbtn.onclick = function (){
+  var key = keyword.value;
+  gedSearchedItem(key);
+  keyword.value = ""; //clear
+}
+
+function gedSearchedItem(key){
+  var found = 0;
+  var productName;
+  var content = "";
+  firebase.database().ref().once('value').then(function(snapshot) {
+
+    var data = snapshot.val();
+    for (count= 1, i = 0 ; i < data.length; i++){
+      productName = data[i].Name;
+
+      if (productName.includes(key)) {
+        content +=
+        "<tr class='rank_tr' onclick='sessionStorage.setItem(\"Product_no\", " + data[i].Product_no +
+        "); location.href=\"gift_detail_sender.html\"'> \
+            <td class='rank_no'>" + count +"</td> \
+            <td class='product_img'><img src='" + data[i].Img + "'></td> \
+            <td class='product_info'> \
+                <table> \
+                    <tr class='product_name'><td>" +data[i].Name +"</td></tr> \
+                    <tr class='product_detail'><td>" +data[i].Price+" won</td></tr> \
+                </table> \
+            </td> \
+        </tr>";
+        found = 1;
+        count++;
+      }
+    }
+    if (found == 0) {
+      content = "No such item.";
+    }
+    document.getElementsByClassName("rank")[0].innerHTML = content; //rank div안에 넣기
+    $('.wrapper_search').addClass('on');
+    $('.wrapper').hide();
+    var nav_bar = document.getElementsByClassName('subt')[0];
+    nav_bar.innerHTML = "<a href="#" onclick='searchClose();'>Back</a><span> Search: '"+key+"'</span>";
+    sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);
+  });
+
+}
+function searchClose(){
+  $('.wrapper_search').removeClass('on');
+  $('.wrapper').show();
+}

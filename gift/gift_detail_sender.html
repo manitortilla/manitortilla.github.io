@@ -44,7 +44,7 @@
         </div>
 
         <div class="item main">
-            
+
            <div class="searcharea">
               <input class="search" type="text" placeholder="Search the gift"></input>
               <button class="searchbtn"type="submit">Search</button>
@@ -61,21 +61,20 @@
               <table>
                   <tr>
                       <td>
-                        <a href="gift_category.html">Category</a>
+                        <a href="gift_category.html"><b>Category</b></a>
                         <span>  >  </span>
-                        <a id="category_title" ></a>
+                        <a id="category_title" ><b>category title</b></a>
                         <span>  > </span>
+                        <b class='product_name'>product name</b>
                       </td>
-                  </tr>
-                  <tr>
-                      <td> <p class='product_name'></p></td>
-                  </tr>
               </table>
 
-           
-          </div>
 
-          <div class="wrap_table">
+          </div>
+          <div class='title_product_name_wrapper' >
+              <b class='product_name' id='title_product_name'>name</b>
+          </div>
+          <div class="wrapper">
             <table>
                 <tr>
                     <td class='product_layout_left'>
@@ -110,8 +109,14 @@
             <div class='product_detail'></div>
           </div>
 
+          <div class="wrapper_search" >
+              <div class="wrapper_rank">
+                  <span style="font-size: 25px; font-weight: bold;">Search results</span>
+                  <table class="rank" style="font-size: 20px;">
+                  </table>
+              </div>
+          </div>
 
-            
 
             <div id='pop'>
                 <div>
@@ -125,6 +130,7 @@
     </div>
 
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
@@ -147,5 +153,6 @@
         firebase.initializeApp(firebaseConfig);
       }
 </script>
+
 <script src="gift_detail_sender.js"></script>
 </html>
