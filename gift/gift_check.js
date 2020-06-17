@@ -66,7 +66,7 @@ $('.product_rcbtn').on('click',function(){
     $(".giftcontent").children('.on').removeClass('on');
     
     var idx = $('.product_rcbtn').index(this);
-    var icon = document.getElementsByClassName('gift').eq(idx);
+    var icon = document.getElementsByClassName('gift')[idx];
     if (icon.hasClass('new')){ //if it is a new letter, update as read
         icon.removeClass(' new');
         icon.addClass(' old');
