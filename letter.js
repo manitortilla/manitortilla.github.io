@@ -56,7 +56,7 @@ $('#closebtn').on('click',function(){
   $('#pop').hide();
 });
 $('#undobtn').on('click', function(){
-  document.getElementsByClassName('popcontent')[0].innerHTML = "Undo sending";
+  document.getElementsByClassName('popcontent')[0].innerHTML = "The letter is cancled.";
   $('.buttonwrap').hide();
 });
 
