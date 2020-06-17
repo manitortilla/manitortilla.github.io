@@ -214,12 +214,6 @@ body {
   margin: 5px;
 }
 
-.wrapper {
-    display : grid;
-    grid-template-columns: 1fr 1fr;
-    padding : 20px;
-}
-
 .wrapper_search {
     display : none;
     grid-template-columns: 1fr 1fr;
