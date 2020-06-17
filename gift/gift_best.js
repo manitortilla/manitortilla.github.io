@@ -28,9 +28,14 @@ function authStateObserver(user) {
 
 getBestItem(); //always load items;
 function getBestItem(){
+  var title = document.getElementById('best_title');
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
   var price = document.getElementsByClassName("product_detail");
+
+  title.innerHTML = 'Best Seller';
+  var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
+  sessionStorage.setItem("Nav_parent", nav_parent);
 
   var content = "";
   return firebase.database().ref().once('value').then(function(snapshot) {
@@ -55,9 +60,14 @@ function getBestItem(){
 }
 
 function getLowItem(){
+  var title = document.getElementById('best_title');
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
   var price = document.getElementsByClassName("product_detail");
+
+  title.innerHTML = 'Price low to high';
+  var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
+  sessionStorage.setItem("Nav_parent", nav_parent);
 
   var content = "";
   return firebase.database().ref().orderByChild('Price').limitToFirst(10).once('value').then(function(snapshot) {
@@ -83,9 +93,14 @@ function getLowItem(){
 }
 
 function getHighItem(){
+  var title = document.getElementById('best_title');
   var img = document.getElementsByClassName("product_img");
   var name = document.getElementsByClassName("product_name");
   var price = document.getElementsByClassName("product_detail");
+
+  title.innerHTML = 'Price high to low';
+  var nav_parent = document.getElementsByClassName("subt")[0].innerHTML;
+  sessionStorage.setItem("Nav_parent", nav_parent);
 
   var content = "";
 

@@ -6,7 +6,7 @@ body {
     margin-top: 5em;
 }
 
-.container {  
+.container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 100px minmax(800px, auto);
@@ -165,16 +165,29 @@ body {
     font-weight: bold;
     width : 200px;
 }
-  
+
   /* Change background color of buttons on hover */
 .tab button:hover {
     background: #afadd2 ;
     font-style: italic;
 }
-  
+
 #tab_on {
     background :  #5e5aa4;
     color: white;
+}
+.subt {
+  display: flex;
+  background-color: #afadd2;
+  margin-top: 20px;
+}
+
+.subt a,span {
+  color: white;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
 }
 
 .wrapper_rank {
@@ -190,13 +203,13 @@ body {
     font-size: 15px;
     border: none;
   }
-  
+
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
@@ -206,7 +219,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
+
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
@@ -215,13 +228,13 @@ body {
     text-decoration: none;
     display: block;
   }
-  
+
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #ddd;}
-  
+
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
-  
+
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #5e5aa4;}
 
