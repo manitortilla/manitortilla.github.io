@@ -42,13 +42,10 @@ $('.product_buybtn').on('click', function(){
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
-$('#closebtn').on('click',function(){
-  $('#pop').hide();
-});
 $('#submitbtn').on('click', function(){
   document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
   $('.wrappercard').hide();
-  $('.buttonwrap').hide();
+  $(this).hide();
 });
 
 
