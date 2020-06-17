@@ -283,15 +283,23 @@ body {
     text-align: right;
 }
 
+.wrapper_rank {
+    font-size: 30px;
+    padding : 10px;
+    width: 900px;
+}
 
 .rank{
     width: inherit;
     margin: 2%;
     font-family: "Source Sans Pro", sans-serif;
-}
+    border-collapse : separate;
+    border-spacing: 30px
+   }
 
 .rank_tr{
     margin : 20px;
+    padding : 10px;
     cursor: pointer;
 }
 
@@ -299,25 +307,31 @@ body {
     font-size : 25px;
     text-align: center;
     padding : 5px;
+    font-weight: bold;
 }
 
 .product_img {
-    height : 150px;
+    width: 160px;
+    height : 160px;
     text-align: center;
     padding : 5px;
 }
 
 .product_img img {
-    height : 150px;
-    width : auto;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 .product_info {
-    padding: 5px;
+    border-collapse: separate;
+    border-spacing: 5px;
 }
 
 .product_name {
-    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
     padding : 5px;
 }
 
