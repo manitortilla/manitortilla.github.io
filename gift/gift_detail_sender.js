@@ -48,7 +48,6 @@ function getProduct(Product_no){
 
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
-  var name1 = document.getElementsByClassName("product_name")[1];
   var img = document.getElementsByClassName("product_img")[0];
   var price = document.getElementsByClassName("product_price")[0];
   var detail = document.getElementsByClassName("product_detail")[0];
@@ -56,7 +55,7 @@ function getProduct(Product_no){
   return firebase.database().ref(Product_no).once('value').then(function(snapshot) {
     var data = snapshot.val(); //불러온 정보(snapshot)을 javascript로 사용할 수 있게 변경
 
-    name1.innerHTML = name2.innerHTML = name3.innerHTML = data.Name; //상품명
+    name1.innerHTML = name2.innerHTML = data.Name; //상품명
     img.innerHTML = "<img src= \"" + data.Img + "\">";  //이미지
     price.innerHTML = "Price : " + data.Price + " won";
     detail.innerHTML = data.Info;
