@@ -179,6 +179,7 @@ body {
 .subt {
   display: flex;
   background-color: #afadd2;
+  margin-top: 20px;
 }
 
 .subt a,span {
