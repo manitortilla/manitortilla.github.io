@@ -341,7 +341,7 @@ margin-top:20px;
 }
 
 .userinput {
-    width: 80%;
+    width: 50px;
     height: 40px;
     background: #e6e6e6;
     font-family: 'Montserrat', sans-serif;
@@ -362,17 +362,6 @@ margin-top:20px;
     color:white;
 }
 
-
-  #closebtn {
-      border-radius:5px;
-      cursor:pointer;
-      margin-right: 15px;
-      padding: 10px;
-      border: 0;
-      background-color: #e6e6e6;
-      font-size: 20px;
-      font-family: "Montserrat";
-  }
   #submitbtn {
       border-radius:5px;
       cursor:pointer;
