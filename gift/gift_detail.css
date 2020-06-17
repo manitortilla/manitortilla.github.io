@@ -245,6 +245,17 @@ body {
     padding-bottom: 10px;
 }
 
+.title_product_name_wrapper{
+    padding:3%;
+    padding-top:2%;
+    padding-bottom:2%;
+}
+
+#title_product_name{
+    color : black;
+    font-size: 35px;
+}
+
 .product_detail{
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
