@@ -224,7 +224,7 @@ body {
 
 .wrapper_rank {
     font-size: 30px;
-    padding : 5%;
+    padding : 10px;
 }
 
 .rank{
@@ -249,22 +249,27 @@ body {
 }
 
 .product_img {
-    height : 150px;
+    width: 160px;
+    height : 160px;
     text-align: center;
     padding : 5px;
 }
 
 .product_img img {
-    height : 150px;
-    width : auto;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 .product_info {
-    padding: 5px;
+    border-collapse: separate;
+    border-spacing: 5px;
 }
 
 .product_name {
-    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
     padding : 5px;
 }
 
