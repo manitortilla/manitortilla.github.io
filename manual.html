@@ -40,7 +40,7 @@
       <div class="item header info">
         <table class="user_info">
           <tr>
-            <td colspan="3" id="userID">user ID</td>
+            <td colspan="3" id="userID"></td>
           </tr>
           <tr>
             <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
@@ -59,7 +59,7 @@
           <br>
           <div class="text">
             <p class="greet">Welcome to MOST</p>
-            <p class="text">Enjoy your Manito game with your friends! MOSt will be your friendly host.</p>
+            <p class="text">Enjoy your Manito game with your friends! MOST will be your friendly host.</p>
             <p> <img src="https://media.gettyimages.com/photos/girlfriends-hanging-out-in-the-city-picture-id826974998?s=2048x2048" alt=""></p>
           </div>
         </div> 
@@ -208,6 +208,30 @@
       <button id="myBtn1" onclick="TopMove()">Go to top</button>
       <br>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+
+    <script>
+        if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
+    var firebaseConfig = {
+      "projectId": "most-hciproject",
+      "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
+      "databaseURL": "https://most-hciproject.firebaseio.com",
+      "storageBucket": "most-hciproject.appspot.com",
+      "locationId": "us-central",
+      "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
+      "authDomain": "most-hciproject.firebaseapp.com",
+      "messagingSenderId": "1096383375744",
+      "measurementId": "G-D34DTCWS6S"
+    };
+    if (firebaseConfig) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    </script>
     </body> 
     </html>
 

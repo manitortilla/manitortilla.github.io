@@ -181,6 +181,11 @@ body {
     padding : 20px;
 }
 
+.wrapper_rank {
+    font-size: 30px;
+    padding : 5%;
+}
+
 .brand_menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
