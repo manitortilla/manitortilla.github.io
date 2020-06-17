@@ -45,7 +45,7 @@ $('#closebtn').on('click',function(){
 });
 $('#submitbtn').on('click', function(){
   document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
-  $('.card').hide();
+  $('.wrappercard').hide();
   $('.buttonwrap').hide();
 });
 
