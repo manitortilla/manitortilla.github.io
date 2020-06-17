@@ -328,17 +328,18 @@ margin-top:20px;
 #pop{
     display: none;
     padding: 3%;
-    width: 400px;
-    height: 100px;
-    background-color: #3d3d3d;
-    color:#fff;
+    width: 500px;
+    height: 250px;
+    background-color: #ffffff;
+    color:black;
     position: absolute;
-    top:30%;
+    top:85%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     text-align:center;
     border:2px solid #000;
 }
+
 .userinput {
     width: 80%;
     height: 40px;
