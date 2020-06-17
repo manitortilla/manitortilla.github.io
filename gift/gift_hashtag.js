@@ -122,10 +122,12 @@ function gedSearchedItem(key){
     $('.wrapper_search').addClass('on');
     $('.wrapper').hide();
     var nav_bar = document.getElementsByClassName('subt')[0];
-    nav_bar.innerHTML = "<a href='javascript:history.back()'>Back</a><span> Search: '"+key+"'</span>";
+    nav_bar.innerHTML = "<a onclick='searchClose();'>Back</a><span> Search: '"+key+"'</span>";
     sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);
-
-
   });
 
+}
+function searchClose(){
+  $('.wrapper_search').removeClass('on');
+  $('.wrapper').show();
 }
