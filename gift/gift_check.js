@@ -58,24 +58,26 @@ getReceived();
 
 // when receive button is clicked, confirm message shown, then the button become inactive
 $('.product_rcbtn').on('click',function(){
+ var idx = $('.product_rcbtn').index(this);
+ if ( document.getElementsByClassName('userinput')[idx].value != "") {
+   var result = confirm("Is the address written correctly?");
+   if(result){
+     $('#pop').show();
+     $(this).addClass(' off');
+     $(this).attr('disabled', true);
+     $('.modal').hide();
+     $(".giftcontent").children('.on').removeClass('on');
 
-  var result = confirm("Is the address written correctly?");
-  if(result){
-    $('#pop').show();
-    $(this).addClass(' off');
-    $(this).attr('disabled', true);
-    $('.modal').hide();
-    $(".giftcontent").children('.on').removeClass('on');
-    
-    var idx = $('.product_rcbtn').index(this);
-    var icon = $('.gift').eq(idx);
-    if (icon.hasClass('new')){ //if it is a new letter, update as read
-        icon.removeClass(' new');
-        icon.addClass(' old');
-        icon.html('<i class="fas fa-box-open"></i>');
-    }
-  }
-  else{
+     var icon = $('.gift').eq(idx);
+     if (icon.hasClass('new')){ //if it is a new letter, update as read
+         icon.removeClass(' new');
+         icon.addClass(' old');
+         icon.html('<i class="fas fa-box-open"></i>');
+     }
+   }
+ }
+ else{
+  alert("Please type your address.");
   };
 });
 
