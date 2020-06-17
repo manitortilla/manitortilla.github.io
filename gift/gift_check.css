@@ -397,6 +397,7 @@ body {
     border-radius: 20px;
     background-color: gray;
     cursor: pointer;
+    border: none;
 }
 
 #pop{
