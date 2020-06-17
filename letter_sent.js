@@ -52,7 +52,9 @@ $('.sidebarbtn').on('click', function(){
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
-
+$('#closebtn').on('click',function(){
+  $('#pop').hide();
+});
 $('#undobtn').on('click', function(){
   document.getElementsByClassName('popcontent').innerHTML = "Undo sending";
 });
