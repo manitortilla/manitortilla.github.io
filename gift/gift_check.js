@@ -58,10 +58,12 @@ getReceived();
 
 // when receive button is clicked, confirm message shown, then the button become inactive
 $('.product_rcbtn').on('click',function(){
+
   var result = confirm("Is the address written correctly?");
   if(result){
     $('#pop').show();
     $(this).addClass(' off');
+    $(this).attr('disabled', true);
     $('.modal').hide();
     $(".giftcontent").children('.on').removeClass('on');
     
