@@ -35,6 +35,8 @@ function authStateObserver(user) {
 
 //pop x button clicked
 $('.product_buybtn').on('click', function(){
+   $('.wrappercard').show();
+   $('.buttonwrap').show();
   $('#pop').show();
 });
 $('#popclose').on('click',function(){
