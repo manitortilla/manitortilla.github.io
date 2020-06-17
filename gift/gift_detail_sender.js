@@ -35,25 +35,23 @@ function authStateObserver(user) {
 
 //pop x button clicked
 $('.product_buybtn').on('click', function(){
+   $('.wrappercard').show();
+   $('.buttonwrap').show();
   $('#pop').show();
 });
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
-$('#closebtn').on('click',function(){
-  $('#pop').hide();
-});
 $('#submitbtn').on('click', function(){
   document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
-  $('.card').hide();
-  $('.buttonwrap').hide();
+  $('.wrappercard').hide();
+  $(this).hide();
 });
 
 
 function getProduct(Product_no){
   document.getElementsByClassName("subt")[0].innerHTML =
-      sessionStorage.Nav_parent + "<span>  > </span><p class='product_name'></p>"; //naviagation bar
-
+     sessionStorage.Nav_parent + "<span>  > </span><span class='product_name'></span>"; //naviagation bar
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
   var name3 = document.getElementsByClassName("product_name")[1];
