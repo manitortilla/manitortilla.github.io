@@ -92,9 +92,9 @@ function getSent(){
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID)
      .collection('letters').orderBy('servertime','desc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
      .onSnapshot(function(snapshot) {
-    snapshot.docChanges().forEach(function( doc) {
+    snapshot.docChanges().forEach(function(change) {
   
-        var data = doc.data();
+        var data = change.doc.data();
 
         if (doc.exists && data.userID == getUserUid()){ //pick only letters I sent
           letter_button  +=
