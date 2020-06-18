@@ -96,7 +96,7 @@ function getSent(){
   
         var data = change.doc.data();
 
-        if (doc.exists && data.userID == getUserUid()){ //pick only letters I sent
+        if (change.doc.exists && data.userID == getUserUid()){ //pick only letters I sent
           letter_button  +=
           "<div><button class='letter sent' id='" + count
           + "'><i class='fas fa-sticky-note'></i></button></div>"; //button ID->count
@@ -106,7 +106,7 @@ function getSent(){
 
           count++;
         }
-        else if (!doc.exists){
+        else if (!change.doc.exists){
           letter_button += "<p> You have not sent any letter yet.</p>";
         }
     });
