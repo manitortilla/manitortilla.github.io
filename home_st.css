@@ -178,3 +178,15 @@ body {
     font-size: 15px;
     color: royalblue;
 }
+
+.footer {
+    width:100%;
+    height: 100px;
+    bottom:0;
+    padding-top: 50px;
+    background:#afadd2;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+ }
