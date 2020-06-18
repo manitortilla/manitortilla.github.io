@@ -498,6 +498,7 @@ body {
     height: auto;
     max-width:70px;
     max-height:70px;
+    border-radius: 35px;
     border-color: black;
     vertical-align: middle;
 }
