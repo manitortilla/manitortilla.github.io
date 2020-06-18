@@ -45,6 +45,10 @@ $('.sidebarbtn').on('click', function(){
   var idx = $('.sidebarbtn').index(this);
   $('.detail').hide(); //style="display:none"
   $('.detail').eq(idx).show();
+ 
+ if (idx==0){ // 편지함 버튼 눌렸을 때
+  location.href = location.href; //새로고침
+ }
 
 });
 
