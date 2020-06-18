@@ -37,13 +37,15 @@ function authStateObserver(user) {
 $('.product_buybtn').on('click', function(){
    $('.wrappercard').show();
    $('.buttonwrap').show();
+  $('#submitbtn').show();
   $('#pop').show();
 });
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
 $('#submitbtn').on('click', function(){
-  document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
+  document.getElementsByClassName('popcontent')[0].innerHTML = 
+   "Your purchase is successuflly done.<br>If you have any question,<br><a href='../qnaboard.html'>Contact us</a>";
   $('.wrappercard').hide();
   $(this).hide();
 });
