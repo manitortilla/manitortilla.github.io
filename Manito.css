@@ -538,26 +538,15 @@ body {
 }
 .resultblock_hit img{
     vertical-align: middle;
-<<<<<<< HEAD
-    width: 100px;
-    height: 100px;
-}
-
-=======
     width: 70px;
     height: 70px;
 }
->>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
 
 #logoutbtn{
     text-align: right;
 }
 
 .table_head {
-<<<<<<< HEAD
-    font-family: "Anton", ;
-}
-=======
     font-family: "Montserrat", sans-serif ;
 }
 
@@ -591,4 +580,3 @@ body {
     color: royalblue;
     font-size: 20px;
 }
->>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
