@@ -33,12 +33,20 @@ function authStateObserver(user) {
 }
 
 
+//pop x button clicked
 $('.product_buybtn').on('click', function(){
-    alert("The present is sent successfully!");
+  $('#pop').show();
 });
-
-$('#close').on('click',function(){
-    $('#pop').hide();
+$('#popclose').on('click',function(){
+  $('#pop').hide();
+});
+$('#closebtn').on('click',function(){
+  $('#pop').hide();
+});
+$('#submitbtn').on('click', function(){
+  document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
+  $('.card').hide();
+  $('.buttonwrap').hide();
 });
 
 

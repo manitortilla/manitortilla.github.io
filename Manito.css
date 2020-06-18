@@ -46,7 +46,7 @@ body {
     grid-column: 2 / span 4;
     grid-row: 2;
     padding : 2em;
-    
+
 }
 
 .header {
@@ -110,11 +110,11 @@ body {
     grid-auto-rows: auto auto;
     min-height: 1000px;
    }
- 
+
 .sidebar {
     float: left;
     border-right : solid;
-    
+
     padding : 5%;
 }
 
@@ -199,7 +199,7 @@ body {
     text-align: center;
 }
 
-.userprofile empty svg{ 
+.userprofile empty svg{
     position: relative;
     border: solid;
     top: 0;
@@ -218,7 +218,7 @@ body {
     width : 25%;
     height : 40%;
     text-align: center;
-    
+
 }
 .guessingarrowwrapper svg{
     vertical-align: middle;
@@ -248,7 +248,7 @@ body {
     margin: 3%;
     display: flow-root;
     text-align: center;
-    
+
 }
 
 .guessbtn.posi{
@@ -474,17 +474,17 @@ body {
     height:100px;
     border-radius: 55px;
     border-color: black;
-    vertical-align: middle;    
+    vertical-align: middle;
 }
 
 /* Inside Guess */
 .resultblock_guess{
-    width: 30%;    
+    width: 30%;
     padding-top:0;
     padding-bottom:0;
     display: table-cell;
-    border-right:solid; 
-    border-right-color:   #ffffff; 
+    border-right:solid;
+    border-right-color:   #ffffff;
 }
 
 /* small profile related style*/
@@ -512,10 +512,6 @@ body {
     height: 100px;
 }
 
-.user_info{
-    text-align: left;
-    font-size: 16px;
-}
 
 #logoutbtn{
     text-align: right;
