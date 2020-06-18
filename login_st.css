@@ -28,12 +28,14 @@ body {
 
 /*로고*/
 .logo{
-  width: 70%;
   text-align: center;
   padding-top: 20%;
   padding-bottom: 10%;
 }
+.logo img{
+    width: 70%;
 
+}
 /*인풋- 아이디, 비밀번호*/
 .wrap-input{
     display: flex;
