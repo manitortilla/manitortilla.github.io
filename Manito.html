@@ -123,15 +123,24 @@
 
             </div>
             </div>
-
+            
             <!--result menu-->
             <div id='manitoresult'  class="detail">
                 <div class="manitomain">
+                    
+                    
                     <h2>Result</h2>
-                    <br><br>
-
+                    <div class='alerevealday'>
+                        <span>Your reveal day is</span>
+                        <span id='revealdate'>2020-06-25</span>
+                        <br>
+                        <span>This page will be active after</span>
+                        <span id='remainday'>7</span>
+                        <span>days.</span>
+                    </div>
+                    <br> <br>
                     <div class="resulttable">
-                        <!-- thead -->
+                        
                         <div class="titem t_head">
                             User
                         </div>
@@ -145,18 +154,18 @@
                             Result
                         </div>
                     
-                        <!-- tbody of row1 -->
+                    
                         <div class="titem row1">
                             <div class="resultblock_name">
                                 <img id="userpic2" src="">
-                                <p id="userID3">RTK</p>
+                                <span id="userID3">RTK</span>
                             </div>
                         </div>
                         <div class="titem row1">
                             <div class="resultblock_guess">
                                 <div class=smallprofile>
                                     <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <p>Yellow</p>
+                                    <span>Yellow</span>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +173,7 @@
                             <div class="resultblock_manito">
                                 <div class=smallprofile>
                                     <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <p>Yellow</p>
+                                    <span>Yellow</span>
                                 </div>
                             </div>
                         </div>
@@ -174,26 +183,26 @@
                             </div>
                         </div>
                     
-                    
+                
                         <div class="titem row2">
                             <div class="resultblock_name">
                                 <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
-                                <p> Blue</p>
+                                <span> Blue</span>
                             </div>
                         </div>
                         <div class="titem row2">
                             <div class="resultblock_guess">
                                 <div class=smallprofile>
-                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <p>Yellow</p>
+                                    <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
+                                    <span>Green</span>
                                 </div>
                             </div>
                         </div>
                         <div class="titem row2">
                             <div class="resultblock_manito">
                                 <div class=smallprofile>
-                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <p>Yellow</p>
+                                    <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
+                                    <span>Green</span>
                                 </div>
                             </div>
                         </div>
@@ -202,18 +211,19 @@
                                 <img src='check.png'>
                             </div>
                         </div>
-                    
+                        
+                       
                         <div class="titem row3">
                             <div class='resultblock_name'>
                                 <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
-                                <p>Green</p>
+                                <span>Green</span>
                             </div>
                         </div>
                         <div class="titem row3">
                             <div class='resultblock_guess'>
                                 <div class=smallprofile>
                                     <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <p>Green</p>
+                                    <span>Yello</span>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +231,7 @@
                             <div class='resultblock_manito'>
                                 <div class=smallprofile>
                                     <img id="userpic3" src="">
-                                    <p id="userID4"></p>
+                                    <span id="userID4"></span>
                                 </div>
                             </div>
                         </div>
@@ -230,18 +240,19 @@
                                 <img src='xmark.png'>
                             </div>
                         </div>
-                    
+                        
+                       
                         <div class="titem row4">
                             <div class='resultblock_name'>
                                 <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                <p>Yellow</p>
+                                <span>Yellow</span>
                             </div>
                         </div>
                         <div class="titem row4">
                             <div class='resultblock_guess'>
                                 <div class=smallprofile>
                                     <img id="userpic4" src="">
-                                    <p id="userID5"></p>
+                                    <span id="userID5"></span>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +260,7 @@
                             <div class='resultblock_manito'>
                                 <div class=smallprofile>
                                     <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
-                                    <p>Blue</p>
+                                    <span>Blue</span>
                                 </div>
                             </div>
                         </div>
@@ -259,15 +270,20 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
 
+        <div class="item footer">
+            If there is any problem, <a href="qnaboard.html">contact us</a>.
+            <br>
+            email : admin@MOST.com
+        </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
+    
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>

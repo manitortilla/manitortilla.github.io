@@ -11,172 +11,179 @@
 <body>
     <div class="container">
 
-      <div class="item header logo">
-        <a class="home-link" href="../home.html"><img src="../logo.png" alt="logo" style="max-width:100%;"/></a>
-    </div>
-
-    <div class="item header nav">
-        <div class="navbtn"><a class="nav-link" id="nav_letter" href="../letter.html">LETTER</a></div>
-        <div class="active"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
-        <div class="navbtn"><a class="nav-link" id="nav_manito" href="../Manito.html">MANITO</a></div>
-    </div>
-
-    <div class="item header info">
-      <table class="user_info">
-        <tr>
-            <td colspan="3" id="userID"></td>
-        </tr>
-        <tr>
-            <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
-        </tr>
-     </table>
-    </div>
-
-
-    <div class="item sidebar">
-         <div class="func">
-            <button class="sidebarbtn" onClick="location.href='gift_send.html'"><i class="fas fa-gift"></i>Send a gift</button>
+        <div class="item header logo">
+            <a class="home-link" href="../home.html"><img src="../logo.png" alt="logo" style="max-width:100%;"/></a>
         </div>
-        <div class="func">
-            <button class="sidebarbtn on" onClick="location.href='gift_check.html'"><i class="fas fa-box-open"></i>Receive a gift</button>
+
+        <div class="item header nav">
+            <div class="navbtn"><a class="nav-link" id="nav_letter" href="../letter.html">LETTER</a></div>
+            <div class="active"><a class="nav-link" id="nav_gift" href="gift_send.html">GIFT</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_manito" href="../Manito.html">MANITO</a></div>
         </div>
-    </div>
 
-    <div class="item content">
-      <div class="detail on">
-          <h3 style="font-size:24px;">My Gift box<br><br></h3>
-          <div class="wrapper">
-              <div class="giftbox">
-                  <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
-                  <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
-                  <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
-              </div>
-          </div>
-
-          <div class="modal" id='myModal'> <!--modal background-->
-              <div class="giftcontent">
-                <span class="close" id="giftclose">&times;</span>
-                <!-- button1 -->
-                <div class="giftdisplay">
-                    <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
-                  <table>
-                      <tr>
-                          <td class='product_layout_left'>
-                              <div class='product_img'>
-                                  <img src='https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[107051]_20150804111927377.jpg'>
-                              </div>
-                          </td>
-                          <td class='product_layout_right'>
-                              <div class="card">
-                                  <table class='gift_info'>
-                                      <tr>
-                                          <td class='gift_attr'>Receiver</td>
-                                          <td class='gift_value' id="userID2"></td>
-                                      </tr>
-                                      <tr>
-                                        <td class='gift_attr'>Address</td>
-                                        <td class='gift_value'><textarea  padding: 5px; rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
-                                      </tr>
-                                      <tr>
-                                          <td class='gift_attr'>Gift</td>
-                                          <td class='gift_value'>Starbucks Cool Lime Starbucks Fizzio™ - Tall size</td>
-                                      </tr>
-                                  </table>
-                                  <div class='product_detail'>Green bean extract is added. (It is a carbonated drink rich in caffeine)</div>
-                              </div>
-
-                          </td>
-                      </tr>
-                  </table>
-                  <p class='notion'>Check your information once again before click the Receive button.</p>
-                    <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
-                  </div>
+        <div class="item header info">
+        <table class="user_info">
+            <tr>
+                <td colspan="3" id="userID"></td>
+            </tr>
+            <tr>
+                <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
+            </tr>
+        </table>
+        </div>
 
 
-                  <!-- button2 -->
-                  <div class="giftdisplay">
-                    <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
-                    <br>
-                    <table>
-                        <tr>
-                            <td class='product_layout_left'>
-                                <div class='product_img'>
-                                    <img src='http://www.bhc.co.kr/upload/bhc/menu/ck20150130_470_v.jpg'>
-                                </div>
-                            </td>
-                            <td class='product_layout_right'>
-                                <div class="card">
-                                    <table class='gift_info'>
-                                        <tr>
-                                            <td class='gift_attr'>Receiver</td>
-                                            <td class='gift_value' id="userID3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class='gift_attr'>Address</td>
-                                            <td class='gift_value'><textarea style="overflow-y: scroll; padding: 5px;" rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
-                                          </tr>
-                                        <tr>
-                                            <td class='gift_attr'>Gift</td>
-                                            <td class='gift_value'>BHC - Bboorinkle</td>
-                                        </tr>
-                                    </table>
-                                    <div class='product_detail'>Cheese Vegetable Flavor Seasoning / Magic Hot Seasoning Chicken</div>
-                                </div>
+        <div class="item sidebar">
+            <div class="func">
+                <button class="sidebarbtn" onClick="location.href='gift_send.html'"><i class="fas fa-gift"></i>Send a gift</button>
+            </div>
+            <div class="func">
+                <button class="sidebarbtn on" onClick="location.href='gift_check.html'"><i class="fas fa-box-open"></i>Receive a gift</button>
+            </div>
+        </div>
 
-                            </td>
-                        </tr>
-                    </table>
-                    <p class='notion'>Check your information once again before click the Receive button.</p>
-                                <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
+        <div class="item content">
+            <div class="detail on">
+                <h3 style="font-size:24px;">My Gift box<br><br></h3>
+                <div class="wrapper">
+                    <div class="giftbox">
+                        <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
+                        <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
+                        <div><button class="gift new"><i class="fas fa-gift"></i></button></div>
                     </div>
+                </div>
+
+                <div class="modal" id='myModal'> <!--modal background-->
+                    <div class="giftcontent">
+                     <span class="close" id="giftclose">&times;</span>
+                        <!-- button1 -->
+                        <div class="giftdisplay">
+                            <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
+                            <table>
+                                <tr>
+                                    <td class='product_layout_left'>
+                                        <div class='product_img'>
+                                            <img src='https://image.istarbucks.co.kr/upload/store/skuimg/2015/08/[107051]_20150804111927377.jpg'>
+                                        </div>
+                                    </td>
+                                    <td class='product_layout_right'>
+                                        <div class="card">
+                                            <table class='gift_info'>
+                                                <tr>
+                                                    <td class='gift_attr'>Receiver</td>
+                                                    <td class='gift_value' id="userID2"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='gift_attr'>Address</td>
+                                                    <td class='gift_value'><textarea  padding: 5px; rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='gift_attr'>Gift</td>
+                                                    <td class='gift_value'>Starbucks Cool Lime Starbucks Fizzio™ - Tall size</td>
+                                                </tr>
+                                            </table>
+                                            <div class='product_detail'>Green bean extract is added. (It is a carbonated drink rich in caffeine)</div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        <p class='notion'>Check your information once again before click the Receive button.</p>
+                            <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
+                        </div>
 
 
-                    <!-- button3 -->
-                    <div class="giftdisplay">
-                        <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
-                      <table>
-                          <tr>
-                              <td class='product_layout_left'>
-                                  <div class='product_img'>
-                                      <img src='https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/71d59f0ea683487e829eaaab00c86bb4_9366/Must_Haves_Stacked_Logo_Dress_Black_FL4092_21_model.jpg'>
-                                  </div>
-                              </td>
-                              <td class='product_layout_right'>
-                                  <div class="card">
-                                      <table class='gift_info'>
-                                          <tr>
-                                              <td class='gift_attr'>Receiver</td>
-                                              <td class='gift_value' id="userID4"></td>
-                                          </tr>
-                                          <tr>
-                                            <td class='gift_attr'>Address</td>
-                                            <td class='gift_value'><textarea  padding: 5px; rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
-                                        </tr>
-                                          <tr>
-                                              <td class='gift_attr'>Gift</td>
-                                              <td class='gift_value'>adidas Must Haves Stacked Logo Dress - Black</td>
-                                          </tr>
-                                      </table>
-                                      <div class='product_detail'>A SPORTY DRESS WITH A CASUAL, LOOSE SHAPE.</div>
-                                  </div>
+                        <!-- button2 -->
+                        <div class="giftdisplay">
+                            <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td class='product_layout_left'>
+                                        <div class='product_img'>
+                                            <img src='http://www.bhc.co.kr/upload/bhc/menu/ck20150130_470_v.jpg'>
+                                        </div>
+                                    </td>
+                                    <td class='product_layout_right'>
+                                        <div class="card">
+                                            <table class='gift_info'>
+                                                <tr>
+                                                    <td class='gift_attr'>Receiver</td>
+                                                    <td class='gift_value' id="userID3"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='gift_attr'>Address</td>
+                                                    <td class='gift_value'><textarea style="overflow-y: scroll; padding: 5px;" rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class='gift_attr'>Gift</td>
+                                                    <td class='gift_value'>BHC - Bboorinkle</td>
+                                                </tr>
+                                            </table>
+                                            <div class='product_detail'>Cheese Vegetable Flavor Seasoning / Magic Hot Seasoning Chicken</div>
+                                        </div>
 
-                              </td>
-                          </tr>
-                      </table>
-                      <p class='notion'>Check your information once again before click the Receive button.</p>
-                      <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class='notion'>Check your information once again before click the Receive button.</p>
+                                        <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
+                        </div>
+
+
+                        <!-- button3 -->
+                        <div class="giftdisplay">
+                            <b style="font-size: 22px; color: royalblue">Gift is arrived from your Manito!</b>
+                        <table>
+                            <tr>
+                                <td class='product_layout_left'>
+                                    <div class='product_img'>
+                                        <img src='https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/71d59f0ea683487e829eaaab00c86bb4_9366/Must_Haves_Stacked_Logo_Dress_Black_FL4092_21_model.jpg'>
+                                    </div>
+                                </td>
+                                <td class='product_layout_right'>
+                                    <div class="card">
+                                        <table class='gift_info'>
+                                            <tr>
+                                                <td class='gift_attr'>Receiver</td>
+                                                <td class='gift_value' id="userID4"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class='gift_attr'>Address</td>
+                                                <td class='gift_value'><textarea  padding: 5px; rows="3" style="padding:5px" class="userinput" type="text" placeholder="Type your address"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td class='gift_attr'>Gift</td>
+                                                <td class='gift_value'>adidas Must Haves Stacked Logo Dress - Black</td>
+                                            </tr>
+                                        </table>
+                                        <div class='product_detail'>A SPORTY DRESS WITH A CASUAL, LOOSE SHAPE.</div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <p class='notion'>Check your information once again before click the Receive button.</p>
+                        <div class='product_rcbtn_wrapper'><button class='product_rcbtn'>RECEIVE</button></div>
+                        </div>
+
                     </div>
+                </div>
 
+                <div id='pop'>
+                    <span class="close" id="popclose">&times;</span>
+                    <div style="font-size: 20px;">Received!<br>It will be delivered to your address.<br><br> For the detail information, <a href="../qnaboard.html">QnA board</a></div>
                 </div>
             </div>
+        </div>
 
-            <div id='pop'>
-                <span class="close" id="popclose">&times;</span>
-                <div style="font-size: 20px;">Received!<br>It will be delivered to your address.<br><br> For the detail information, <a href="../qnaboard.html">QnA board</a></div>
-            </div>
-      </div>
+        <div class="item footer">
+            If there is any problem, <a href="qnaboard.html">contact us</a>.
+            <br>
+            email : admin@MOST.com
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>

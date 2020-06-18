@@ -104,3 +104,14 @@ function searchClose(){
   $('.wrapper_search').removeClass('on');
   $('.wrapper').show();
 }
+
+$(document).ready(function(){
+  $('.search').keydown(function(key){
+    if (key.keyCode == 13){
+      var keyword = document.getElementsByClassName("search")[0];
+      var keyvalue = keyword.value;
+      gedSearchedItem(keyvalue);
+      keyword.value = ""; //clear
+    }
+  })
+})

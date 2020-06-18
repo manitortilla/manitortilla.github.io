@@ -10,13 +10,30 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 100px minmax(800px, auto);
+    grid-template-rows: 50px minmax(800px, auto) 100px;
     grid-gap: 3em 20px;
     justify-content: center;
     width : 80em;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
 }
+
+.item:nth-child(5) {
+    grid-column: 1 / span 5;
+    grid-row: 3;
+}
+
+.footer {
+    width:100%;
+    height: 100px;
+    bottom:0;
+    padding-top: 50px;
+    background:#afadd2;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+ }
 
 .item:nth-child(1) {
     grid-column: 1;
@@ -46,6 +63,24 @@ body {
     grid-row: 2;
     padding : 2em;
 }
+
+.item:nth-child(6) {
+    grid-column: 1 / span 5;
+    grid-row: 3;
+}
+
+
+.footer {
+    width:100%;
+    height: 100px;
+    bottom:0;
+    padding-top: 50px;
+    background:#afadd2;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+ }
 
 .header {
     text-align: center;
@@ -175,9 +210,10 @@ body {
 
 .faqlist {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    text-align: center;
+    text-align: left;
+    font-size:20px;
 }
 
 .faqbar{
@@ -185,15 +221,26 @@ body {
     height:100px;
     margin-top:0%;
     margin-bottom:0%;
+    border-top: solid;
+    border-bottom:solid;
+    border-color: gray;
 }
 
 .faqbar_num{
     width:10%;
+    padding-top: 20px;
+    padding-bottom:20px;
 }
 .faqbar_title{
     width:80%;
+    padding-top: 20px;
+    padding-bottom:20px;
 }
-
+.daqbar_date{
+    width:10%;
+    padding-top: 20px;
+    padding-bottom:20px;
+}
 
 /* The Modal (background) */
 .modal {
@@ -201,6 +248,7 @@ body {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 200px; /* Location of the box */
+  padding-left: 400px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -217,10 +265,11 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 40px;
+    padding-left: 40px;
     border: 1px solid #888;
     width: 600px;
     font-size: 20px;
-    }
+}
 
 /* The Close Button */
 .close {
@@ -237,20 +286,16 @@ body {
   cursor: pointer;
 }
 
-.letterdisplay {
-  display: none;
-}
-
-.letterdisplay.on {
-  display: block;
-  font-size: 20px;
-}
-
-#faq_display {
+#faq_question {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 3%;
+    
+}
+#faq_answer{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    padding: 3%;
 }
 
 .writing_qna {

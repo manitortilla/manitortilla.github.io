@@ -35,11 +35,18 @@ function authStateObserver(user) {
 
 //pop x button clicked
 $('.product_buybtn').on('click', function(){
+<<<<<<< HEAD
+=======
+   $('.wrappercard').show();
+   $('.buttonwrap').show();
+  $('#submitbtn').show();
+>>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
   $('#pop').show();
 });
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
+<<<<<<< HEAD
 $('#closebtn').on('click',function(){
   $('#pop').hide();
 });
@@ -47,13 +54,19 @@ $('#submitbtn').on('click', function(){
   document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
   $('.card').hide();
   $('.buttonwrap').hide();
+=======
+$('#submitbtn').on('click', function(){
+  document.getElementsByClassName('popcontent')[0].innerHTML = 
+   "Your purchase is successuflly done.<br>If you have any question,<br><a href='../qnaboard.html'>Contact us</a>";
+  $('.wrappercard').hide();
+  $(this).hide();
+>>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
 });
 
 
 function getProduct(Product_no){
   document.getElementsByClassName("subt")[0].innerHTML =
-      sessionStorage.Nav_parent + "<span>  > </span><p class='product_name'></p>"; //naviagation bar
-
+     sessionStorage.Nav_parent + "<span>  > </span><span class='product_name'></span>"; //naviagation bar
   var name1 = document.getElementsByClassName("product_name")[0];
   var name2 = document.getElementsByClassName("gift_value")[2];
   var name3 = document.getElementsByClassName("product_name")[1];
@@ -115,7 +128,7 @@ function gedSearchedItem(key){
     $('.wrapper_search').addClass('on');
     $('.wrapper').hide();
     var nav_bar = document.getElementsByClassName('subt')[0];
-    nav_bar.innerHTML = "<a href="#" onclick='searchClose();'>Back</a><span> Search: '"+key+"'</span>";
+    nav_bar.innerHTML = "<a href='#' onclick='searchClose();'>Back</a><span> Search: '"+key+"'</span>";
     sessionStorage.setItem("Nav_parent", nav_bar.innerHTML);
   });
 
