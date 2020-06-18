@@ -210,6 +210,7 @@ body {
 
 .faqlist {
     display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     text-align: center;
 
@@ -246,7 +247,7 @@ body {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 200px; /* Location of the box */
-  padding-left:200px;
+  padding-left: 400px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
