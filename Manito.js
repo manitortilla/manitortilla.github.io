@@ -35,13 +35,13 @@ function authStateObserver(user) {
    document.getElementById("userpic").setAttribute("src", url);
    document.getElementById("userpic2").setAttribute("src", url);
    document.getElementById("userpic3").setAttribute("src", url);
-   document.getElementById("userpic4").setAttribute("src", url);
+   //document.getElementById("userpic4").setAttribute("src", url);
    document.getElementById("userID").innerHTML = getUserName();
    document.getElementById("userID2").innerHTML = getUserName();
    document.getElementById("userID3").innerHTML = getUserName();
    document.getElementById("userID4").innerHTML = getUserName();
-   document.getElementById("userID5").innerHTML = getUserName();
-
+   //document.getElementById("userID5").innerHTML = getUserName();
+   //because it is not reveal day, removed user name and pic in guess columns.
  } else { // User is signed out!
    location.href="/index.html";
  }
