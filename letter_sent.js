@@ -89,8 +89,11 @@ function getSent(){
   var modal_content = "";
   var count = 0;
 
-  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').orderBy('servertime').get().then(function(snapshot){
-    snapshot.forEach(function(doc) {
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID)
+     .collection('letters').orderBy('servertime','desc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
+     .onSnapshot(function(snapshot) {
+    snapshot.docChanges().forEach(function( doc) {
+  
         var data = doc.data();
 
         if (doc.exists && data.userID == getUserUid()){ //pick only letters I sent
