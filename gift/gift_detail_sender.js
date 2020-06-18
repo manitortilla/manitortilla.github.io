@@ -35,32 +35,23 @@ function authStateObserver(user) {
 
 //pop x button clicked
 $('.product_buybtn').on('click', function(){
-<<<<<<< HEAD
-=======
    $('.wrappercard').show();
    $('.buttonwrap').show();
   $('#submitbtn').show();
->>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
   $('#pop').show();
 });
 $('#popclose').on('click',function(){
   $('#pop').hide();
 });
-<<<<<<< HEAD
 $('#closebtn').on('click',function(){
   $('#pop').hide();
 });
-$('#submitbtn').on('click', function(){
-  document.getElementsByClassName('popcontent')[0].innerHTML = "Your purchase is successuflly done.";
-  $('.card').hide();
-  $('.buttonwrap').hide();
-=======
+
 $('#submitbtn').on('click', function(){
   document.getElementsByClassName('popcontent')[0].innerHTML = 
    "Your purchase is successuflly done.<br>If you have any question,<br><a href='../qnaboard.html'>Contact us</a>";
   $('.wrappercard').hide();
   $(this).hide();
->>>>>>> cba2a92d76807563df9df3edf88b0ca2b81d7075
 });
 
 
