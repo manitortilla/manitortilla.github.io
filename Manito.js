@@ -155,4 +155,4 @@ function updateDday(){
     document.getElementById('remainday').innerHTML = diff;
   });
 }
-updateDay();
+updateDday();
