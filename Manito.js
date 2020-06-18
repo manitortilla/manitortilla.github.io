@@ -34,12 +34,12 @@ function authStateObserver(user) {
 
    document.getElementById("userpic").setAttribute("src", url);
    document.getElementById("userpic2").setAttribute("src", url);
-   document.getElementById("userpic3").setAttribute("src", url);
+   //document.getElementById("userpic3").setAttribute("src", url);
    //document.getElementById("userpic4").setAttribute("src", url);
    document.getElementById("userID").innerHTML = getUserName();
    document.getElementById("userID2").innerHTML = getUserName();
    document.getElementById("userID3").innerHTML = getUserName();
-   document.getElementById("userID4").innerHTML = getUserName();
+   //document.getElementById("userID4").innerHTML = getUserName();
    //document.getElementById("userID5").innerHTML = getUserName();
    //because it is not reveal day, removed user name and pic in guess columns.
  } else { // User is signed out!
@@ -81,8 +81,11 @@ $('#guessuserbutton1').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile1').html();
+        var small_photo =$('#guessprofile1').getElementsByClassName("pad2_img").html();
+        var small_name = $('#guessprofile1').getElementsByClassName("pad2_name").html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').html(small_photo+small_name);
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -98,8 +101,12 @@ $('#guessuserbutton2').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile2').html();
+        var small_photo =$('#guessprofile2').getElementsByClassName("pad2_img").html();
+        var small_name = $('#guessprofile2').getElementsByClassName("pad2_name").html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').html(small_photo+small_name);
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -114,8 +121,12 @@ $('#guessuserbutton3').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
     if(result){
         var photo_html = $('#guessprofile3').html();
+        var small_photo =$('#guessprofile3').getElementsByClassName("pad2_img").html();
+        var small_name = $('#guessprofile3').getElementsByClassName("pad2_name").html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').html(small_photo+small_name);
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
