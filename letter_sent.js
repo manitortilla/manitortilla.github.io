@@ -89,7 +89,7 @@ function getSent(){
   var modal_content = "";
   var count = 0;
 
-  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').get().then(function(snapshot){
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').orderBy('servertime').get().then(function(snapshot){
     snapshot.forEach(function(doc) {
         var data = doc.data();
 
@@ -146,7 +146,8 @@ function sendLetter() {
       userID: getUserUid(),
       contents: content,
       read: false,
-      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate()
+      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate(),
+      servertime: firebase.firestore.FieldValue.serverTimestamp()
     }).catch(function(error) {
       console.error('Error writing new message to database', error);
     });
