@@ -90,7 +90,7 @@ function getSent(){
   var count = 0;
 
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID)
-     .collection('letters').orderBy('servertime','asc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
+     .collection('letters').orderBy('servertime','desc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
      .onSnapshot(function(snapshot) {
     snapshot.docChanges().forEach(function(change) {
   
