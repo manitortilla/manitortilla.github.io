@@ -508,7 +508,12 @@ body {
 }
 
 /* Inside Result */
+.resultblock_manito{
+    display: none;
+}
+
 .resultblock_hit{
+    display:none;
     text-align: center;
     padding-top: 5px;
 }
@@ -539,3 +544,4 @@ body {
     font-size: 30px;
     text-align: center;
 }
+
