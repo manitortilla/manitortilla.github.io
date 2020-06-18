@@ -545,3 +545,19 @@ body {
     text-align: center;
 }
 
+.alerevealday{
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    border: solid 2px #afadd2;
+}
+
+#revealdate{
+    color: royalblue;
+    font-size: 20px;
+}
+
+#remainday{
+    color: royalblue;
+    font-size: 20px;
+}

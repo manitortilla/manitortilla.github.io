@@ -127,16 +127,17 @@
             <!--result menu-->
             <div id='manitoresult'  class="detail">
                 <div class="manitomain">
-                    <div class='RevealdayNotice'>
-                        <span>Your reveal day is</span>
-                        <span></span>
-                        <br>
-                        <span>This page will be active after</span>
-                        <span></span>
-                        <span>days.</span>
-                    </div>
+                    
                     
                     <h2>Result</h2>
+                    <div class='alerevealday'>
+                        <span>Your reveal day is</span>
+                        <span id='revealdate'>2020-06-25</span>
+                        <br>
+                        <span>This page will be active after</span>
+                        <span id='remainday'>7</span>
+                        <span>days.</span>
+                    </div>
                     <div class="ale">Your MANITO was
                         <span id="resultname">Yellow</span>
                         <span>!</span>
@@ -288,7 +289,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <!--
+    
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
@@ -309,7 +310,7 @@
     firebase.initializeApp(firebaseConfig);
   }
     </script>
--->
+
     <script type="text/javascript" src="Manito.js"></script>
 
 
