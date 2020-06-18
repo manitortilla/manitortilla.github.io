@@ -212,8 +212,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    text-align: left;
-    font-size:20px;
+    font: 10px;
 }
 
 .faqbar{
@@ -223,23 +222,27 @@ body {
     margin-bottom:0%;
     border-top: solid;
     border-bottom:solid;
-    border-color: gray;
+    border-width: 1;
+    border-color: rgb(190, 190, 190);
 }
 
 .faqbar_num{
     width:10%;
     padding-top: 20px;
     padding-bottom:20px;
+    text-align: center;
 }
 .faqbar_title{
     width:80%;
     padding-top: 20px;
     padding-bottom:20px;
+    text-align: left;
 }
 .daqbar_date{
     width:10%;
     padding-top: 20px;
     padding-bottom:20px;
+    text-align: center;
 }
 
 /* The Modal (background) */
