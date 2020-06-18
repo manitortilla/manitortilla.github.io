@@ -42,8 +42,15 @@ body {
     justify-content: center;
 }
 
-
 .item:nth-child(5) {
+    grid-column: 2 / span 4;
+    grid-row: 2;
+    padding : 2em;
+    
+}
+
+
+.item:nth-child(6) {
     grid-column: 1 / span 5;
     grid-row: 3;
 }
@@ -59,6 +66,7 @@ body {
     font-size: 18px;
     vertical-align: middle;
  }
+
 
 .header {
     text-align: center;
