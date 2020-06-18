@@ -33,8 +33,8 @@
           </table>
         </div>
         <div class="item sidebar">
-              <div><button class="sidebarbtn on"><i class="fas fa-envelope-open-text"></i><br>FAQ</button></div>
-              <div><button class="sidebarbtn"><i class="fas fa-pencil-alt"></i><br>Write a letter</button></div>
+              <div><button class="sidebarbtn on"><i class="far fa-comments"></i></i><br>FAQ</button></div>
+              <div><button class="sidebarbtn"><i class="fas fa-question-circle"></i></i><br>Submit Question</button></div>
         </div>
 
         <div class="item content">
@@ -42,14 +42,16 @@
                   <h3 style>FAQ Board<br><br></h3>
                   <div class="pad">
                       <div class="faqlist">
-                          <table class="faqbar"><tr><td class="faqbar_num">3</td><td class=faqbar_title><a href="javascript:showfaqcontent()">There is error during purchasing </a></td></tr></table>
+                          <table class="faqbar"><tr><td class="faqbar_num">3</td><td class="faqbar_category">gift</td><td class=faqbar_title><a link="black" href="javascript:showfaqcontent()">There is error during purchasing </a></td></tr></table>
                       </div>
                   </div>
 
                   <div class="modal" id='myModal'> <!--modal background-->
                     <div class="faqcontent">
                     <span class="close" id="faqclose">&times;</span>
-                    <p id="faq_display" style="clear:right;">Q: There is error during purchasing<br>When I click BUY button, error occurs. cause is not clear.<br><br><br>Hi, I am sorry for the error. Please check your credit card info correctly enter. Thank you.</p>
+                    <p id="faq_question" style="clear:right;">Q: There is error during purchasing<br>When I click BUY button, error occurs. cause is not clear.</p>
+                    <HR size="1" color="gray" width="100%">
+                    <p id="faq_answer"><br><br>Hi, I am sorry for the error. Please check your credit card info correctly enter. Thank you.</p>
                     </div>
                   </div>
               </div>
@@ -65,7 +67,11 @@
           </div>
       </div>
 
-
+      <div class="item footer">
+        If there is any problem, <a href="qnaboard.html">contact us</a>.
+        <br>
+        email : admin@MOST.com
+      </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
