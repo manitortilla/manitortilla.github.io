@@ -86,8 +86,7 @@ $('.guessuserbutton').on('click',function(){
       var small_name = $('.pad2_name').eq(idx).html();
       $('#manitoprofile').removeClass(' empty');
       $('#manitoprofile').html(photo_html);
-      $('#manitoprofile').html(photo_html);
-      $('#manitoprofile2').innerHTML = small_photo+small_name;
+      $('#manitoprofile2').html(small_photo+small_name);
       $('#guessingbutton').removeClass(' posi');
       $('#guessingbutton').addClass(' nega');
       document.getElementsByClassName("guesswindow")[0].style.display = "none";
