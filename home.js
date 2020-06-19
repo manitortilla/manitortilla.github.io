@@ -47,8 +47,6 @@ function updateDday(){
   var diff;
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
     enddate = doc.data().enddate;
-    console.log(today, enddate);
-
     diff =  Math.floor( (Date.parse(enddate.replace(/-/g,'\/')) - Date.parse(today.replace(/-/g,'\/'))) / 86400000);
     document.getElementById("Dday").innerHTML = "D-Day : " + diff;
   });

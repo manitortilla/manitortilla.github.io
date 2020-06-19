@@ -23,14 +23,19 @@ body {
 /*상태1. 로그인 창 */
 .login-form {
   display: none;
-  color: grey;
+  min-height: 70vh;
 }
+
 /*로고*/
 .logo{
   text-align: center;
-  padding-bottom: 30px;
+  padding-top: 20%;
+  padding-bottom: 10%;
 }
+.logo img{
+    width: 70%;
 
+}
 /*인풋- 아이디, 비밀번호*/
 .wrap-input{
     display: flex;
@@ -92,8 +97,9 @@ body {
 
 #googlelogin {
   width: 100%;
+  height: 50px;
   background-color: #afadd2;
-  margin-top: 20px;
+  margin-top: 10%;
   margin-bottom: 50px;
   cursor: pointer;
 }

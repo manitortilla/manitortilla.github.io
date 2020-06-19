@@ -113,7 +113,8 @@ function sendLetter() {
   content= document.getElementById("txt").value;
 
   var t = new Date(+new Date()+(1000*60*60*9));
-
+  document.getElementsByClassName('popcontent')[0].innerHTML = "Letter is successfully sent."; //when user cancel sending previously, re-show the message.
+  $('.buttonwrap').show();
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
     $('#pop').show();
@@ -122,7 +123,8 @@ function sendLetter() {
       userID: getUserUid(),
       contents: content,
       read: false,
-      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate()
+      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate(),
+      servertime: firebase.firestore.FieldValue.serverTimestamp()
     }).catch(function(error) {
       console.error('Error writing new message to database', error);
     });

@@ -34,14 +34,14 @@ function authStateObserver(user) {
 
    document.getElementById("userpic").setAttribute("src", url);
    document.getElementById("userpic2").setAttribute("src", url);
-   document.getElementById("userpic3").setAttribute("src", url);
-   document.getElementById("userpic4").setAttribute("src", url);
+   //document.getElementById("userpic3").setAttribute("src", url);
+   //document.getElementById("userpic4").setAttribute("src", url);
    document.getElementById("userID").innerHTML = getUserName();
    document.getElementById("userID2").innerHTML = getUserName();
    document.getElementById("userID3").innerHTML = getUserName();
-   document.getElementById("userID4").innerHTML = getUserName();
-   document.getElementById("userID5").innerHTML = getUserName();
-
+   //document.getElementById("userID4").innerHTML = getUserName();
+   //document.getElementById("userID5").innerHTML = getUserName();
+   //because it is not reveal day, removed user name and pic in guess columns.
  } else { // User is signed out!
    location.href="/index.html";
  }
@@ -77,12 +77,16 @@ $('#guesswindowclose').on('click', function(){
 });
 
 
-$('#guessuserbutton1').on('click',function(){
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile1').html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -94,12 +98,17 @@ $('#guessuserbutton1').on('click',function(){
 
 });
 
-$('#guessuserbutton2').on('click',function(){
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile2').html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -110,12 +119,18 @@ $('#guessuserbutton2').on('click',function(){
     }
 
 });
-$('#guessuserbutton3').on('click',function(){
+
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile3').html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
+        $('#manitoprofile').html(photo_html);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -126,3 +141,33 @@ $('#guessuserbutton3').on('click',function(){
     }
 
 });
+
+function getDate(){
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = new String(date.getMonth()+1);
+  var day = new String(date.getDate());
+
+  // 한자리수일 경우 0을 채워준다.
+  if(month.length == 1){
+    month = "0" + month;
+  }
+  if(day.length == 1){
+    day = "0" + day;
+  }
+  return year+"-"+month+"-"+day;
+}
+
+
+function updateDday(){
+  var today = getDate();
+  var enddate;
+  var diff;
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
+    enddate = doc.data().enddate;
+    document.getElementById('revealdate').innerHTML= enddate;
+    diff =  Math.floor( (Date.parse(enddate.replace(/-/g,'\/')) - Date.parse(today.replace(/-/g,'\/'))) / 86400000);
+    document.getElementById('remainday').innerHTML = diff;
+  });
+}
+updateDday();

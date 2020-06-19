@@ -8,7 +8,7 @@ $('.sidebarbtn').on('click', function(){
     $('.detail').hide(); //style="display:none"
     $('.detail').eq(idx).show();
     if (idx == 0){ //편지 읽기 상태에서 메뉴 바꿨을 때 메일함이 디폴트로 올 수 있게
-      $('.faqcontent').hide();
+      $('.modal').hide();
       $('.faqlist').show();
     }
 });

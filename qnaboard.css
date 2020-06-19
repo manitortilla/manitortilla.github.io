@@ -64,6 +64,24 @@ body {
     padding : 2em;
 }
 
+.item:nth-child(6) {
+    grid-column: 1 / span 5;
+    grid-row: 3;
+}
+
+
+.footer {
+    width:100%;
+    height: 100px;
+    bottom:0;
+    padding-top: 50px;
+    background:#afadd2;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+ }
+
 .header {
     text-align: center;
     padding : 1em;
@@ -192,9 +210,9 @@ body {
 
 .faqlist {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    text-align: center;
+    font: 10px;
 }
 
 .faqbar{
@@ -202,15 +220,30 @@ body {
     height:100px;
     margin-top:0%;
     margin-bottom:0%;
+    border-top: solid;
+    border-bottom:solid;
+    border-width: 1;
+    border-color: rgb(190, 190, 190);
 }
 
 .faqbar_num{
     width:10%;
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: center;
 }
 .faqbar_title{
     width:80%;
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: left;
 }
-
+.daqbar_date{
+    width:10%;
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: center;
+}
 
 /* The Modal (background) */
 .modal {
@@ -218,6 +251,7 @@ body {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 200px; /* Location of the box */
+  padding-left: 400px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -234,10 +268,11 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 40px;
+    padding-left: 40px;
     border: 1px solid #888;
     width: 600px;
     font-size: 20px;
-    }
+}
 
 /* The Close Button */
 .close {
@@ -254,20 +289,16 @@ body {
   cursor: pointer;
 }
 
-.letterdisplay {
-  display: none;
-}
-
-.letterdisplay.on {
-  display: block;
-  font-size: 20px;
-}
-
-#faq_display {
+#faq_question {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 3%;
+    
+}
+#faq_answer{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    padding: 3%;
 }
 
 .writing_qna {

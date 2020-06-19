@@ -45,6 +45,10 @@ $('.sidebarbtn').on('click', function(){
   var idx = $('.sidebarbtn').index(this);
   $('.detail').hide(); //style="display:none"
   $('.detail').eq(idx).show();
+ 
+ if (idx==0){ // 편지함 버튼 눌렸을 때
+  location.href = location.href; //새로고침
+ }
 
 });
 
@@ -89,11 +93,14 @@ function getSent(){
   var modal_content = "";
   var count = 0;
 
-  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').get().then(function(snapshot){
-    snapshot.forEach(function(doc) {
-        var data = doc.data();
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID)
+     .collection('letters').orderBy('servertime','desc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
+     .onSnapshot(function(snapshot) {
+    snapshot.docChanges().forEach(function(change) {
+  
+        var data = change.doc.data();
 
-        if (doc.exists && data.userID == getUserUid()){ //pick only letters I sent
+        if (change.doc.exists && data.userID == getUserUid()){ //pick only letters I sent
           letter_button  +=
           "<div><button class='letter sent' id='" + count
           + "'><i class='fas fa-sticky-note'></i></button></div>"; //button ID->count
@@ -103,7 +110,7 @@ function getSent(){
 
           count++;
         }
-        else if (!doc.exists){
+        else if (!change.doc.exists){
           letter_button += "<p> You have not sent any letter yet.</p>";
         }
     });
@@ -146,7 +153,8 @@ function sendLetter() {
       userID: getUserUid(),
       contents: content,
       read: false,
-      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate()
+      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate(),
+      servertime: firebase.firestore.FieldValue.serverTimestamp()
     }).catch(function(error) {
       console.error('Error writing new message to database', error);
     });
