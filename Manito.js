@@ -85,7 +85,7 @@ $('#guessuserbutton1').on('click',function(){
         var small_name = $('#guessprofile1').getElementsByClassName("pad2_name").html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').html(small_photo+small_name);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -106,7 +106,7 @@ $('#guessuserbutton2').on('click',function(){
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
         $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').html(small_photo+small_name);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
@@ -117,6 +117,7 @@ $('#guessuserbutton2').on('click',function(){
     }
 
 });
+
 $('#guessuserbutton3').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
     if(result){
@@ -126,7 +127,7 @@ $('#guessuserbutton3').on('click',function(){
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
         $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').html(small_photo+small_name);
+        $('#manitoprofile2').innerHTML = small_photo+small_name;
         $('#guessingbutton').removeClass(' posi');
         $('#guessingbutton').addClass(' nega');
         document.getElementsByClassName("guesswindow")[0].style.display = "none";
