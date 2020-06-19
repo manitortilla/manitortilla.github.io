@@ -79,62 +79,19 @@ $('#guesswindowclose').on('click', function(){
 
 $('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
-    var index = $(this).idx();
     if(result){
-        var photo_html = $('#guessprofile1').html();
-        var small_photo =$('.pad2_img').eq(index).html();
-        var small_name = $('.pad2_name').eq(index).html();
-        $('#manitoprofile').removeClass(' empty');
-        $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').innerHTML = small_photo+small_name;
-        $('#guessingbutton').removeClass(' posi');
-        $('#guessingbutton').addClass(' nega');
-        document.getElementsByClassName("guesswindow")[0].style.display = "none";
-        document.getElementsByClassName("manitomain")[0].style.display = "block";
-    }
-    else{
-
-    }
-
-});
-
-$('.guessuserbutton').on('click',function(){
-    const result = confirm('Would you choose this one as Manito?');
-    var index = $(this).idx();
-    if(result){
-        var photo_html = $('#guessprofile2').html();
-        var small_photo =$('.pad2_img').eq(index).html();
-        var small_name = $('.pad2_name').eq(index).html();
-        $('#manitoprofile').removeClass(' empty');
-        $('#manitoprofile').html(photo_html);
-        $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').innerHTML = small_photo+small_name;
-        $('#guessingbutton').removeClass(' posi');
-        $('#guessingbutton').addClass(' nega');
-        document.getElementsByClassName("guesswindow")[0].style.display = "none";
-        document.getElementsByClassName("manitomain")[0].style.display = "block";
-    }
-    else{
-
-    }
-
-});
-
-$('.guessuserbutton').on('click',function(){
-    const result = confirm('Would you choose this one as Manito?');
-    var index = $(this).idx();
-    if(result){
-        var photo_html = $('#guessprofile3').html();
-        var small_photo =$('.pad2_img').eq(index).html();
-        var small_name = $('.pad2_name').eq(index).html();
-        $('#manitoprofile').removeClass(' empty');
-        $('#manitoprofile').html(photo_html);
-        $('#manitoprofile').html(photo_html);
-        $('#manitoprofile2').innerHTML = small_photo+small_name;
-        $('#guessingbutton').removeClass(' posi');
-        $('#guessingbutton').addClass(' nega');
-        document.getElementsByClassName("guesswindow")[0].style.display = "none";
-        document.getElementsByClassName("manitomain")[0].style.display = "block";
+      var idx = $('.guessuserbutton').index(this);
+      var photo_html = $('.guessprofile').eq(idx).html();
+      var small_photo =$('.pad2_img').eq(idx).html();
+      var small_name = $('.pad2_name').eq(idx).html();
+      $('#manitoprofile').removeClass(' empty');
+      $('#manitoprofile').html(photo_html);
+      $('#manitoprofile').html(photo_html);
+      $('#manitoprofile2').innerHTML = small_photo+small_name;
+      $('#guessingbutton').removeClass(' posi');
+      $('#guessingbutton').addClass(' nega');
+      document.getElementsByClassName("guesswindow")[0].style.display = "none";
+      document.getElementsByClassName("manitomain")[0].style.display = "block";
     }
     else{
 
