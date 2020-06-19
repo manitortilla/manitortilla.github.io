@@ -77,12 +77,13 @@ $('#guesswindowclose').on('click', function(){
 });
 
 
-$('#guessuserbutton1').on('click',function(){
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile1').html();
-        var small_photo =$('#guessprofile1').getElementsByClassName("pad2_img").html();
-        var small_name = $('#guessprofile1').getElementsByClassName("pad2_name").html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
         $('#manitoprofile2').innerHTML = small_photo+small_name;
@@ -97,12 +98,13 @@ $('#guessuserbutton1').on('click',function(){
 
 });
 
-$('#guessuserbutton2').on('click',function(){
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile2').html();
-        var small_photo =$('#guessprofile2').getElementsByClassName("pad2_img").html();
-        var small_name = $('#guessprofile2').getElementsByClassName("pad2_name").html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
         $('#manitoprofile').html(photo_html);
@@ -118,12 +120,13 @@ $('#guessuserbutton2').on('click',function(){
 
 });
 
-$('#guessuserbutton3').on('click',function(){
+$('.guessuserbutton').on('click',function(){
     const result = confirm('Would you choose this one as Manito?');
+    var index = $(this).idx();
     if(result){
         var photo_html = $('#guessprofile3').html();
-        var small_photo =$('#guessprofile3').getElementsByClassName("pad2_img").html();
-        var small_name = $('#guessprofile3').getElementsByClassName("pad2_name").html();
+        var small_photo =$('.pad2_img').eq(index).html();
+        var small_name = $('.pad2_name').eq(index).html();
         $('#manitoprofile').removeClass(' empty');
         $('#manitoprofile').html(photo_html);
         $('#manitoprofile').html(photo_html);
