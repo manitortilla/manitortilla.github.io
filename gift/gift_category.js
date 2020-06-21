@@ -48,6 +48,7 @@ function getItem(categoryNO){
   sessionStorage.setItem("Nav_parent", nav_parent);
 
   if (categoryNO  == 0 ) { //if "all"
+    $(".loader").delay(2000).fadeOut('slow');
     return firebase.database().ref().once('value').then(function(snapshot) {
       var data = snapshot.val();
       for (i = 0 ; i < data.length; i++){

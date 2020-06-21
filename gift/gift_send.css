@@ -270,7 +270,7 @@ body {
 
 .hashtag a {
     display: inline-block;
-    font-size : 20px;
+    font-size : 15px;
     color : black;
     padding : 10px;
     margin : 2%;
@@ -280,6 +280,16 @@ body {
 
 .hashtag a:hover {
     background-color: #afadd2;
+}
+
+#1 {
+    font-size : 25px;
+    border: solid 2px #7976a1;
+}
+
+#4{
+    font-size : 20px;
+    border: solid 2px #8e8cb1;
 }
 
 .name {
@@ -351,3 +361,5 @@ body {
     font-size: 15px;
     padding : 5px;
 }
+
+
