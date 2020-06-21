@@ -47,6 +47,7 @@ function authStateObserver(user) {
  }
 }
 
+
 // sidebar menu toggle
 $('.sidebarbtn').on('click', function(){
     //sidebarbtn color update
@@ -127,3 +128,21 @@ function updateDday(){
   });
 }
 updateDday();
+
+function updateGameInfo(){
+  var manito;
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
+   
+    manito = doc.data().players;
+    document.getElementsByClassName("pad2_name")[0].innerHTML = manito[1];
+    document.getElementsByClassName("pad2_name")[0].innerHTML = manito[2];
+    document.getElementsByClassName("pad2_name")[0].innerHTML = manito[3];
+   
+    document.getElementsByClassName("player_name")[0].innerHTML = manito[1];
+    document.getElementsByClassName("player_name")[0].innerHTML = manito[2];
+    document.getElementsByClassName("player_name")[0].innerHTML = manito[2];
+
+
+  });
+
+}
