@@ -84,7 +84,7 @@ function signupclicked(){
 function getGamelist(){
   //load users' game list
   firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
-      var newHTML = "<ul class='game'><a href='home.html'>SAMPLE GAME</a></ul>";
+      var newHTML = ""; //"<ul class='game'><a href='home.html'>SAMPLE GAME</a></ul>";
       if (doc.exists) {
         var mygamelist = doc.data().game;
         for (i=0; i < mygamelist.length; i++){
