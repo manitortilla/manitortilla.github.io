@@ -135,12 +135,12 @@ function updateGameInfo(){
    
     manito = doc.data().players;
     document.getElementsByClassName("pad2_name")[0].innerHTML = manito[1];
-    document.getElementsByClassName("pad2_name")[0].innerHTML = manito[2];
-    document.getElementsByClassName("pad2_name")[0].innerHTML = manito[3];
+    document.getElementsByClassName("pad2_name")[1].innerHTML = manito[2];
+    document.getElementsByClassName("pad2_name")[2].innerHTML = manito[3];
    
     document.getElementsByClassName("player_name")[0].innerHTML = manito[1];
-    document.getElementsByClassName("player_name")[0].innerHTML = manito[2];
-    document.getElementsByClassName("player_name")[0].innerHTML = manito[2];
+    document.getElementsByClassName("player_name")[1].innerHTML = manito[2];
+    document.getElementsByClassName("player_name")[2].innerHTML = manito[3];
 
 
   });
