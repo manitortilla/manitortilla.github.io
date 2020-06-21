@@ -48,10 +48,15 @@ $('#closebtn').on('click',function(){
 });
 
 $('#submitbtn').on('click', function(){
+ var input = document.getElementsByClassName('userinput');
+ if (input[0]=="" || input[1] =="" || input[2] == "" || input[3]=="" || input[4] =="")
+  alrert("You have to fill the card information.");
+ else{
   document.getElementsByClassName('popcontent')[0].innerHTML = 
    "Your purchase is successuflly done.<br>If you have any question,<br><a href='../qnaboard.html'>Contact us</a>";
   $('.wrappercard').hide();
   $(this).hide();
+ }
 });
 
 
