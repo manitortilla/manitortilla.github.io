@@ -60,10 +60,12 @@ function saveGame() {
 }
 
 function dataSave(name, ids){
+  var players = getUserUid()+', '+ ids;
+  players= player.split(',');
   return firebase.firestore().collection("gamelist").add({
     gamename: name,
     enddate: document.getElementById("gamedate").value,
-    players: getUserUid()+', '+ ids
+    players: players
   }).then(function(doc) {
       userdataUpdate(name, doc.id);
   }).catch(function(error) {
