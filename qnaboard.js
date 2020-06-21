@@ -48,6 +48,12 @@ $('.sidebarbtn').on('click', function(){
     }
 });
 
+window.onclick = function(event) {
+  if (event.target == document.getElementById("myModal")) {
+    $('#myModal').hide();
+  }
+}
+
 $('#faqclose').on('click',function(){
     $('#myModal').hide();
 });
