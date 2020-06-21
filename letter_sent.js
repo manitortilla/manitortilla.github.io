@@ -111,11 +111,12 @@ function getSent(){
           count++;
         }
     });
-    if (letter_button=="")
-      letter_button = "You have not sent any letter yet.";
-   
-    document.getElementsByClassName("mailbox")[0].innerHTML = letter_button;
-    document.getElementsByClassName("letterdiv")[0].innerHTML = modal_content;
+    
+   if (letter_button=="") {
+      letter_button = "<p>You have not sent any letter yet.</p>";
+ 
+   document.getElementsByClassName("mailbox")[0].innerHTML = letter_button;
+   document.getElementsByClassName("letterdiv")[0].innerHTML = modal_content;
 
     var letters = document.getElementsByClassName("sent");
     // Attach onclick handler - make letter a button
