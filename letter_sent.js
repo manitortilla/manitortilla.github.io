@@ -110,10 +110,10 @@ function getSent(){
 
           count++;
         }
-        else if (!change.doc.exists){
-          letter_button += "<p> You have not sent any letter yet.</p>";
-        }
     });
+    if (letter_button=="")
+      letter_button = "<p> You have not sent any letter yet.</p>";
+   
     document.getElementsByClassName("mailbox")[0].innerHTML = letter_button;
     document.getElementsByClassName("letterdiv")[0].innerHTML = modal_content;
 
