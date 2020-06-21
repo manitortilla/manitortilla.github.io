@@ -46,6 +46,7 @@ function updateGameInfo(){
   var enddate;
   var diff;
   var manito;
+  var gamename;
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
     enddate = doc.data().enddate;
     diff =  Math.floor( (Date.parse(enddate.replace(/-/g,'\/')) - Date.parse(today.replace(/-/g,'\/'))) / 86400000);
@@ -54,6 +55,9 @@ function updateGameInfo(){
     manito = doc.data().players;
     manito = manito[1]; //나 다음에 썼던 사람으로 마니또 픽스
     document.getElementById("manito").innerHTML = manito;
+   
+    gamename = doc.data().gamename;
+    document.getElementById("gamename").innerHTML = gamename ; 
   });
 
 }
