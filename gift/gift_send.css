@@ -263,12 +263,14 @@ body {
 }
 
 .hashtag{
+    text-align: center;
+    display: inline-block;
+}
+
+.hash_id {
     margin : 2%;
     display: inline-block;
     text-align: center;
-}
-
-.hashtag a {
     display: inline-block;
     font-size : 15px;
     color : black;
@@ -282,22 +284,12 @@ body {
     background-color: #afadd2;
 }
 
-#hash1 {
-    font-weight: normal;
-    padding-left : 10px;
-    padding : 10px;
-    margin : 2%;
-    font-size : 25px;
-    color:black;
+.hash1 {
+    font-size: 25px;
 }
 
-#hash4{
-    font-weight: normal;
-    padding-left : 10px;
-    padding : 10px;
-    margin : 2%;
-    font-size : 20px;
-    color:black;
+.hash4{
+    font-size: 20px;
 }
 
 .name {
