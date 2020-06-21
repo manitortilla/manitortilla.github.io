@@ -215,7 +215,9 @@ body {
     font-size: 100px;
     color: grey;
 }
-
+.mailbox p {
+    grid-column: 1 / span 4;   
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
