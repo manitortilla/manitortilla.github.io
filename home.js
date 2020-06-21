@@ -45,6 +45,7 @@ function updateGameInfo(){
   var today = getDate();
   var enddate;
   var diff;
+  var manito;
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
     enddate = doc.data().enddate;
     diff =  Math.floor( (Date.parse(enddate.replace(/-/g,'\/')) - Date.parse(today.replace(/-/g,'\/'))) / 86400000);
