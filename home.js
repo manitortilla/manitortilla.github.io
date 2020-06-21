@@ -70,18 +70,6 @@ function authStateObserver(user) {
  }
 }
 
-function getManito(){
-  return firebase.firestore().collection("gamelist").add({
-    gamename: name,
-    enddate: document.getElementById("gamedate").value,
-    players: getUserUid()+', '+ ids
-  }).then(function(doc) {
-      userdataUpdate(name, doc.id);
-  }).catch(function(error) {
-    console.error('Error writing new message to database', error);
-  });
-}
-
 function readmore() {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
