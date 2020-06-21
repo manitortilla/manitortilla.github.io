@@ -35,6 +35,7 @@ for (i = 0; i < menu_cate.length; i++) {
 getItem(0); //always starts from category All
 
 function getItem(categoryNO){
+  $(".loader").delay(2000).fadeOut('slow');
   var content = "";
 
   var title = document.getElementById("category_title"); //navigation bar
@@ -47,6 +48,7 @@ function getItem(categoryNO){
   sessionStorage.setItem("Nav_parent", nav_parent);
 
   if (categoryNO  == 0 ) { //if "all"
+    $(".loader").delay(2000).fadeOut('slow');
     return firebase.database().ref().once('value').then(function(snapshot) {
       var data = snapshot.val();
       for (i = 0 ; i < data.length; i++){
@@ -100,7 +102,7 @@ searchbtn.onclick = function (){
   keyword.value = ""; //clear
 }
 
-function gedSearchedItem(key){
+function getSearchedItem(key){
   var found = 0;
   var productName;
   var content = "";
@@ -149,7 +151,7 @@ $(document).ready(function(){
     if (key.keyCode == 13){
       var keyword = document.getElementsByClassName("search")[0];
       var keyvalue = keyword.value;
-      gedSearchedItem(keyvalue);
+      getSearchedItem(keyvalue);
       keyword.value = ""; //clear
     }
   })
