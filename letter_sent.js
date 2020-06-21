@@ -112,7 +112,7 @@ function getSent(){
         }
     });
     if (letter_button=="")
-      letter_button = "<p> You have not sent any letter yet.</p>";
+      letter_button = "You have not sent any letter yet.";
    
     document.getElementsByClassName("mailbox")[0].innerHTML = letter_button;
     document.getElementsByClassName("letterdiv")[0].innerHTML = modal_content;
