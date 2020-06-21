@@ -24,6 +24,15 @@ function isUserSignedIn() {
 return !!firebase.auth().currentUser;
 }
 
+function authStateObserver(user) {
+ if (user) { // User is signed in!
+   // Get the signed-in user's profile pic and name.
+   document.getElementById("userID").innerHTML = getUserName();
+ } else { // User is signed out!
+   location.href="/index.html";
+ }
+}
+
 // sidebar menu toggle
 $('.sidebarbtn').on('click', function(){
     //sidebarbtn color update
