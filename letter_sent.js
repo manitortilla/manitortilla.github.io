@@ -45,7 +45,7 @@ $('.sidebarbtn').on('click', function(){
   var idx = $('.sidebarbtn').index(this);
   $('.detail').hide(); //style="display:none"
   $('.detail').eq(idx).show();
- 
+
  if (idx==0){ // 편지함 버튼 눌렸을 때
   location.href = location.href; //새로고침
  }
@@ -60,6 +60,7 @@ $('#closebtn').on('click',function(){
   $('#pop').hide();
 });
 $('#undobtn').on('click', function(){
+  undo();
   document.getElementsByClassName('popcontent')[0].innerHTML = "The letter is cancled.";
   $('.buttonwrap').hide();
 });
@@ -97,7 +98,7 @@ function getSent(){
      .collection('letters').orderBy('servertime','desc') //.get().then(function(snapshot){snapshot.forEach(function(doc) {
      .onSnapshot(function(snapshot) {
     snapshot.docChanges().forEach(function(change) {
-  
+
         var data = change.doc.data();
 
         if (change.doc.exists && data.userID == getUserUid()){ //pick only letters I sent
@@ -111,10 +112,10 @@ function getSent(){
           count++;
         }
     });
-    
-   if (letter_button=="") {
+
+   if (letter_button=="")
       letter_button = "<p>You have not sent any letter yet.</p>";
- 
+
    document.getElementsByClassName("mailbox")[0].innerHTML = letter_button;
    document.getElementsByClassName("letterdiv")[0].innerHTML = modal_content;
 
@@ -145,10 +146,10 @@ function sendLetter() {
   content= document.getElementById("txt").value;
 
   var t = new Date(+new Date()+(1000*60*60*9));
- 
+
  document.getElementsByClassName('popcontent')[0].innerHTML = "Letter is successfully sent."; //when user cancel sending previously, re-show the message.
   $('.buttonwrap').show();
- 
+
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
     $('#pop').show();
@@ -166,4 +167,18 @@ function sendLetter() {
   else {
     alert ("You cannot sent an empty letter");
   }
+}
+
+function undo(){
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID)
+     .collection('letters').orderBy('servertime','desc').get().then(function(querySnapshot) {
+    if (!querySnapshot.empty) {
+        //We know there is one doc in the querySnapshot
+        const queryDocumentSnapshot = querySnapshot.docs[0];
+        return queryDocumentSnapshot.ref.delete();
+    } else {
+        console.log("No document corresponding to the query!");
+        return null;
+    }
+  });
 }
