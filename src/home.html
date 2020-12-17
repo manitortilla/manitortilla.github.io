@@ -3,7 +3,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home_st.css">
+    <link rel="stylesheet" href="../style/home_st.css">
     <title>MOST</title>
 </head>
 <body>
@@ -11,13 +11,12 @@
   <div class= "container">
 
       <div class="item header logo">
-        <div class="logo"><a class="home-link" href="home.html"><img src="logo.png" alt="logo" style="max-width:100%"/></a></div>
+        <div class="logo"><a class="home-link" href="home.html"><img src="../logo.png" alt="logo" style="max-width:100%"/></a></div>
       </div>
 
       <div class="item header nav">
           <div class="navbtn"><a class="nav-link" id="nav_letter" href="letter.html">LETTER</a></div>
-          <div class="navbtn"><a class="nav-link" id="nav_gift" href="./gift/gift_send.html">GIFT</a></div>
-          <div class="navbtn"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
+          <div class="navbtn"><a class="nav-link" id="nav_manito" href="manito.html">MANITO</a></div>
       </div>
 
       <div class="item header info">
@@ -62,21 +61,29 @@
               </table>
               
           </div>
-          <div class="item_un no2">
+          <div class="item_un no2" id="gameInfo">
             <p class="hello">Hello, <span id="userID2"></span> ! </p>
-              <p class="on_game">You are on a game " <span id="gamename"></span> " now.<br>
-                You are the Manito of <span id="manito" style='color:royalblue'></span>.<br>Until the end of the game,</p>
+              <p class="on_game">You are on a game " <span id="gamename"></span> " now.<br></p>
+              <p id ="manitoInfo"> </p>
+              Until the end of the game,
             <h1 id="Dday">D-7</h1>
           </div>
-          <div class="item_un no3">
-              <p class="hello">How to use?</p>
-              <a href="manual.html">Click here for Website Manual</a>
+          <div class="item_un no3" id="manualBox">
+            <!--  <p class="hello">How to use?</p>
+              <a href="src/manual.html">Click here for Website Manual</a>-->
+              <span>마니또 정보</span>
+              <div class="wrap-input" id="manitoBox">
+                <input id="manitoid" type="text" placeholder=""></input>
+              </div>
+              <div class="wrap-button">
+                <button class="startbtn" style="margin-bottom: 0px;" onclick="submitManito()">등록</button>
+              </div>
           </div>
       </div>
       </div>
  
       <div class="item footer">
-        If there is any problem, <a href="qnaboard.html">contact us</a>.
+        If there is any problem, <a href="src/qnaboard.html">contact us</a>.
         <br>
         email : admin@MOST.com
       </div>
@@ -100,27 +107,27 @@
   }
   </script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
-  <script>
-    if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
-    var firebaseConfig = {
-      "projectId": "most-hciproject",
-      "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
-      "databaseURL": "https://most-hciproject.firebaseio.com",
-      "storageBucket": "most-hciproject.appspot.com",
-      "locationId": "us-central",
-      "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
-      "authDomain": "most-hciproject.firebaseapp.com",
-      "messagingSenderId": "1096383375744",
-      "measurementId": "G-D34DTCWS6S"
-    };
-    if (firebaseConfig) {
-      firebase.initializeApp(firebaseConfig);
-    }
-    </script>
-    <script type="text/javascript" src="home.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCsetN2RZ4Mbs0jgo1F7n30WyPv1YV33uU",
+            authDomain: "manitortilla-ed683.firebaseapp.com",
+            projectId: "manitortilla-ed683",
+            storageBucket: "manitortilla-ed683.appspot.com",
+            messagingSenderId: "793034925364",
+            appId: "1:793034925364:web:362342f6eb8a2281d9b161"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
+    <script type="text/javascript" src="../script/home.js"></script>
     </body>
 </html>

@@ -77,22 +77,19 @@ function toggleScreen(){
   }
 }
 
-function signupclicked(){
-  alert("Sorry, we are currently preparing for this service");
-}
-
 function getGamelist(){
   //load users' game list
+
   firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
-      var newHTML = ""; //"<ul class='game'><a href='home.html'>SAMPLE GAME</a></ul>";
+      var newHTML = "";
       if (doc.exists) {
         var mygamelist = doc.data().game;
         for (i=0; i < mygamelist.length; i++){
-          newHTML += "<ul class='game'><a href='home.html' onclick ='sessionStorage.gameID=\"" + doc.data().gameDocID + "\"'>"
-              + mygamelist[i] + "</a></ul>";
+          newHTML += "<ul class='game'><a href='../src/home.html' onclick ='sessionStorage.gameID=\"" + mygamelist[i]['docid'] + "\"'>"
+              + mygamelist[i]['name'] + "</a></ul>";
         }
       }
-      newHTML += " <ul class='game newgame'><a href='newgame.html'>+ Start a new game</a></ul>";
+      newHTML += " <ul class='game newgame'><a href='../src/newgame.html'>+ Start a new game</a></ul>";
       document.getElementsByClassName("list")[0].innerHTML= newHTML;
   });
 

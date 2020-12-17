@@ -4,20 +4,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="letter_st.css">
+    <link rel="stylesheet" href="../style/letter_st.css">
     <title>MOST</title>
 </head>
 <body>
     <div class= "container">
 
         <div class="item header logo">
-          <div class="logo"><a class="home-link" href="home.html"><img src="logo.png" alt="logo" style="max-width:100%"/></a></div>
+          <div class="logo"><a class="home-link" href="home.html"><img src="../logo.png" alt="logo" style="max-width:100%"/></a></div>
         </div>
 
         <div class="item header nav">
             <div class="active"><a class="nav-link" id="nav_letter" href="letter.html">LETTER</a></div>
-            <div class="navbtn"><a class="nav-link" id="nav_gift" href="./gift/gift_send.html">GIFT</a></div>
-            <div class="navbtn"><a class="nav-link" id="nav_manito" href="Manito.html">MANITO</a></div>
+            <div class="navbtn"><a class="nav-link" id="nav_manito" href="manito.html">MANITO</a></div>
         </div>
 
         <div class="item header info">
@@ -92,28 +91,28 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
     <script>
-      if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
-  var firebaseConfig = {
-    "projectId": "most-hciproject",
-    "appId": "1:1096383375744:web:e6f16ee15321f89955b965",
-    "databaseURL": "https://most-hciproject.firebaseio.com",
-    "storageBucket": "most-hciproject.appspot.com",
-    "locationId": "us-central",
-    "apiKey": "AIzaSyCj8CLGD_xvx2ZwAXecw1bVA66__QTO0NQ",
-    "authDomain": "most-hciproject.firebaseapp.com",
-    "messagingSenderId": "1096383375744",
-    "measurementId": "G-D34DTCWS6S"
-  };
-  if (firebaseConfig) {
-    firebase.initializeApp(firebaseConfig);
-  }
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCsetN2RZ4Mbs0jgo1F7n30WyPv1YV33uU",
+        authDomain: "manitortilla-ed683.firebaseapp.com",
+        projectId: "manitortilla-ed683",
+        storageBucket: "manitortilla-ed683.appspot.com",
+        messagingSenderId: "793034925364",
+        appId: "1:793034925364:web:362342f6eb8a2281d9b161"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     </script>
 
-    <script type="text/javascript" src="letter_sent.js"></script>
+    <script type="text/javascript" src="../script/letter_sent.js"></script>
 
 </body>
 </html>

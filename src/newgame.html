@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style/newgame_st.css">
+    <title>Most</title>
+  </head>
+  <body>
+    <div class= "container">
+      <div class= "wrapper">
+        <div class= "form">
+
+          <div class="container-form">
+
+            <div class="header">
+              <h2>Join the game</h2>
+            </div>
+            <div class="setting">
+              <span>Game code</span>
+              <div class="wrap-input">
+                <input id="gamecode" type="text" placeholder="입력하세요"></input>
+              </div>
+              <div class="wrap-button">
+                <button class="startbtn" style="margin-bottom: 0px;" onclick="joinGame()">게임 참여</button>
+              </div>
+            </div>
+            
+            <div class="header">
+              ============= OR =============
+              <h2>Create a new game</h2>
+            </div>
+            <div class="setting">
+              <span>Name your game</span>
+              <div class="wrap-input">
+                <input id="gamename" type="text" placeholder="e.g) Seoul Friends"></input>
+              </div>
+              <div>
+                <span>Set reveal date</span>
+                <input id="gamedate" type="date"></input>
+              </div>
+
+              <div class="wrap-button">
+                <button class="startbtn"  onclick="saveGame()">게임 코드 생성</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCsetN2RZ4Mbs0jgo1F7n30WyPv1YV33uU",
+        authDomain: "manitortilla-ed683.firebaseapp.com",
+        projectId: "manitortilla-ed683",
+        storageBucket: "manitortilla-ed683.appspot.com",
+        messagingSenderId: "793034925364",
+        appId: "1:793034925364:web:362342f6eb8a2281d9b161"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+      <script src="../script/newgame.js"></script>
+    </body>
+  </html>

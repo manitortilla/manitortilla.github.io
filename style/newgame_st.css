@@ -55,7 +55,7 @@ body {
   background-color: #e6e6e6;
 }
 
-#gamename {
+#gamename, #gamecode {
     width: 90%;
     height: 40px;
     background: transparent;

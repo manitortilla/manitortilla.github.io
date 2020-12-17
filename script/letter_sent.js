@@ -31,7 +31,7 @@ function authStateObserver(user) {
    // Get the signed-in user's profile pic and name.
    document.getElementById("userID").innerHTML = getUserName();
  } else { // User is signed out!
-   location.href="/index.html";
+   location.href="../index.html";
  }
 }
 
