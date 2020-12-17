@@ -93,17 +93,11 @@ function dataSave(name){
 
 //원래는 player마다 게임방 이름 추가해야하지만 여기서는 그냥 현재 유저에만 한다
 function userdataUpdate(name, docid){
-  firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
-    if (!doc.exists) //게임 리스트 없으면 새로 시작
-      var myGamelist = [];
-    else //게임 리스트 있으면 기존 리스트 가져온다
-      var myGamelist = doc.data().game;
-    myGamelist.push({"name":name, "docid": docid, "manitoof": ""});
-    return firebase.firestore().collection("userlist").doc(getUserUid()).set({
-      game: myGamelist
-    }).then(function() {
-      alert(docid);
-      location.href='../index.html';
-    });
+  return firebase.firestore().collection("userlist").doc(getUserUid()).collection('game').doc(docid).set({
+    gamename: name,
+    manitoof: ""
+  }).then(function() {
+    alert(docid);
+    location.href='../index.html';
   });
 }

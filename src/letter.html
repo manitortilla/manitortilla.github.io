@@ -25,7 +25,7 @@
               <td colspan="3" id="userID"></td>
             </tr>
             <tr>
-              <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
+              <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='../index.html'">Start Game</td>
               <td>&nbsp;&nbsp;&nbsp;</td>
               <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
             </tr>
@@ -45,25 +45,15 @@
                   </div>
 
                   <div class="pad">
-                      <div class="mailbox">
-                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
-                          <div><button class="letter new"><i class="fas fa-envelope"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
-                          <div><button class="letter old"><i class="fas fa-envelope-open"></i></button></div>
+                      <div class="mailbox" id='myMailbox'>
+                      <!--편지 아이콘-->
                       </div>
                   </div>
 
                   <div class="modal" id='myModal'> <!--modal background-->
                     <div class="lettercontent">
                     <span class="close" id="letterclose">&times;</span>
-                    <p class="letterdisplay" >Dear my friend<br><br>Hey!! Today I was looking around the gift shop in the website and I found the best item for you. I know how you like coffees at Starbucks!! So I sent you one. Don't forget to receive it.<br>Also, you got to take a photo of this and upload it on your instagram!! Hahaha. <br>2020.06.20</p>
-                    <p class="letterdisplay" >Dear my friend <br><br>Hey, how are you doing?<br>I cannot wait to see all of you guys. We haven't seen in months. I really miss you all and especially you!!<br>2020.06.17</p>
-                    <p class="letterdisplay" >Dear my friend <br><br>Hi, it's getting so hot now and I think you'll be very upset by the weather. LOL. Hope you are doing okay.<br>2020.06.15</p>
-                    <p class="letterdisplay" >Dear my friend <br><br>Hey! I just heard that you got a good grade on your exam. I am so happy for you!!<br>And I am proud of you.<br>2020.06.08</p>
-                    <p class="letterdisplay" >Dear my friend <br><br>Hi, how are you?<br>Do you remember when we went on a trip to Busan? I still remember you took really good care of me! Thank you my friend<br>2020.06.04</p>
-                    <p class="letterdisplay" >Dear my friend <br><br>Hi, I'm so glad to be your Manito.<br> Let's have some fun together!<br>2020.05.31</p>
+                    <!--편지 내용-->
                     </div>
                   </div>
               </div>
@@ -103,23 +93,21 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>    
+        <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyCsetN2RZ4Mbs0jgo1F7n30WyPv1YV33uU",
-        authDomain: "manitortilla-ed683.firebaseapp.com",
-        projectId: "manitortilla-ed683",
-        storageBucket: "manitortilla-ed683.appspot.com",
-        messagingSenderId: "793034925364",
-        appId: "1:793034925364:web:362342f6eb8a2281d9b161"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCsetN2RZ4Mbs0jgo1F7n30WyPv1YV33uU",
+            authDomain: "manitortilla-ed683.firebaseapp.com",
+            projectId: "manitortilla-ed683",
+            storageBucket: "manitortilla-ed683.appspot.com",
+            messagingSenderId: "793034925364",
+            appId: "1:793034925364:web:362342f6eb8a2281d9b161"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
     <script type="text/javascript" src="../script/letter.js"></script>
-
-</body>
+    </body>
 </html>

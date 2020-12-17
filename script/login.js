@@ -79,18 +79,16 @@ function toggleScreen(){
 
 function getGamelist(){
   //load users' game list
-
-  firebase.firestore().collection('userlist').doc(getUserUid()).get().then(function(doc){
-      var newHTML = "";
-      if (doc.exists) {
-        var mygamelist = doc.data().game;
-        for (i=0; i < mygamelist.length; i++){
-          newHTML += "<ul class='game'><a href='../src/home.html' onclick ='sessionStorage.gameID=\"" + mygamelist[i]['docid'] + "\"'>"
-              + mygamelist[i]['name'] + "</a></ul>";
-        }
-      }
-      newHTML += " <ul class='game newgame'><a href='../src/newgame.html'>+ Start a new game</a></ul>";
-      document.getElementsByClassName("list")[0].innerHTML= newHTML;
+  var newHTML = "";
+  firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(doc.data()); // For data inside doc
+        console.log(doc.id); // For doc name
+        newHTML += "<ul class='game'><a href='../src/home.html' onclick ='sessionStorage.gameID=\"" + doc.id + "\"'>"
+            + doc.data().gamename + "</a></ul>";
+    });
+    newHTML += " <ul class='game newgame'><a href='../src/newgame.html'>+ Start a new game</a></ul>";
+    document.getElementsByClassName("list")[0].innerHTML= newHTML;
   });
 
 }

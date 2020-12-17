@@ -19,7 +19,6 @@ function getUserName() {
 function getUserUid(){ //현재 로그인 한 유저의 uid 불러오기
   return firebase.auth().currentUser.uid;
 }
-
 // Returns true if a user is signed-in.
 function isUserSignedIn() {
 return !!firebase.auth().currentUser;
@@ -30,8 +29,9 @@ function authStateObserver(user) {
  if (user) { // User is signed in!
    // Get the signed-in user's profile pic and name.
    document.getElementById("userID").innerHTML = getUserName();
+   getReceived();
  } else { // User is signed out!
-   location.href="/index.html";
+   location.href="../index.html";
  }
 }
 
@@ -86,47 +86,62 @@ document.getElementById("letterclose").onclick = function() {
 // - Received Tab
 // load letter
 function getReceived() {
+  var divHTML =""; 
+  var conHTML ="";
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => { 
+      if (doc.data().read==false)
+        divHTML += "<div><button class='letter new' id='"+doc.id+"'><i class='fas fa-envelope'></i></button></div>";
+      else
+        divHTML += "<div><button class='letter old'><i class='fas fa-envelope-open'></i></button></div>";
+      conHTML += "<p class='letterdisplay'>"+doc.data().contents+"<br>"+doc.data().servertime+"</p>";
+    });
+    document.getElementById("myMailbox").innerHTML += divHTML;
+    document.getElementById("myModal").innerHTML += conHTML;
+  });
+
   var letters = document.getElementsByClassName("letter ");
   for (i=0; i< letters.length; i++){
     letters[i].onclick = function() {
       var idx = $('.letter').index(this);
       $('.letterdisplay').eq(idx).addClass('on'); //매칭되는 편지 on
-      document.getElementById("myModal").style.display = "block";
-
-      if ($(this).hasClass('new')){ //if it is a new letter, update as read
-        $(this).removeClass(' new');
-        $(this).addClass(' old');
-        $(this).html('<i class="fas fa-envelope-open"></i>');
+      if ($(this).hasClass('new')) {
+        console.log($(this).id);
+        console.log(this.id);
+        firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).doc($(this).id).update({
+          read:true
+        });
       }
-    };
+      document.getElementById("myModal").style.display = "block";
+    }
   }
 }
-getReceived();
+
 
 
 
 // 2) Writing letter
 // Saves a letter to Cloud Firestore database.
-// Saves a letter to Cloud Firestore database.
 function sendLetter() {
   // Add a new login info entry to the database.
   content= document.getElementById("txt").value;
 
-  var t = new Date(+new Date()+(1000*60*60*9));
   document.getElementsByClassName('popcontent')[0].innerHTML = "Letter is successfully sent."; //when user cancel sending previously, re-show the message.
   $('.buttonwrap').show();
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
     $('#pop').show();
-
-    return firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection('letters').add({
-      userID: getUserUid(),
-      contents: content,
-      read: false,
-      timestamp: t.getUTCFullYear()+"."+ (t.getUTCMonth()+1) +"."+t.getUTCDate(),
-      servertime: firebase.firestore.FieldValue.serverTimestamp()
-    }).catch(function(error) {
-      console.error('Error writing new message to database', error);
+    
+    firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
+      manito = doc.data().manitoof;
+      t= new Date();
+      console.log(t.getTime().toString());
+      return firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(manito).doc(t.getTime().toString()).set({
+        sender: getUserUid(),
+        contents: content,
+        read: false,
+        servertime: t
+      });
     });
   }
   else {
