@@ -34,6 +34,10 @@ function authStateObserver(user) {
  if (user) { // User is signed in!
    // Get the signed-in user's profile pic and name.
    firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
+    if (doc.data().status=="ready"){
+      alert("아직 게임이 시작되지 않아 사용할 수 없습니다.");
+      location.href="../index.html";
+    }
     if (doc.data().status=="on")
      updateGameInfo();
     else
