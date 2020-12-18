@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
 
 /*전체 크기*/
 body {
     padding : 2;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 auto;
     margin-top: 5em;
+    zoom: 80%;
 }
-
 /*위쪽 바*/
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 50px minmax(800px, auto) 100px;
+    grid-template-rows: 100px minmax(800px, auto) 100px;
     grid-gap: 3em 20px;
     justify-content: center;
     width : 80em;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .item:nth-child(1) {
@@ -37,7 +43,7 @@ body {
 .item:nth-child(4) {
     grid-column: 1;
     grid-row: 2;
-    border-right: solid gray 1px;
+    border-right: dashed #e9847b 3px;
     padding: 1em;
     justify-content: center;
 }
@@ -60,7 +66,7 @@ body {
     height: 100px;
     bottom:0;
     padding-top: 50px;
-    background:#afadd2;
+    background: #f5c5c1;
     text-align: center;
     color: white;
     font-size: 18px;
@@ -97,13 +103,13 @@ body {
     width:100%;
     height:51px;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #5e5aa4;
+    border-bottom-color: #e9847b;
 }
 
 .navbtn:hover > .nav-link{
     width:100%;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #afadd2;
+    border-bottom-color:  #f5c5c1;
 }
 
 .info{
@@ -119,7 +125,7 @@ body {
 
 .sidebarbtn.on {
     background-color:silver;
-    color: #5e5aa4;
+    color: #e9847b;
 }
 
 /*컨텐츠*/
@@ -132,7 +138,7 @@ body {
 
 .sidebar {
     float: left;
-    border-right : solid;
+    border-right: dashed #e9847b 3px;
 
     padding : 5%;
 }
@@ -144,7 +150,7 @@ body {
     float: right;
     max-width: inherit;
     height : inherit;
-    border: solid #5e5aa4;
+    border: solid #e9847b;
     color: black;
     cursor: pointer;
     font-size: 15px;
@@ -186,7 +192,7 @@ body {
     margin: 2%;
     padding : 1%;
     float : left;
-    border: solid 1px #afadd2;
+    border: solid 1px  #f5c5c1;
     border-radius: 5px;
     width : 200px;
     height: 200px;
@@ -212,7 +218,7 @@ body {
     padding : 1%;
     margin: 2%;
     float : left;
-    background-color: #afadd2;
+    background-color:  #f5c5c1;
     width : 30%;
     height : 40%;
     text-align: center;
@@ -234,19 +240,19 @@ body {
 .guessingarrowwrapper{
     margin: 2%;
     float : left;
-    width : 25%;
-    height : 40%;
+    width : 215px;
     text-align: center;
-
+    vertical-align: middle;
+    margin-top: 50px;
 }
 .guessingarrowwrapper svg{
     vertical-align: middle;
-    color:  #5e5aa4;
+    color:  #e9847b;
 }
 
 /*마니또 선택 설명란*/
 #guessdescription{
-    font-family: "Source Sans Pro",sans-serif;
+    font-family: "Noto Sans KR",sans-serif;
     margin: 20px;
     width: 700px;
     padding: 3%;
@@ -263,16 +269,15 @@ body {
 
 /*마니또 추측도 + 마니또 선택 설명란*/
 .pad{
-    width : 90%;
+    width : 100%;
     margin: 3%;
     display: flow-root;
     text-align: center;
-
 }
 
 .guessbtn.posi{
     color: #ffffff;
-    background-color:#5e5aa4;
+    background-color:#e9847b;
     border: none;
     padding : 1em;
     display: inline-block;
@@ -346,7 +351,7 @@ body {
 
 .guessuserbutton{
     color: #ffffff;
-    background-color:  #5e5aa4;
+    background-color:  #e9847b;
     border: none;
     padding : 5px;
     font-size: 20px;
@@ -354,7 +359,7 @@ body {
     text-align: center;
     width: inherit;
     cursor: pointer;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
 }
 .guessuserbutton:hover{
     background-color:#3a3870 ;
@@ -366,9 +371,9 @@ body {
 }
 
 .pad2{
-    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     margin: 2%;
-    border : solid 1px #afadd2;
+    border : solid 1px  #f5c5c1;
     border-radius: 5px;
     width : 200px;
     height : 300px;
@@ -378,7 +383,6 @@ body {
 
 .windowtitle{
     inline-size: inherit;
-
 }
 
 #manitoresult{
@@ -395,100 +399,37 @@ body {
 
 /* head 부분 */
 .titem:nth-child(1){
-    border-bottom: solid  #afadd2;
+    border-bottom: solid   #f5c5c1;
 }
 .titem:nth-child(2){
-    border-bottom: solid #afadd2;
-    border-right: solid  #afadd2;
+    border-bottom: solid  #f5c5c1;
+    border-right: solid   #f5c5c1;
 }
 .titem:nth-child(3){
-    border-bottom: solid  #afadd2;
+    border-bottom: solid   #f5c5c1;
 }
 .titem:nth-child(4){
-    border-bottom: solid  #afadd2;
+    border-bottom: solid   #f5c5c1;
 }
 
 .titem {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Noto Sans KR",sans-serif;
+    border-bottom: solid gray 1px;
+    padding: 10px;
+    text-align: center;
 }
 
 .t_head {
     text-align: center;
     padding-top: 30px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-}
-
-
-.row1, .row2, .row3, .row4 {
-    padding: 10px;
-    text-align: center;
-}
-
-/* table first row */
-.titem:nth-child(5){
-    border-bottom: solid gray 1px;
-}
-.titem:nth-child(6){
-    border-bottom: solid gray 1px;
-    border-right: solid  #afadd2;
-}
-.titem:nth-child(7){
-    border-bottom: solid gray 1px;
-}
-.titem:nth-child(8){
-    border-bottom: solid gray 1px;
-}
-
-/* table second row */
-.titem:nth-child(9){
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(10){
-    border-bottom: solid gray 1px;
-    border-right: solid  #afadd2;
-}
-.titem:nth-child(11){
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(12){
-    border-bottom: solid 1px gray;
-}
-
-/* table third row */
-.titem:nth-child(13){
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(14){
-    border-bottom: solid gray 1px;
-    border-right: solid  #afadd2;
-}
-.titem:nth-child(15){
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(16){
-    border-bottom: solid 1px gray;
-}
-
-/* table forth row */
-.titem:nth-child(17) {
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(18) {
-    border-bottom: solid gray 1px;
-    border-right: solid  #afadd2;
-}
-.titem:nth-child(19) {
-    border-bottom: solid 1px gray;
-}
-.titem:nth-child(20) {
-    border-bottom: solid 1px gray;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 /* Inside User */
 .resultblock_name{
-    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
 }
 
@@ -523,7 +464,7 @@ body {
 }
 
 .smallprofile p{
-    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 15px;
 }
 
@@ -547,7 +488,7 @@ body {
 }
 
 .table_head {
-    font-family: "Montserrat", sans-serif ;
+    font-family: "Noto Sans KR", sans-serif ;
 }
 
 #resultname {
@@ -558,8 +499,8 @@ body {
     margin: 0 auto;
     width: 500px;
     text-align: center;
-    border: solid 2px #afadd2;
-        font-family: 'Montserrat', sans-serif;
+    border: solid 2px  #f5c5c1;
+        font-family: 'Noto Sans KR', sans-serif;
     font-size: 30px;
     text-align: center;
 }
@@ -568,7 +509,7 @@ body {
     margin: 0 auto;
     width: 500px;
     text-align: center;
-    border: solid 2px #afadd2;
+    border: solid 2px  #f5c5c1;
 }
 
 #revealdate{

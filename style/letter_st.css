@@ -1,21 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
 /*전체 크기*/
 body {
     padding : 2;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 auto;
     margin-top: 5em;
+    zoom: 80%;
 }
 
 /*위쪽 바*/
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 50px minmax(800px, auto) 100px;
+    grid-template-rows: 100px minmax(800px, auto) 150px;
     grid-gap: 3em 20px;
     justify-content: center;
     width : 80em;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .item:nth-child(1) {
@@ -36,7 +44,7 @@ body {
 .item:nth-child(4) {
     grid-column: 1;
     grid-row: 2;
-    border-right: solid gray 1px;
+    border-right: dashed #e9847b 3px;
     padding: 1em;
     justify-content: center;
 }
@@ -57,7 +65,7 @@ body {
     height: 100px;
     bottom:0;
     padding-top: 50px;
-    background:#afadd2;
+    background: #f5c5c1;
     text-align: center;
     color: white;
     font-size: 18px;
@@ -93,13 +101,13 @@ body {
     width:100%;
     height:51px;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #5e5aa4;
+    border-bottom-color: #e9847b;
 }
 
 .navbtn:hover > .nav-link{
     width:100%;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #afadd2;
+    border-bottom-color:  #f5c5c1;
 }
 
 .info{
@@ -123,7 +131,7 @@ body {
 .sidebarbtn {
     max-width: inherit;
     height : inherit;
-    border: solid #5e5aa4;
+    border: solid #e9847b;
     color: black;
     cursor: pointer;
     font-size: 15px;
@@ -135,7 +143,7 @@ body {
 
 .sidebarbtn.on {
     background-color:silver;
-    color: #5e5aa4;
+    color: #e9847b;
 }
 .sidebarbtn i {
   padding: 20%;
@@ -175,12 +183,12 @@ body {
 
   /* Change background color of buttons on hover */
 .tab button:hover {
-    background: #afadd2 ;
+    background:  #f5c5c1 ;
     font-style: italic;
 }
 
 #tab_on {
-    background :  #5e5aa4;
+    background :  #e9847b;
     color: white;
 }
 
@@ -188,6 +196,8 @@ body {
 .pad {
   margin-top:10px;
   padding: 5%;
+  border: solid #f5c5c1;
+  min-height: 30em;
 }
 
 .mailbox {
@@ -204,7 +214,7 @@ body {
     cursor:pointer;
     padding-bottom: 20px;
     font-size: 100px;
-    color:  #5e5aa4;
+    color:  #e9847b;
 }
 .mailbox .old, .sent{
     background:none;
@@ -268,7 +278,7 @@ body {
 }
 
 .letterdisplay {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 23px;
     padding-left: 40px;
     padding-right: 40px;
@@ -280,23 +290,25 @@ body {
   }
 
 #txt{
-    margin: 40px;
-    width: 700px;
+    width: 80%;
     height: 400px;
-    border : 2px solid #afadd2;
+    border : 2px solid  #f5c5c1;
     border-radius : 5px;
     background-color: #F6F6F6;
     font-size: 23px;
-    padding: 20px;
+    padding: 40px;
     font-size: 20px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#txtbtn {
+    margin-left:80%;
 }
 
   .writing input{
       margin-top: 10px;
       padding: 10px;
       border: 0;
-      background-color:#afadd2;
+      background-color: #f5c5c1;
       font-size: 20px;
   }
   .buttonwarp{
@@ -306,12 +318,11 @@ body {
   #sendbtn, #closebtn {
       border-radius:5px;
       cursor:pointer;
-      margin-right: 15px;
-      padding: 10px;
+      padding: 10px 20px 10px 20px;
       border: 0;
-      background-color:#afadd2;
+      background-color: #f5c5c1;
       font-size: 20px;
-      font-family: "Montserrat";
+      font-family: "Noto Sans KR";
   }
   #undobtn {
       border-radius:5px;
@@ -321,7 +332,7 @@ body {
       border: 0;
       background-color:#e6e6e6;
       font-size: 20px;
-      font-family: "Montserrat";
+      font-family: "Noto Sans KR";
   }
 
 #pop{

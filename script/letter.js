@@ -60,27 +60,18 @@ $('#undobtn').on('click', function(){
   $('.buttonwrap').hide();
 });
 
-
-// Modal
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == document.getElementById("myModal")) {
-    var modal = document.getElementById("myModal");
-    var lettercontent = document.getElementsByClassName("lettercontent")[0];
-    modal.style.display = "none";
-    $(lettercontent).children('.on').removeClass('on'); // 활성화된 modal content 삭제
-
+function letterShow(obj) {
+  var idx = $('.letter').index(this);
+  $('.letterdisplay').eq(idx).addClass('on'); //매칭되는 편지 on
+  if (obj.getAttribute('class') == "letter new"){ //if it is a new letter, update as read
+    obj.setAttribute('class','letter old');
+    obj.innerHTML = '<i class="fas fa-envelope-open"></i>';
+    firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).doc(obj.id).update({
+      read:true
+    });
   }
+  document.getElementById("myModal").style.display = "block";
 }
-// modal close
-document.getElementById("letterclose").onclick = function() {
-    var modal = document.getElementById("myModal");
-    var lettercontent = document.getElementsByClassName("lettercontent")[0];
-    modal.style.display = "none";
-    $(lettercontent).children('.on').removeClass('on'); // 활성화된 modal content 삭제
-
-};
-
 
 // 1) Mailbox
 // - Received Tab
@@ -88,36 +79,34 @@ document.getElementById("letterclose").onclick = function() {
 function getReceived() {
   var divHTML =""; 
   var conHTML ="";
-  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).onSnapshot((querySnapshot) => {
+  firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).get().then(function(querySnapshot) {
     querySnapshot.forEach((doc) => { 
       if (doc.data().read==false)
-        divHTML += "<div><button class='letter new' id='"+doc.id+"'><i class='fas fa-envelope'></i></button></div>";
+        divHTML += "<div><button class='letter new' id='"+doc.id+"' onclick='letterShow(this)'><i class='fas fa-envelope'></i></button></div>";
       else
-        divHTML += "<div><button class='letter old'><i class='fas fa-envelope-open'></i></button></div>";
+        divHTML += "<div><button class='letter old' onclick='letterShow(this)'><i class='fas fa-envelope-open'></i></button></div>";
       conHTML += "<p class='letterdisplay'>"+doc.data().contents+"<br>"+doc.data().servertime+"</p>";
     });
     document.getElementById("myMailbox").innerHTML += divHTML;
-    document.getElementById("myModal").innerHTML += conHTML;
-  });
+    document.getElementById("myModalDiv").innerHTML += conHTML;
 
-  var letters = document.getElementsByClassName("letter ");
-  for (i=0; i< letters.length; i++){
-    letters[i].onclick = function() {
-      var idx = $('.letter').index(this);
-      $('.letterdisplay').eq(idx).addClass('on'); //매칭되는 편지 on
-      if ($(this).hasClass('new')) {
-        console.log($(this).id);
-        console.log(this.id);
-        firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(getUserUid()).doc($(this).id).update({
-          read:true
-        });
+      // Modal
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == document.getElementById("myModal")) {
+          var modal = document.getElementById("myModal");
+          modal.style.display = "none";
+          $('#myModalDiv .on').removeClass('on'); // 활성화된 modal content 삭제
+        }
       }
-      document.getElementById("myModal").style.display = "block";
-    }
-  }
+      // modal close
+      document.getElementById("letterclose").onclick = function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";  
+        $('#myModalDiv .on').removeClass('on'); // 활성화된 modal content 삭제
+      };
+  });
 }
-
-
 
 
 // 2) Writing letter

@@ -94,7 +94,7 @@ function updateGameInfo(){
               }
         }
         else {
-          document.getElementById("manitoInfo").innerHTML = "마니또 정보를 입력하세요";
+          document.getElementById("manitoInfo").innerHTML = "아래에  니또 정보를 입력하세요";
         }
         
         if (doc.data().manager == getUserUid()){

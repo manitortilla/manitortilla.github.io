@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300;0,500;0,800;1,300;1,500&family=Source+Sans+Pro:wght@300;400&family=Sriracha&display=swap');
-/*전체 크기*/
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} 
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
 body {
     padding : 2;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 auto;
     margin-top: 5em;
+    zoom: 80%;
 }
 
 /*위쪽 바*/
@@ -15,7 +22,7 @@ body {
     justify-content: center;
     width : 80em;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .item:nth-child(1) {
@@ -73,13 +80,13 @@ body {
     width:100%;
     height:51px;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #5e5aa4;
+    border-bottom-color: #e9847b;
 }
 
 .navbtn:hover > .nav-link{
     width:100%;
     border-bottom: .50rem solid transparent;
-    border-bottom-color: #afadd2;
+    border-bottom-color: #f5c5c1;
 }
 
 .info{
@@ -106,14 +113,14 @@ body {
     grid-gap: 2em;
     justify-content: center;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .item_un:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     padding : 5%;
-    background-color: #afadd2;
+    background-color: #f5c5c1;
 }
 .item_un:nth-child(2) {  
     grid-column: 1;
@@ -130,39 +137,39 @@ body {
 
 .most_exp {
     width: 600px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 20px;
 }
 
 .item_un h2 {
-    font-family: "Sriracha", sans-serif;
+    font-family: "Noto Sans KRa", sans-serif;
     font-size: 30px;
 }
 
 .hello {
-    font-family: "Sriracha", sans-serif;
-    color: #5e5aa4;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #e9847b;
     font-size : 30px;
 }
 .on_game{
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size : 20px;
     text-align: center;
 }
 
 .no2 h1{
     text-align: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 .no3 h3{
-    font-family: "Sriracha", sans-serif;
-    color: #5e5aa4;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #e9847b;
 }
 
 .no3 a{
     text-align: center;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     font-size: 20px;
     color: royalblue;
 }
@@ -184,7 +191,7 @@ body {
     height: 100px;
     bottom:0;
     padding-top: 50px;
-    background:#afadd2;
+    background:#f5c5c1;
     text-align: center;
     color: white;
     font-size: 18px;
@@ -192,10 +199,10 @@ body {
  }
 
  .startbtn {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
     width: 100%;
-    background-color: #afadd2;
+    background-color: #f5c5c1;
     border: 1px solid transparent;
     border-radius: 3px;
     height: 40px;
@@ -216,9 +223,23 @@ body {
     width: 80%;
     height: 40px;
     background: transparent;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 17px;
     outline: none;
     border: none;
     padding: 0 5px 0 20px;
+}
+#manitoid {
+    width: 90%;
+    height: 40px;
+    background: transparent;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    outline: none;
+    border: none;
+    padding: 0 5px 0 5px;
+    border-bottom: solid 0.5px;
+    border-bottom-color: grey;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }

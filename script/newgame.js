@@ -4,6 +4,10 @@ function initFirebaseAuth() {
  firebase.auth().onAuthStateChanged(authStateObserver);
 }
 
+function getProfilePicUrl() {
+  return firebase.auth().currentUser.photoURL;
+ }
+
 // Returns the signed-in user's display name.
 function getUserName() {
  return firebase.auth().currentUser.displayName;
@@ -58,7 +62,7 @@ function joinGame() {
       else {
         name = doc.data().gamename;
         firebase.firestore().collection("gamelist").doc(gamecode).update({
-          players: firebase.firestore.FieldValue.arrayUnion({"uid": getUserUid(), "username": getUserName()})
+          players: firebase.firestore.FieldValue.arrayUnion({"uid": getUserUid(), "username": getUserName(), "pic": getProfilePicUrl()})
         }).then(function(){
           userdataUpdate(name, gamecode);
         });
@@ -81,7 +85,7 @@ function dataSave(name){
   return firebase.firestore().collection("gamelist").add({
     gamename: name,
     enddate: document.getElementById("gamedate").value,
-    players: [{"uid":getUserUid(), "username": getUserName()}],
+    players: [{"uid":getUserUid(), "username": getUserName(), "pic": getProfilePicUrl()}],
     manager: getUserUid(),
     status: "ready"
   }).then(function(doc) {
@@ -95,7 +99,8 @@ function dataSave(name){
 function userdataUpdate(name, docid){
   return firebase.firestore().collection("userlist").doc(getUserUid()).collection('game').doc(docid).set({
     gamename: name,
-    manitoof: ""
+    manitoof: "",
+    manitoguess: ""
   }).then(function() {
     alert(docid);
     location.href='../index.html';

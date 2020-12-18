@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/letter_st.css">
-    <title>MOST</title>
+    <title>Manitortilla</title>
 </head>
 <body>
     <div class= "container">
@@ -22,26 +22,27 @@
         <div class="item header info">
           <table class="user_info">
             <tr>
-              <td colspan="3" id="userID"></td>
+                <td colspan="3" id="userID"></td>
             </tr>
             <tr>
-              <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='../index.html'">Start Game</td>
-              <td>&nbsp;&nbsp;&nbsp;</td>
-              <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
+                <td style="cursor: pointer; background-color: #d7c993; color:white; font-size:18px" onclick="location.href='../index.html'">게임 목록</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td id="logoutbtn" style="cursor:pointer; color:#d7c993; font-size:18px">로그아웃</td>
             </tr>
           </table>
         </div>
+        
         <div class="item sidebar">
-              <div><button class="sidebarbtn on"><i class="fas fa-envelope-open-text"></i><br>Mailbox</button></div>
-              <div><button class="sidebarbtn"><i class="fas fa-pencil-alt"></i><br>Write a letter</button></div>
+              <div><button class="sidebarbtn on"><i class="fas fa-envelope-open-text"></i><br>편지함</button></div>
+              <div><button class="sidebarbtn"><i class="fas fa-pencil-alt"></i><br>편지 작성</button></div>
         </div>
 
         <div class="item content">
               <div class="detail on">
-                  <h2 style>My Mailbox<br><br></h2>
+                  <h2 style>나의 편지함<br><br></h2>
                   <div class="tab">
-                    <button class="tablinks" id="tab_on" onclick="location.href='letter.html'">Received</button>
-                    <button class="tablinks" onclick="location.href='letter_sent.html'">Sent</button>
+                    <button class="tablinks" id="tab_on" onclick="location.href='letter.html'">받은 편지함</button>
+                    <button class="tablinks" onclick="location.href='letter_sent.html'">보낸 편지함</button>
                   </div>
 
                   <div class="pad">
@@ -51,7 +52,7 @@
                   </div>
 
                   <div class="modal" id='myModal'> <!--modal background-->
-                    <div class="lettercontent">
+                    <div class="lettercontent" id='myModalDiv'>
                     <span class="close" id="letterclose">&times;</span>
                     <!--편지 내용-->
                     </div>
@@ -60,16 +61,15 @@
 
               <div class="detail">
                   <div class="writing">
-                    <h2 style>Write a letter to your friend<br><br></h2>
-                    <textarea id="txt" rows="25" placeholder="Write a letter here"></textarea>
-                    <p style="width: 800px; text-align: right;"><button id="sendbtn" onclick="sendLetter()" >SEND</button></p>
+                    <h2 style>당신의 비밀 친구에게 편지를 작성하세요<br><br></h2>
+                    <textarea id="txt" rows="25" placeholder="여기에 내용을 입력하세요"></textarea>
+                    <p id="txtbtn"><button id="sendbtn" onclick="sendLetter()" >보내기</button></p>
 
                     <div id='pop'>
                         <span class="close" id="popclose">&times;</span>
-                        <p class="popcontent" style="font-size: 20px;">Letter is successfully sent.<br></p>
+                        <p class="popcontent" style="font-size: 20px;">편지가 성공적으로 전달되었습니다.<br></p>
                         <div class="buttonwrap">
-                          <button id="undobtn">UNDO</button>
-                          <button id="closebtn">CLOSE</button>
+                          <button id="closebtn">확인</button>
                         </div>
                     </div>
                     
@@ -77,13 +77,12 @@
               </div>
           </div>
           <div class="item footer">
-            If there is any problem, <a href="qnaboard.html">contact us</a>.
+            문제가 생기면 <a href="qnaboard.html">여기</a>에 글을 남겨주세요.
             <br>
             email : admin@MOST.com
           </div>
+    
     </div>
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>

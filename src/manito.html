@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style/anito.css">
+    <link rel="stylesheet" href="../style/Manito.css">
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-    <title>MOST</title>
+    <title>Manitortilla</title>
 </head>
 <body>
     <div class= "container">
@@ -20,104 +20,66 @@
             <div class="active"><a class="nav-link" id="nav_manito" href="manito.html">MANITO</a></div>
         </div>
 
-
-
         <div class="item header info">
             <table class="user_info">
-                <tr>
-                    <td colspan="3" id="userID"></td>
-                </tr>
-                <tr>
-                    <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='index.html'">Start Game</td>
-                    <td>&nbsp;&nbsp;&nbsp;</td>
-                    <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
-                </tr>
+              <tr>
+                  <td colspan="3" id="userID"></td>
+              </tr>
+              <tr>
+                  <td style="cursor: pointer; background-color: #d7c993; color:white; font-size:18px" onclick="location.href='../index.html'">게임 목록</td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td id="logoutbtn" style="cursor:pointer; color: #d7c993; font-size:18px">로그아웃</td>
+              </tr>
             </table>
-        </div>
+          </div>
 
         <div class="item sidebar">
-              <div><button class="sidebarbtn on"><i class="fas fa-question fa-4x"></i><br>Guess Manito</button></div>
-              <div><button class="sidebarbtn"><i class="fas fa-exclamation fa-4x"></i><br>Game Result</button></div>
+              <div><button class="sidebarbtn on"><i class="fas fa-question fa-4x"></i><br>나의 마니또 맞추기</button></div>
+              <div><button class="sidebarbtn"><i class="fas fa-exclamation fa-4x"></i><br>게임 결과</button></div>
         </div>
 
         <div class="item content">
             <!--main menu-->
             <div class="detail">
             <div class="manitomain">
-                <h2>Would you guess who your Manito is?</h2>
+                <h2>당신의 마니또를 맞춰보세요!</h2>
                 <br><br>
                 <table class="pad">
                  <tr>
                      <td>
                          <div class="userprofile"><img id="userpic" src=""><div><span id="userID2"></span></div></div>
-
                          <div class="guessingarrowwrapper"><i class="fas fa-arrow-right fa-7x"></i><div style="font-size: large;">Guess</div></div>
-
-                         <div id='manitoprofile' class="userprofile empty"><img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png"><div>None</div></div>
+                         <div id='manitoprofile' class="userprofile empty"></div>
                      </td>
                  </tr>
                  <tr>
                      <td>
                          <div id="guessdescription">
-                             You have <span class="emph"> only 1 chance  </span> to guess Manito during manito game. 
+                             마니또를 추측할 수 있는 기회는 <span class="emph">단 한 번</span>만 주어집니다. 
                              <br>
-                             Once you choose someone as Manito, you <span class="emph"> cannot change </span>your choice.
+                             한 번 마니또를 선택하고 나면 변경이 불가능합니다.
                          </div>
                     </td>
                  </tr>
+                 <tr>
+                    <td>
+                        <div>
+                            <button id="guessingbutton" class="guessbtn posi">마니또 선택</button>
+                        </div>
+                    </td>
+                 </tr>
                 </table>
-                <div class="pad">
-                    <button id="guessingbutton" class="guessbtn posi">Try the guess!</button>
-                </div>
             </div>
 
 
             <div class="guesswindow">
-                
                 <div style="vertical-align: middle;">
                     <button id="guesswindowclose"><i class="fas fa-chevron-left fa-3x" style="cursor: pointer;"></i></button>
-                    <span class="windowtitle"><h2>Guess your Manito</h2></span>
+                    <span class="windowtitle"><h2>마니또 맞추기</h2></span>
                 </div>
                 
                 <div id="guessuserlist">
-                    <div class=pad2>
-                        <div id='guessprofile1'class="guessprofile">
-                            <div class="pad2_img">
-                                <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                            </div>
-                            <div class="pad2_name">Yellow</div>
-                            <br>
-                        </div>
-                        <div class="pad2_btn">
-                            <button id="guessuserbutton1"class="guessuserbutton">Choose</button>
-                        </div>
-                    </div>
-                        
-                    <div class=pad2>
-                        <div id='guessprofile2'class="guessprofile">
-                            <div class="pad2_img">
-                                <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
-                            </div>
-                            <div class="pad2_name">Green</div>
-                            <br>
-                        </div>
-                        <div class="pad2_btn">
-                            <button id="guessuserbutton2"class="guessuserbutton">Choose</button>
-                        </div>
-                    </div>
-            
-                    <div class=pad2>
-                        <div id='guessprofile3'class="guessprofile">
-                            <div class="pad2_img">
-                                <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
-                            </div>
-                            <div class="pad2_name">Blue</div>
-                            <br>
-                        </div>
-                        <div class="pad2_btn">
-                            <button id="guessuserbutton3"class="guessuserbutton">Choose</button>
-                        </div>
-                    </div>
+                    <!--자신을 제외한 참가자 리스트-->
                 </div>
 
             </div>
@@ -127,187 +89,31 @@
             <div id='manitoresult'  class="detail">
                 <div class="manitomain">
                     
-                    
-                    <h2>Result</h2>
-                    <div class='alerevealday'>
-                        <span>Your reveal day is</span>
-                        <span id='revealdate'>2020-06-25</span>
-                        <br>
-                        <span>This page will be active after</span>
-                        <span id='remainday'>7</span>
-                        <span>days.</span>
+                    <h2>게임 결과</h2>
+                    <div class='alerevealday' id='alerevealday'>
+                        <span>게임 종료일은 </span><span id='revealdate'></span><span>입니다.</span><br>
+                        <span>이 메뉴는 </span><span id='remainday'></span><span>일 후에 활성화됩니다.</span>
                     </div>
                     <br> <br>
-                    <div class="resulttable">
+                    <div class="resulttable" id="resultTable">
+                        <div class="titem t_head">참여자</div>
+                        <div class="titem t_head">추측</div>
+                        <div class="titem t_head">마니또</div>
+                        <div class="titem t_head">결과</div>
                         
-                        <div class="titem t_head">
-                            User
-                        </div>
-                        <div class="titem t_head">
-                            Guess
-                        </div>
-                        <div class="titem t_head">
-                            Real Manito
-                        </div>
-                        <div class="titem t_head">
-                            Result
-                        </div>
-                    
-                    
-                        <div class="titem row1">
-                            <div class="resultblock_name">
-                                <div class=smallprofile>
-                                    <img id="userpic2" src="">
-                                    <span id="userID3">RTK</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row1">
-                            <div class="resultblock_guess" >
-                                <div class=smallprofile id='manitoprofile2'>
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row1">
-                            <div class="resultblock_manito">
-                                <div class=smallprofile>
-                                    <!--
-                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <span>Yellow</span>
-                                    -->
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row1">
-                            <div class="resultblock_hit">
-                                <img src='check.png'>
-                            </div>
-                        </div>
-                    
-                
-                        <div class="titem row2">
-                            <div class="resultblock_name">
-                                <div class=smallprofile>
-                                    <img src="https://img.hankyung.com/photo/201909/03.20575271.1.jpg">
-                                    <span class="player_name"> Blue</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row2">
-                            <div class="resultblock_guess">
-                                <div class=smallprofile>
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row2">
-                            <div class="resultblock_manito">
-                                <div class=smallprofile>
-                                    <!--
-                                    <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
-                                    <span>Green</span>
-                                    -->
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row2">
-                            <div class="resultblock_hit">
-                                <img src='check.png'>
-                            </div>
-                        </div>
-                        
-                       
-                        <div class="titem row3">
-                            <div class='resultblock_name'>
-                                <div class="smallprofile">
-                                    <img src="https://pbs.twimg.com/media/D_xHePJUcAIjEJJ.jpg">
-                                    <span class="player_name">Green</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row3">
-                            <div class='resultblock_guess'>
-                                <div class=smallprofile>
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row3">
-                            <div class='resultblock_manito'>
-                                <div class=smallprofile>
-                                    <!--
-                                    <img id="userpic3" src="">
-                                    <span id="userID4"></span>
-                                    -->
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row3">
-                            <div class='resultblock_hit'>
-                                <img src='xmark.png'>
-                            </div>
-                        </div>
-                        
-                       
-                        <div class="titem row4">
-                            <div class='resultblock_name'>
-                                <div class=smallprofile>
-                                    <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
-                                    <span class="player_name">Yellow</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row4">
-                            <div class='resultblock_guess'>
-                                <div class=smallprofile>
-                                    <!--
-                                    <img id="userpic4" src="">
-                                    <span id="userID5"></span>
-                                    -->
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row4">
-                            <div class='resultblock_manito'>
-                                <div class=smallprofile>
-                                    <!--
-                                    <img src="https://i.pinimg.com/originals/69/c7/be/69c7bed008f4bd275002b423e36598c3.jpg">
-                                    <span>Blue</span>
-                                    -->
-                                    <img src="https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png">
-                                    <span>???</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="titem row4">
-                            <div class='resultblock_hit'>
-                                <img src='../images/xmark.png'>
-                            </div>
-                        </div>
-                
+                        <!--참여자 전원-->
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="item footer">
-            If there is any problem, <a href="qnaboard.html">contact us</a>.
+            문제가 생기면 <a href="qnaboard.html">여기</a>에 글을 남겨주세요.
             <br>
             email : admin@MOST.com
-        </div>
-    </div>
+          </div>
+    
+      </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>

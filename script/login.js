@@ -58,7 +58,7 @@ function isUserSignedIn() {
 function authStateObserver(user) {
   if (user) { // User is signed in!
     // show the game list
-    document.getElementById("userID").innerHTML="Hi, "+getUserName();
+    document.getElementById("userID").innerHTML=getUserName()+" 님, 안녕하세요.";
     toggleScreen();
   } else{
     toggleScreen();
@@ -87,7 +87,7 @@ function getGamelist(){
         newHTML += "<ul class='game'><a href='../src/home.html' onclick ='sessionStorage.gameID=\"" + doc.id + "\"'>"
             + doc.data().gamename + "</a></ul>";
     });
-    newHTML += " <ul class='game newgame'><a href='../src/newgame.html'>+ Start a new game</a></ul>";
+    newHTML += " <ul class='game newgame'><a href='../src/newgame.html'>+ 새 게임 시작하기</a></ul>";
     document.getElementsByClassName("list")[0].innerHTML= newHTML;
   });
 

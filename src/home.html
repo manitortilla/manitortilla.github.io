@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/home_st.css">
-    <title>MOST</title>
+    <title>Manitortilla</title>
 </head>
 <body>
 
@@ -22,12 +22,12 @@
       <div class="item header info">
         <table class="user_info">
           <tr>
-            <td colspan="3" id="userID"></td>
+              <td colspan="3" id="userID"></td>
           </tr>
           <tr>
-            <td style="cursor: pointer; background-color: #5e5aa4; color:white; font-size:18px" onclick="location.href='../index.html'">Start Game</td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td id="logoutbtn" style="cursor:pointer; color: #5e5aa4; font-size:18px">Log out</td>
+              <td style="cursor: pointer; background-color: #d7c993; color:white; font-size:18px" onclick="location.href='../index.html'">게임 목록</td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td id="logoutbtn" style="cursor:pointer; color: #d7c993; font-size:18px">로그아웃</td>
           </tr>
         </table>
       </div>
@@ -35,19 +35,19 @@
       <div class="item under">
         <div class="wrapper">
           <div class="item_un no1">
-              <h2>Welcome to MOST!</h2>
+              <h2>Welcome to Manitortilla!</h2>
               <table>
                 <tr>
                   <td>
                     <p class="most_exp">
-                      Most is a platform where users can play Manito online with a perfect anonymity.
-                      If you want to have fun with your friends playing a game, we will be your game host!
+                      Manitortilla는 완벽히 익명으로 마니또 놀이를 즐길 수 있는 플랫폼입니다.
+                      친구들과 게임을 하며 즐거운 시간을 보내고 싶다면 Manitortilla와 함께 하세요!
                       <span id="dots">...</span>
-                      <span id="more">
-                        You can write a letter and buy a gift for your friend.
-                        Once you do, MOST will take care of anything else.
-                        So that your friend never knows that you are the Manito!
-                        Just make some great memories with your beloved friends.
+                      <span id="more"><br>
+                        비밀 친구에게 편지를 쓰면 Manitortilla가 전달해 드립니다. 상대방은 당신이 마니또라는 걸 전혀 알지 못하겠죠.
+                        게임이 종료되기 전, 마니또라고 추측되는 친구를 선택해보세요.
+                        정해진 게임 종료일이 되거나 게임 생성자가 게임을 종료하고 나면 실제 마니또 매칭 정보와 함께 누가 서로를 지목했는지 볼 수 있습니다.
+                        마니또 놀이로 사랑하는 친구들과 즐거운 추억을 남겨 보세요.
                       </span>
                       <span>
                         <button id="myBtn" onclick="readmore()">Read more</button>
@@ -62,8 +62,8 @@
               
           </div>
           <div class="item_un no2" id="gameInfo">
-            <p class="hello">Hello, <span id="userID2"></span> ! </p>
-              <p class="on_game">You are on game " <span id="gamename"></span> " now.<br>Until the end of the game,</p>
+            <p class="hello">안녕하세요, <span id="userID2"></span> 님 </p>
+              <p class="on_game">현재 " <span id="gamename"></span> " 게임에 입장했습니다.<br> 게임 종료까지 남은 날짜</p>
             <h1 id="Dday">D-7</h1>
           </div>
 
@@ -72,7 +72,7 @@
               <p id="playersInfo"> </p>
               <p id ="manitoInfo"> </p>
               <div class="wrap-input" id="manitoBox">
-                <input id="manitoid" type="text" placeholder=""></input>
+                <input id="manitoid" type="text" placeholder="배정받은 사람의 ID 코드를 입력하세요."></input>
               </div>
               <div class="wrap-button">
                 <button class="startbtn" id="submitbtn" style="margin-bottom: 0px;" onclick="submitManito()">등록</button>
@@ -82,7 +82,7 @@
       </div>
  
       <div class="item footer">
-        If there is any problem, <a href="src/qnaboard.html">contact us</a>.
+        문제가 생기면 <a href="qnaboard.html">여기</a>에 글을 남겨주세요.
         <br>
         email : admin@MOST.com
       </div>
