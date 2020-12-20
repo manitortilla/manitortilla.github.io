@@ -149,7 +149,7 @@ function updateGameInfo() {
     firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
       var playerslist = doc.data().players;
       if (myGuess=="")
-        $('#manitoprofile').html("<img src=''><div>???</div>");
+        $('#manitoprofile').html("<img src='"+url+"'><div>???</div>");
       else { 
         $('#guessingbutton').hide();
       }
@@ -159,14 +159,14 @@ function updateGameInfo() {
         "<div class='titem'><div class='resultblock_name'><div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div></div></div>\
         <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+url+"'><span>???</span></div></div></div>\
         <div class='titem'><div class='resultblock_manito'><div class='smallprofile'><img src='"+url+"'><span>???</span></div></div></div>\
-        <div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>"
+        <div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
         
-        // 마니또 추측 메뉴
+        // 추측 선택 메뉴
         if (getUserUid()==playerslist[i]['uid']) continue;
         document.getElementById("guessuserlist").innerHTML+=
           "<div class=pad2><div id='guessprofile1'class='guessprofile'>\
               <div class='pad2_img'>\
-                  <img src='"+playerslist[i]['pic']+">\
+                  <img src='"+playerslist[i]['pic']+"'>\
               </div> \
               <div class='pad2_name'>"+playerslist[i]['username']+"</div><br>\
               </div>\
@@ -185,17 +185,6 @@ function updateGameInfo() {
 }
 
 function finalGameInfo(){
-  $('.sidebarbtn').removeClass('on');
-  $(this).addClass('on');
-
-  //show the related content
-  var idx = $('.sidebarbtn').index(this);
-  $('.detail').hide(); //style="display:none"
-  $('.detail').eq(idx).show();
-  if (idx == 0){
-    $('.manitomain').show();
-    $('.guesswindow').hide();
-  }
   $('#guessingbutton').hide();
 
   url='https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png';
@@ -207,24 +196,26 @@ function finalGameInfo(){
       firebase.firestore().collection('userlist').doc(playerslist[i]['uid']).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
         guess=doc.data().guess;
         for (j=0; j<playerslist.length; j++){
-          if (guess==playerlist[j]['uid']){
+          if (guess==playerslist[j]['uid']){
             newHTML +=
             "<div class='titem'><div class='resultblock_name'><div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div></div></div>\
-              <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+playerslist[j]['pic']+"'><span>???</span></div></div></div>";
-            break;
+              <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+playerslist[j]['pic']+"'><span>"+playerslist[j]['username']+"</span></div></div></div>";;
           }
         }
       });
+      
       flag=0;
-      for (j=0; flag==0 && i<playerslist.length; i++) {
+      for (j=0; flag==0 && j<playerslist.length; j++) {
         firebase.firestore().collection('userlist').doc(playerslist[j]['uid']).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
-          if (playerslist[i]['uid']==doc.data().manitoof) {
+          console.log(i);
+          console.log(j);
+          if (doc.data().manitoof==playerslist[i]['uid']) {
               newHTML +=
               "<div class='titem'><div class='resultblock_manito'><div class='smallprofile'><img src='"+playerslist[j]['pic']+"'><span>"+playerslist[j]['username']+"</span></div></div></div>";
               if (guess == playerslist[j]['uid'])
-                newHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
+                document.getElementById("guessuserlist").innerHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
               else
-                newHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/xmark.png'></div></div>";
+                document.getElementById("guessuserlist").innerHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/xmark.png'></div></div>";
               flag=1;
           }
         });

@@ -52,7 +52,7 @@ function initDate(){
 
 function joinGame() {
   gamecode = document.getElementById("gamecode").value;
-  if (gamecode != "")
+  if (gamecode == "")
     alert("코드를 입력하세요");
   else
     return firebase.firestore().collection("gamelist").doc(gamecode).get().then(function(doc){
@@ -60,7 +60,7 @@ function joinGame() {
         alert("잘못된 코드입니다");
       }
       else {
-        name = doc.data().gamename;
+        var name = doc.data().gamename;
         firebase.firestore().collection("gamelist").doc(gamecode).update({
           players: firebase.firestore.FieldValue.arrayUnion({"uid": getUserUid(), "username": getUserName(), "pic": getProfilePicUrl()})
         }).then(function(){
@@ -102,7 +102,7 @@ function userdataUpdate(name, docid){
     manitoof: "",
     manitoguess: ""
   }).then(function() {
-    alert(docid);
+    alert("아래 코드를 복사하여 참가자들에게 공유하세요.\n"+ docid);
     location.href='../index.html';
   });
 }

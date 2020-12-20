@@ -87,14 +87,13 @@ function updateGameInfo(){
           document.getElementById("submitbtn").removeAttribute("onClick");
           for (i=0; i<playerlist.length; i++)
               if (playerlist[i]['uid']==manito){
-                console.log()
                 document.getElementById("manitoInfo").innerHTML = 
                 "당신은 <span id='manito' style='color:royalblue'>"+playerlist[i]['username']+"</span>의 마니또입니다.<br>" ;
                 break;
               }
         }
         else {
-          document.getElementById("manitoInfo").innerHTML = "아래에  니또 정보를 입력하세요";
+          document.getElementById("manitoInfo").innerHTML = "아래에 마니또 정보를 입력하세요";
         }
         
         if (doc.data().manager == getUserUid()){
@@ -125,10 +124,18 @@ function finishGame(){
 }
 
 function submitManito(){
-  firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).update({
-    manitoof: document.getElementById("manitoid").value
-  }).then(function(){ 
-    location.reload();
+  var input= document.getElementById("manitoid").value;
+  firebase.firestore().collection("userlist").doc(input).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
+    if (!doc.exists) {
+      alert("잘못된 코드입니다");
+      return;
+    }
+
+    firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).update({
+      manitoof: input
+    }).then(function(){ 
+      location.reload();
+    });
   });
 }
 
