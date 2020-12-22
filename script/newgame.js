@@ -97,12 +97,17 @@ function dataSave(name){
 
 //원래는 player마다 게임방 이름 추가해야하지만 여기서는 그냥 현재 유저에만 한다
 function userdataUpdate(name, docid){
+  firebase.firestore().collection("userlist").doc(getUserUid()).set({
+    username: getUserName(),
+    pic: getProfilePicUrl()
+  });
   return firebase.firestore().collection("userlist").doc(getUserUid()).collection('game').doc(docid).set({
     gamename: name,
     manitoof: "",
+    manitois: "",
     manitoguess: ""
   }).then(function() {
-    alert("아래 코드를 복사하여 참가자들에게 공유하세요.\n"+ docid);
+    alert(docid);
     location.href='../index.html';
   });
 }

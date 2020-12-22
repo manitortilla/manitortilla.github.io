@@ -474,12 +474,13 @@ body {
 }
 
 .resultblock_hit{
-    display:none;
+    display:block;
+    vertical-align: middle;
+
     text-align: center;
     padding-top: 5px;
 }
 .resultblock_hit img{
-    vertical-align: middle;
     width: 70px;
     height: 70px;
 }

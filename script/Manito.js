@@ -83,15 +83,39 @@ $('#guesswindowclose').on('click', function(){
     document.getElementsByClassName("manitomain")[0].style.display = "block";
 });
 
-function submitGuess(targetId){
+function subfunc(targetId, targetPic, targetName){
+
+  var html="";
+    firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
+      manito=doc.data().manitois;
+    }).then(function(){
+    firebase.firestore().collection('userlist').doc(manito).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
+      manito_pic=doc.data().pic;
+      manito_name=doc.data().name;
+    }).then(function(){
+   // firebase.firestore().collection('userlist').doc(manito).get().then(function(doc){
+//console.log(doc.data().pic);
+      html += "<div class='titem'><div class='resultblock_name'><div class='smallprofile'><img id='userpic2' src='"+getProfilePicUrl()+"'><span id='userID3'>"+getUserName()+"</span></div></div></div>\
+    <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+targetPic+"'><span>"+targetName+"</span></div></div></div>\
+    <div class='titem'><div class='resultblock_manito'><div class='smallprofile'><img src='"+manito_pic+"'><span>"+manito_name+"</span></div></div></div>";
+      if (manito == targetId)
+        html+="<div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
+      else
+      html+="<div class='titem'><div class='resultblock_hit'><img src='../images/xmark.png'></div></div>";
+      while (html=="");
+    }); }).then(function(){console.log(html);
+      return html;});
+    
+}
+function submitGuess(targetId, targetPic, targetName){
   firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).update({
     manitoguess: targetId
-  }).then(function(){ 
+  }).then(function(){
     location.reload();
   });
 }
 $('.guessuserbutton').on('click',function(){
-    const result = confirm('Would you choose this one as Manito?');
+    const result = confirm('선택하겠습니까?');
     if(result){
       var idx = $('.guessuserbutton').index(this);
       var photo_html = $('.guessprofile').eq(idx).html();
@@ -155,11 +179,14 @@ function updateGameInfo() {
       }
       for (i=0; i<playerslist.length; i++) {
         // 결과 메뉴
-        document.getElementById("resultTable").innerHTML +=
-        "<div class='titem'><div class='resultblock_name'><div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div></div></div>\
-        <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+url+"'><span>???</span></div></div></div>\
-        <div class='titem'><div class='resultblock_manito'><div class='smallprofile'><img src='"+url+"'><span>???</span></div></div></div>\
-        <div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
+        document.getElementById("name").innerHTML +=
+        "<div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div>";
+        document.getElementById("guess").innerHTML +=
+        "<div class='smallprofile' id='manitoprofile2'><img src='"+url+"'><span>???</span></div>";
+        document.getElementById("manito").innerHTML +=
+        "<div class='smallprofile'><img src='"+url+"'><span>???</span></div>";
+        document.getElementById("answer").innerHTML +=
+        "<span>???</span>";
         
         // 추측 선택 메뉴
         if (getUserUid()==playerslist[i]['uid']) continue;
@@ -171,7 +198,7 @@ function updateGameInfo() {
               <div class='pad2_name'>"+playerslist[i]['username']+"</div><br>\
               </div>\
               <div class='pad2_btn'>\
-                  <button class='guessuserbutton' onClick='submitGuess(\""+playerslist[i]['uid']+"\")'> 선택 </button>\
+                  <button class='guessuserbutton' onClick='submitGuess(\""+playerslist[i]['uid']+"\",\""+playerslist[i]['username']+"\",\""+ playerslist[i]['pic']+"\")'> 선택 </button>\
               </div>\
           </div>"; 
         if (myGuess == playerslist[i]['uid']){
@@ -186,41 +213,50 @@ function updateGameInfo() {
 
 function finalGameInfo(){
   $('#guessingbutton').hide();
+  $('#alerevealday').hide();
 
   url='https://embodiedfacilitator.com/wp-content/uploads/2018/05/human-icon-png-1901.png';
   newHTML="";
+  firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
+    manitoguess= doc.data().manitoguess;
+    if (manitoguess == "")
+      $('#manitoprofile').html("<img src='"+url+"'><div>???</div>");
+    else
+    firebase.firestore().collection('userlist').doc(manitoguess).get().then(function(doc){
+      $('#manitoprofile').html("<img src='"+doc.data().pic+"'><div>"+doc.data().username+"</div>");
+    });
+  });
+
   firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
     var playerslist = doc.data().players;
     // 결과 메뉴
     for (i=0; i<playerslist.length; i++) {
+      document.getElementById("name").innerHTML +=
+      "<div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div>";
+
       firebase.firestore().collection('userlist').doc(playerslist[i]['uid']).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
-        guess=doc.data().guess;
-        for (j=0; j<playerslist.length; j++){
-          if (guess==playerslist[j]['uid']){
-            newHTML +=
-            "<div class='titem'><div class='resultblock_name'><div class='smallprofile'><img id='userpic2' src='"+playerslist[i]['pic']+"'><span id='userID3'>"+playerslist[i]['username']+"</span></div></div></div>\
-              <div class='titem'><div class='resultblock_guess'><div class='smallprofile' id='manitoprofile2'><img src='"+playerslist[j]['pic']+"'><span>"+playerslist[j]['username']+"</span></div></div></div>";;
-          }
-        }
-      });
-      
-      flag=0;
-      for (j=0; flag==0 && j<playerslist.length; j++) {
-        firebase.firestore().collection('userlist').doc(playerslist[j]['uid']).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
-          console.log(i);
-          console.log(j);
-          if (doc.data().manitoof==playerslist[i]['uid']) {
-              newHTML +=
-              "<div class='titem'><div class='resultblock_manito'><div class='smallprofile'><img src='"+playerslist[j]['pic']+"'><span>"+playerslist[j]['username']+"</span></div></div></div>";
-              if (guess == playerslist[j]['uid'])
-                document.getElementById("guessuserlist").innerHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/check.png'></div></div>";
-              else
-                document.getElementById("guessuserlist").innerHTML += "<div class='titem'><div class='resultblock_hit'><img src='../images/xmark.png'></div></div>";
-              flag=1;
-          }
+        manitoguess= doc.data().manitoguess;
+        manitois= doc.data().manitois;
+
+        if (manitoguess == "")
+          $('#manitoprofile').html("<img src='"+url+"'><div>???</div>");
+        else
+        firebase.firestore().collection('userlist').doc(manitoguess).get().then(function(doc){
+          document.getElementById("guess").innerHTML +=
+              "<div class='smallprofile' id='manitoprofile2'><img src='"+doc.data().pic+"'><span>"+doc.data().username+"</span></div>";
         });
-      }
+
+        firebase.firestore().collection('userlist').doc(manitois).get().then(function(doc){
+          document.getElementById("manito").innerHTML +=
+          "<div class='smallprofile'><img src='"+doc.data().pic+"'><span>"+doc.data().username+"</span></div>";
+        });
+        if (manitois == manitoguess)
+          document.getElementById("answer").innerHTML += "<div><img src='../images/check.png'></div>";
+        else
+          document.getElementById("answer").innerHTML += "<div><img src='../images/xmark.png'></div>";
+
+      });
     }
-    document.getElementById("resultTable").innerHTML += newHTML;
+
   });
 }

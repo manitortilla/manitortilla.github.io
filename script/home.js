@@ -63,7 +63,8 @@ function updateGameInfo(){
 
     firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).get().then(function(doc){
       if (doc.data().status == "ready"){
-        var string= "<p>참가자들을 기다리는 중입니다.<br>현재 참가자 수: "+doc.data().players.length+" 명</p>";
+        var string= "<p>참가자들을 기다리는 중입니다.<br>현재 참가자 수: "+doc.data().players.length+" 명\
+        <br><br>아래 게임 코드를 참가자들에게 공유하세요.<br>"+sessionStorage.gameID+"</p>";
         if (doc.data().manager == getUserUid()){
           string += "<button class='startbtn' onclick='startGame()'>게임 시작</button>";
         }
@@ -130,7 +131,10 @@ function submitManito(){
       alert("잘못된 코드입니다");
       return;
     }
-
+    firebase.firestore().collection('userlist').doc(input).collection('game').doc(sessionStorage.gameID).update({
+      manitois: getUserUid()
+    });
+    
     firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).update({
       manitoof: input
     }).then(function(){ 

@@ -133,7 +133,7 @@ function sendLetter() {
   // Add a new login info entry to the database.
   content= document.getElementById("txt").value;
 
-  document.getElementsByClassName('popcontent')[0].innerHTML = "Letter is successfully sent."; //when user cancel sending previously, re-show the message.
+  document.getElementsByClassName('popcontent')[0].innerHTML = "편지가 성공적으로 전송되었습니다."; //when user cancel sending previously, re-show the message.
   $('.buttonwrap').show();
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
@@ -147,12 +147,12 @@ function sendLetter() {
         sender: getUserUid(),
         contents: content,
         read: false,
-        servertime: t
+        servertime: firebase.firestore.FieldValue.serverTimestamp()
       });
     });
   }
   else {
-    alert ("You cannot sent an empty letter");
+    alert ("내용을 입력하세요.");
   }
 }
 /*

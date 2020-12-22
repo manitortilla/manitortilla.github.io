@@ -93,6 +93,8 @@ function getReceived() {
         divHTML += "<div><button class='letter old' onclick='letterShow(this)'><i class='fas fa-envelope-open'></i></button></div>";
       conHTML += "<p class='letterdisplay'>"+doc.data().contents+"<br>"+doc.data().servertime+"</p>";
     });
+    if (divHTML == "")
+      divHTML = "<p>작성한 편지가 없습니다.</p>";
     document.getElementById("myMailbox").innerHTML += divHTML;
     document.getElementById("myModalDiv").innerHTML += conHTML;
 
@@ -121,7 +123,7 @@ function sendLetter() {
   // Add a new login info entry to the database.
   content= document.getElementById("txt").value;
 
-  document.getElementsByClassName('popcontent')[0].innerHTML = "Letter is successfully sent."; //when user cancel sending previously, re-show the message.
+  document.getElementsByClassName('popcontent')[0].innerHTML = "편지가 성공적으로 전송되었습니다."; //when user cancel sending previously, re-show the message.
   $('.buttonwrap').show();
   if (content != "") {
     document.getElementById("txt").value = ""; //clear
@@ -135,11 +137,11 @@ function sendLetter() {
         sender: getUserUid(),
         contents: content,
         read: false,
-        servertime: t
+        servertime: firebase.firestore.FieldValue.serverTimestamp()
       });
     });
   }
   else {
-    alert ("You cannot sent an empty letter");
+    alert ("내용을 입력하세요.");
   }
 }
