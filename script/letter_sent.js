@@ -142,12 +142,12 @@ function sendLetter() {
     firebase.firestore().collection('userlist').doc(getUserUid()).collection('game').doc(sessionStorage.gameID).get().then(function(doc){
       manito = doc.data().manitoof;
       t= new Date();
-      console.log(t.getTime().toString());
+      console.log(t.toLocaleString());
       return firebase.firestore().collection('gamelist').doc(sessionStorage.gameID).collection(manito).doc(t.getTime().toString()).set({
         sender: getUserUid(),
         contents: content,
         read: false,
-        servertime: firebase.firestore.FieldValue.serverTimestamp()
+        servertime: t.toLocaleString() 
       });
     });
   }
